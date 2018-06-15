@@ -4,8 +4,38 @@
 
 웹페이지를 이루고 있는 구성요소들을 작성한 문서입니다.
 
-```text
-naver news code
+```markup
+<div>
+    <div>
+        <h4><a href="#">경제</a></h4>
+        <span>
+            <a href="#">일반</a>
+            <a href="#">금융</a>
+            <a href="#">생활경제</a>
+        </span>
+    </div>
+    <div>
+        <dl>                
+            <a>
+                <img src="http://imgnews.naver.net/image/upload/item/2018/06/14/
+                            182203604_%25C1%25A6%25B8%25F1-%25BE%25F8%25C0%25BD-3.jpg
+                            ?type=f270_166" width="300" height="190"> <br/>
+                
+
+            <a href="#">[한미 금리차 확대 전문가 진단] "外人 자금 이탈땐 증시 출렁"..."조정, 저가매수 기회로"</a>
+            
+        </dl>
+        <div>
+            <ul>
+                <li>
+                    <a href="#"><strong>임대로 바뀐 나인원 한남, 이번엔 임대료 사상 최고될듯</strong></a>
+                    <i>포토</i> <span>조선일보</span>
+                </li>
+                <li>
+                    <a href="#"><strong>"매파적 연준, 코스피 단기 변동성 확대 불가피"</strong></a>
+                    <i>포토</i> <span>머니투데이</span>
+                </li>
+...이하 생략
 ```
 
 ![](../.gitbook/assets/image%20%285%29.png)
@@ -18,9 +48,13 @@ naver news code
 
 ```markup
 <div>
-    <div>
-        <h4><a href="#">경제</a>
-        </div>
+    <h4><a>경제</a></h4>
+    <span>
+        <a>일반</a>
+        <a>금융</a>
+        <a>생활경제</a>
+    </span>
+</div>
 ```
 
 하나의 태그는 &lt;&gt;안에 들어있습니다.  
@@ -35,8 +69,15 @@ naver news code
 
 #### div
 
-```text
-div code sample
+```markup
+<div>
+    <h4><a>경제</a></h4>
+    <span>
+        <a>일반</a>
+        <a>금융</a>
+        <a>생활경제</a>
+    </span>
+</div>
 ```
 
 div code image
@@ -47,8 +88,12 @@ div code image
 
 #### a
 
-```text
-a code sample
+```markup
+<a href="#">신이 내린 선물 골든 부트, 누가 거머쥘까</a>
+<a href="#">"2018월드컵 어느 국가가 우승?"···'점쟁이'동물···</a>
+<a href="#">울버햄튼·맨유·유벤투스, 인테르 풀백 칸셀로 영입전</a>
+<a href="#">러시아월드컵, 오늘밤 자정 '화려한 개막'</a>
+<a href="#">양국 몸값 합해 1조9000억···'황금발'들의 결투</a>
 ```
 
 ![](../.gitbook/assets/image%20%2837%29.png)
@@ -66,7 +111,7 @@ a 태그는 어디론가 이동하기 위해 존재하기 때문에, 꼭 이동�
 #### img 태그
 
 ```text
-img code sample
+<img src="http://postfiles14.naver.net/MjAxODA2MTRfMjc3/MDAxNTI4OTQ4NTk1MjYy.ME8ls0srrbeR-XJhPZXugqVWw7CwQ4AOMRURsbiwxqMg.HGYStbBpMgPLB0GBeWexrbddXDV7hE3knABayN3mzvIg.PNG.coalastudy/%EB%8B%B9%EC%BD%94%EC%8B%A4.png?type=w966" width="611" height="320">
 ```
 
 ![](../.gitbook/assets/image%20%2828%29.png)

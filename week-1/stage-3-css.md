@@ -8,8 +8,20 @@ Stage 2에 등장한 블로그 글을 여러 개 만든다고 생각해 봅시�
 
 코드는 어떻게 될까요?
 
-```text
-duplicate code sample
+```markup
+<div>
+    <h3 style="margin: 5px;">김코알라</h3>
+    <span style="color: #aaa; font-size: 13px;">2018년 6월 15일 10:30 오전.</span>
+    <h3 style="color: #3a6;">데이터 수집 스터디에 오신 것을 환영합니다.</h3>
+    <span>오늘은 기초 개념과 HTML/CSS에 대해 알아보겠습니다.</span>
+</div>
+
+<div>
+    <h3 style="margin: 5px;">김코끼리</h3>
+    <span style="color: #aaa; font-size: 13px;">2018년 6월 16일 03:14 오후.</span>
+    <h3 style="color: #3a6;">서비스명 후보중에 코끼리도 있었는데...</h3>
+    <span>제가 코알라보다 못한게 뭐죠?</span>
+</div>
 ```
 
 그대로 복사하여 내용만 바꾸었습니다.  
@@ -17,8 +29,31 @@ duplicate code sample
 
 작성이 비효율적이고, 제목을 파란색으로 수정하고 싶어지면 두 군데를 바꿔야 합니다. 글이 100개라면 100군데를 바꿔야 하구요.
 
-```text
-explicit style code sample
+```markup
+<style>
+    #container {
+        background-color: #cecece;
+        width: 100%;
+        height: 100%;
+    }
+
+    .post {
+        background-color: white; padding: 10px; margin: 10px; width: 400px;
+    }
+
+    .name {
+        margin: 5px;
+    }
+
+    .date {
+        color: #aaa;
+        font-size: 13px;
+    }
+
+    .title {
+        color: #3a6;
+    }
+</style>
 ```
 
 이럴 때에는 HTML 문서 끝에 style이라는 태그를 만들어 CSS 스타일들을 몰아넣는 것이 좋습니다. 함께 적용할 스타일들을 묶어서 container, post 등의 이름을 붙여놓고 필요한 HTML 태그에서 호출하면 통채로 적용된답니다.
@@ -29,12 +64,16 @@ explicit style code sample
 
 #### ID
 
-```text
-id style code sample
+```markup
+#container {
+    background-color: #cecece;
+    width: 100%;
+    height: 100%;
+}
 ```
 
 ```text
-id apply code sample
+<div id="container">...</div>
 ```
 
 ID는 한 HTML 태그에 붙이는 고유한 식별자입니다. 같은 HTML 문서 내에 수백 수천 개의 div가 존재할 수 있지만, container라는 ID는 하나만 가질 수 있죠.  
@@ -48,11 +87,13 @@ HTML 태그에 적용할 때에는 id="id명" 속성을 추가해줍니다.
 #### CLASS
 
 ```text
-class style code sample
+.post {
+    background-color: white; padding: 10px; margin: 10px; width: 400px;
+}
 ```
 
 ```text
-class apply code sample
+<div class="post">...</div>
 ```
 
 Class는 여러 HTML 태그에 동시에 적용하고 싶은 스타일을 정의할 때 사용합니다. 트위터의 트윗들, 쇼핑몰의 상품들, 뉴스 서비스의 기사들처럼 서비스의 같은 데이터들이 서로 비슷한 디자인이어야 사용하기 편한 서비스겠죠?
@@ -61,11 +102,21 @@ CSS 스타일 태그 안에서는 .class명 { 스타일 목록... } 으로 선�
 HTML 태그에 적용할 때에는 class="class명" 속성을 추가해줍니다.
 
 ```text
-implicit styled code sample
+<div>
+    <h3 style="margin: 5px;">김코끼리</h3>
+    <span style="color: #aaa; font-size: 13px;">2018년 6월 16일 03:14 오후.</span>
+    <h3 style="color: #3a6;">서비스명 후보중에 코끼리도 있었는데...</h3>
+    <span>제가 코알라보다 못한게 뭐죠?</span>
+</div>
 ```
 
 ```text
-explicit styled code sample
+<div class="post">
+    <h3 class="name">김코끼리</h3>
+    <span class="date">2018년 6월 16일 03:14 오후.</span>
+    <h3 class="title">서비스명 후보중에 코끼리도 있었는데...</h3>
+    <span>제가 코알라보다 못한게 뭐죠?</span>
+</div>
 ```
 
 CSS를 HTML 태그 내에 직접 적용했을 때와 따로 빼냈을 때의 HTML 코드 비교입니다.

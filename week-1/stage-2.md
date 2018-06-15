@@ -24,16 +24,26 @@
 
 CSS의 작성 방식에는 여러가지가 있지만, 처음엔 HTML 태그에 직접 집어넣는 것이 쉽습니다.
 
-```text
-without css code
+```markup
+<div>
+    <h3>코알라</h3>
+    <span>2018년 5월 9일 10:30 오전.</span>
+    <h3>데이터 수집 스터디에 오신 것을 환영합니다.</h3>
+    <span>오늘은 기초 개념과 HTML/CSS에 대해 알아보겠습니다.</span>
+</div>
 ```
 
 ![](../.gitbook/assets/image%20%2814%29.png)
 
 이러한 HTML only 코드에서
 
-```text
-with css code
+```markup
+<div>
+    <h3 style="margin: 5px;">코알라</h3>
+    <span style="color: #aaa; font-size: 13px;">2018년 5월 9일 10:30 오전.</span>
+    <h3 style="color: #3a6;">데이터 수집 스터디에 오신 것을 환영합니다.</h3>
+    <span>오늘은 기초 개념과 HTML/CSS에 대해 알아보겠습니다.</span>
+</div>
 ```
 
 ![](../.gitbook/assets/image%20%282%29.png)
@@ -52,7 +62,9 @@ src, href등과 같이 태그 내에 style이라는 속성을 추가하여 CSS�
 요소 안에 있는 글자의 색을 바꿉니다.
 
 ```text
-color sample code
+<span style="color: red;">
+    파란색으로 바뀝니다.
+</span>
 ```
 
 color sample image
@@ -64,7 +76,9 @@ color sample image
 요소의 배경색을 바꿉니다.
 
 ```text
-bg sample code
+<span style="background-color: #99aab5;">
+    배경색이 바뀝니다.
+</span>
 ```
 
 bg sample image
@@ -101,7 +115,13 @@ bg sample image
 구역 바깥에 여백을 줍니다.
 
 ```text
-margin sample code
+<p style="background-color: #cc8811; color: #ffffff; margin: 10px;">
+    바깥 여백을 줍니다.
+</p>
+
+<p style="background-color: #88cc11; color: #ffffff; margin: 10px;">
+    바깥 여백을 줍니다.
+</p>
 ```
 
 ![&#xAC01; &#xC0C1;&#xC790;&#xAC00; &#xC790;&#xC2E0;&#xC744; &#xB458;&#xB7EC;&#xC2FC; &#xBD80;&#xBAA8; &#xC694;&#xC18C;&#xB098; &#xB2E4;&#xB978; &#xC694;&#xC18C;&#xB4E4;&#xACFC; &#xAC04;&#xACA9;&#xC744; &#xBC8C;&#xB9AC;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.](../.gitbook/assets/image%20%2818%29.png)
@@ -113,7 +133,13 @@ margin sample code
 구역 안에 여백을 줍니다.
 
 ```text
-padding sample code
+<p style="background-color: #cc8811; color: #ffffff; padding: 10px;">
+    안쪽 여백을 줍니다.
+</p>
+
+<p style="background-color: #88cc11; color: #ffffff; padding: 10px;">
+    안쪽 여백을 줍니다.
+</p>
 ```
 
 ![&#xAC01; &#xC0C1;&#xC790;&#xB294; &#xC678;&#xBD80; &#xC694;&#xC18C;&#xB4E4;&#xACFC;&#xB294; &#xC5EC;&#xBC31; &#xC5C6;&#xC774; &#xBD99;&#xC5B4;&#xC788;&#xACE0;, &#xB0B4;&#xBD80;&#xC758; &#xD14D;&#xC2A4;&#xD2B8;&#xC640; &#xAC04;&#xACA9;&#xC744; &#xBC8C;&#xB9AC;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.](../.gitbook/assets/image%20%2825%29.png)
