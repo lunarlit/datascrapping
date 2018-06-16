@@ -1,6 +1,6 @@
 # Stage 1 - HTML에 대해 알아보자
 
-### HTML에 대한 설명
+## HTML에 대한 설명
 
 웹페이지를 이루고 있는 구성요소들을 작성한 문서입니다.
 
@@ -20,10 +20,10 @@
                 <img src="http://imgnews.naver.net/image/upload/item/2018/06/14/
                             182203604_%25C1%25A6%25B8%25F1-%25BE%25F8%25C0%25BD-3.jpg
                             ?type=f270_166" width="300" height="190"> <br/>
-                
+
 
             <a href="#">[한미 금리차 확대 전문가 진단] "外人 자금 이탈땐 증시 출렁"..."조정, 저가매수 기회로"</a>
-            
+
         </dl>
         <div>
             <ul>
@@ -38,13 +38,11 @@
 ...이하 생략
 ```
 
-![](../.gitbook/assets/image%20%285%29.png)
+![](../.gitbook/assets/image-5.png)
 
 브라우저에서 이렇게 표현됩니다.
 
-
-
-### HTML의 작성 방식
+## HTML의 작성 방식
 
 ```markup
 <div>
@@ -65,9 +63,9 @@
 내용이 많지 않을 땐 한줄로 늘여 쓰기도 합니다.  
 사천성?
 
-### 기초적으로 알아야 할 태그 소개
+## 기초적으로 알아야 할 태그 소개
 
-#### div
+### div
 
 ```markup
 <div>
@@ -86,7 +84,7 @@ div code image
 * 주로 연관된 내용을 하나의 div 안에 담기 위해 사용합니다.
 * 내용이 없이 단독으
 
-#### a
+### a
 
 ```markup
 <a href="#">신이 내린 선물 골든 부트, 누가 거머쥘까</a>
@@ -96,7 +94,7 @@ div code image
 <a href="#">양국 몸값 합해 1조9000억···'황금발'들의 결투</a>
 ```
 
-![](../.gitbook/assets/image%20%2837%29.png)
+![](../.gitbook/assets/image-37.png)
 
 * 마우스를 올리면 손가락 모양으로 변하며 반응이 생깁니다.
 * 누르면 다른 문서로 이동할 수 있습니다.
@@ -108,13 +106,14 @@ a 태그는 어디론가 이동하기 위해 존재하기 때문에, 꼭 이동�
 여기에서는 href가 이동할 위치를 알려주겠다는 속성 이름이고 쌍따옴표 \(“”\) 안에 있는 네이버 뉴스 주소가 이동할 실제 위치가 되겠죠?  
 이 href는 데이터 수집의 주요 대상이기도 하니 잘 기억해주세요!
 
-#### img 태그
+### img 태그
 
-```text
-<img src="http://postfiles14.naver.net/MjAxODA2MTRfMjc3/MDAxNTI4OTQ4NTk1MjYy.ME8ls0srrbeR-XJhPZXugqVWw7CwQ4AOMRURsbiwxqMg.HGYStbBpMgPLB0GBeWexrbddXDV7hE3knABayN3mzvIg.PNG.coalastudy/%EB%8B%B9%EC%BD%94%EC%8B%A4.png?type=w966" width="611" height="320">
+```markup
+<img src="http://postfiles14.naver.net/MjAxODA2MTRfMjc3/....." 
+     width="611" height="320">
 ```
 
-![](../.gitbook/assets/image%20%2828%29.png)
+![](../.gitbook/assets/image-28.png)
 
 그림, 사진의 경로를 받아 실제로 보여줍니다.
 
@@ -123,25 +122,25 @@ img라는 태그명은 “그림을 표시할 것이다” 라는 뜻밖에 안�
 
 닫는 태그가 없습니다. 들어갈 내용이 없기 때문에 단일 태그로 작성해도 괜찮습니다.
 
-### 실습 - HTML 문서 작성해보기
+## 실습 - HTML 문서 작성해보기
 
 데이터 수집을 잘 하기 위해서 HTML 문서를 잘 작성할 필요는 없어요.  
 작성할 때는 수많은 태그의 특징과 각 태그에서 자주 사용되는 속성도 알아야 하고, 배치를 어떻게 할지도 고심해봐야 하지만 수집할 땐 상하 구조만 잘 파악하고 내용을 찾아가면 되니까요.  
 그래도 HTML 태그에 관한 정말 기초적인 이해를 다지기 위해 함께 작성해보도록 하겠습니다.
 
-![](../.gitbook/assets/image%20%2832%29.png)
+![](../.gitbook/assets/image-32.png)
 
 메모장을 열고 내용을 감싸는 div 태그 안에 img 태그와 a 태그를 작성해주세요. img태그의 src 속성과 a태그의 href 속성은 필수겠죠?
 
-![](../.gitbook/assets/image%20%2823%29.png)
+![](../.gitbook/assets/image-23.png)
 
 img태그에 들어갈 그림의 주소를 얻기 위해 인터넷에서 원하는 그림을 찾아서 우클릭하고 이미지 주소 복사를 해주세요. 이미지 복사가 아닙니다!
 
-![](../.gitbook/assets/image%20%2836%29.png)
+![](../.gitbook/assets/image-36.png)
 
 복사한 주소를 src 속성 안에 붙여넣어 주세요.
 
-![](../.gitbook/assets/image%20%2811%29.png)
+![](../.gitbook/assets/image-11.png)
 
 저장할 때는 꼭 .html을 붙여 html 문서로 저장해주세요.
 
