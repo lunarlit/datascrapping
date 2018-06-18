@@ -213,7 +213,7 @@ span.title.largetext 와 같이 .으로 계속 붙여나가면 됩니다.
 하지만 태그명이나 클래스명은 어느 곳에나 사용될 수 있기 때문에 그 정확성이 보장되지 않죠.  
 아래 예시를 봅시다.
 
-![](../.gitbook/assets/image%20%282%29.png)
+![](../.gitbook/assets/image%20%283%29.png)
 
 ```text
 class not correct example code
@@ -231,7 +231,7 @@ class not correct example code
 
 그래서 좀 더 정확한 위치를 알려주어야 합니다.
 
-![](../.gitbook/assets/image%20%2823%29.png)
+![](../.gitbook/assets/image%20%2842%29.png)
 
 이 때 사용할 수 있는 것이 자식 선택자입니다.  
 자식 선택자는 "부모 선택자 &gt; 자식 선택자"로 나타내며, 부모 선택자의 바로 아래 단계에 있는 직계 자식 요소들만 선택합니다.
@@ -246,7 +246,7 @@ div.post > span.title
 
 
 
-![](../.gitbook/assets/image%20%286%29.png)
+![](../.gitbook/assets/image%20%2815%29.png)
 
 ```text
 id identifiable example code

@@ -11,4 +11,8 @@
   * [Stage 4 - 원하는 데이터를 찾아가보자](week-1/stage-4.md)
   * [Challenge 2](week-1/challenge-2/README.md)
     * [모범 답안](week-1/challenge-2/solution.md)
+* [2주차 - 파이썬 기초부터 첫번째 데이터 수집까지](2/README.md)
+  * [Stage 1 - 파이썬 첫 걸음!](2/stage-1.md)
+  * [Stage 2 - 함수에 대해 알아보자](2/stage-2.md)
+* [Challenge 1](challenge-1.md)
 
