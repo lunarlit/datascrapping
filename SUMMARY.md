@@ -16,6 +16,7 @@
   * [Stage 2 - 함수에 대해 알아보자](week-2/stage-2.md)
   * [Challenge 1](week-2/challenge-1/README.md)
     * [모범 답안](week-2/challenge-1/solution.md)
-  * [Stage 3 - HTML 문서를 가져와보자](week-2/stage-3-html.md)
+  * [Stage 3 - HTML 문서를 가져와보자](week-2/stage-3.md)
+  * [Stage 4 - 가져온 문서에서 데이터를 추출해보자](week-2/stage-4.md)
 * [Untitled](untitled.md)
 
