@@ -8,32 +8,32 @@
 
 PyCharm을 사용하여 진행됩니다. 아직 설치하지 않은 분이라면 \[ \] 설치 가이드를 참고하여 먼저 설치를 수행해주세요!
 
-![](../.gitbook/assets/image%20%2818%29.png)
+![](../.gitbook/assets/image%20%2821%29.png)
 
 PyCharm을 처음 실행하면 위와 같은 창을 볼 수 있습니다.  
 Create New Project를 클릭합니다.
 
 
 
-![](../.gitbook/assets/image%20%2826%29.png)
+![](../.gitbook/assets/image%20%2832%29.png)
 
 가장 위쪽의 Location에는 untitled라고 되어있는 프로젝트명을 원하는대로 변경해주세요.  
 다음으로 Project Interpreter 좌측의 조그만 삼각형 버튼을 눌러, New environment using Virtualenv에 체크해줍니다.
 
 
 
-![](../.gitbook/assets/image%20%2866%29.png)
+![](../.gitbook/assets/image%20%2885%29.png)
 
 프로젝트가 생성되면 좌측 창에서 회색 폴더 아이콘으로 된 프로젝트명 폴더를 우클릭하여 New &gt; Python File을 클릭합니다.
 
 
 
-![](../.gitbook/assets/image%20%2824%29.png)
+![](../.gitbook/assets/image%20%2829%29.png)
 
 이름 부분에 새로 생길 파이썬 파일의 이름을 작성해줍니다.  
 helloworld라고 한번 지어볼까요?
 
-![](../.gitbook/assets/image%20%2867%29.png)
+![](../.gitbook/assets/image%20%2886%29.png)
 
 파일을 생성하면 비어있던 오른쪽 공간이 코드를 편집할 수 있는 공간으로 바뀝니다.
 
@@ -49,20 +49,20 @@ hello world는 모든 프로그래밍 언어를 처음 시작할 때 출력해�
 
 꼭 해야된다고 정해져 있는 것은 아니지만, 이 언어로 프로그램을 작동시키기 위해 최소한으로 어느 정도의 코드가 필요한 지 알아보는 일종의 문화라고 생각해주세요.
 
-![](../.gitbook/assets/image%20%2843%29.png)
+![](../.gitbook/assets/image%20%2853%29.png)
 
 편집 영역에 위와 같이 입력해주세요.
 
-![](../.gitbook/assets/image%20%2860%29.png)
+![](../.gitbook/assets/image%20%2877%29.png)
 
 다음으로 상단 메뉴에서 Run을 선택하여 세 번째에 위치한 Run을 눌러주세요.  
 \(메뉴를 선택하지 않고도 Alt + Shift + F10 을 눌러 실행가능합니다.\)
 
-![](../.gitbook/assets/image%20%2851%29.png)
+![](../.gitbook/assets/image%20%2866%29.png)
 
 가운데 뜨는 조그마한 창에서 파일명인 helloworld를 클릭하시거나, Enter를 눌러주시면
 
-![](../.gitbook/assets/image%20%2813%29.png)
+![](../.gitbook/assets/image%20%2815%29.png)
 
 하단 메시지 창에 실행 결과가 출력됩니다.   
 Hello World!
@@ -81,7 +81,7 @@ Hello World!
 
 이 때 필요한 것이 바로 **"변수"**입니다. 
 
-![](../.gitbook/assets/image%20%2814%29.png)
+![](../.gitbook/assets/image%20%2816%29.png)
 
 변수는 쉽게 말씀드리면 이름표가 붙어있는 통이라고 생각하시면 되는데요.
 

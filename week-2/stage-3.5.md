@@ -36,7 +36,7 @@ langs = ["Python", "Javascript", "Java", "C++", "Go", "Kotlin"]
 print(langs)
 ```
 
-![](../.gitbook/assets/image%20%285%29.png)
+![](../.gitbook/assets/image%20%286%29.png)
 
 langs를 print 한 결과입니다. 값들이 잘 들어있네요.
 
