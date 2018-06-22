@@ -6,11 +6,11 @@ Stage 4에서는 네이버 TOP 100의 4위 이하 클립 정보들을 불러와 
 
 다음으로 4 ~ 8 위 클립들의 제목, 채널명, 재생 수를 출력해보세요.
 
-![](../../.gitbook/assets/image%20%2841%29.png)
+![](../../.gitbook/assets/image%20%2844%29.png)
 
 출력 형식은 "클립명 / 채널명 / 재생 수" 입니다.
 
-![2018&#xB144; 6&#xC6D4; 19&#xC77C;&#xC758; &#xACB0;&#xACFC;&#xB294; &#xC774;&#xB807;&#xC2B5;&#xB2C8;&#xB2E4;.](../../.gitbook/assets/image%20%2831%29.png)
+![2018&#xB144; 6&#xC6D4; 19&#xC77C;&#xC758; &#xACB0;&#xACFC;&#xB294; &#xC774;&#xB807;&#xC2B5;&#xB2C8;&#xB2E4;.](../../.gitbook/assets/image%20%2833%29.png)
 
 
 
