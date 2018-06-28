@@ -57,13 +57,13 @@ for subject in subjects:
     print(subject, "스터디")
 ```
 
-![](../.gitbook/assets/image%20%2857%29.png)
+![](../.gitbook/assets/image%20%2864%29.png)
 
 for 문을 작성하고 실행할 기능을 정의해 주기만 하면, subjects 배열 내의 모든 요소에 대해 같은 기능을 반복하여 실행합니다.
 
 for subject in subjects:  는 영어 문장처럼 해석하면, "subjects 안의 subject에 대하여" 라는 뜻입니다. 여기서 subjects는 미리 정의해 둔 배열의 변수명이며, subject는 미리 정의한 것이 아니라 for 문 안에서 임시로 사용할 매개 변수입니다.
 
-![](../.gitbook/assets/image%20%2894%29.png)
+![](../.gitbook/assets/image%20%28107%29.png)
 
 for 문 내부에서는 위와 같은 기능이 실행되고 있다고 볼 수 있습니다. subjects의 모든 요소가 한 번씩 subject에 할당되어 명령해 둔 작업을 반복 수행합니다.
 
@@ -107,7 +107,7 @@ for info in infos:
     print(chn, '/', title, '/', hit, '/', like)
 ```
 
-![](../.gitbook/assets/image%20%2881%29.png)
+![](../.gitbook/assets/image%20%2893%29.png)
 
 결과는 위와 같습니다.
 
@@ -139,7 +139,7 @@ print(subjects[1:3])
 물론 아닙니다. 배열의 요소 접근자 \[ \] 에는 사실 숫자가 꼭 하나만 들어가는 것은 아니랍니다.  
 먼저 위 출력의 결과를 볼까요?
 
-![](../.gitbook/assets/image%20%2891%29.png)
+![](../.gitbook/assets/image%20%28104%29.png)
 
 이렇게 \[ \] 안에 1:3 이라는 값을 넣으면, 배열의 1번부터 3번 **이전** 값까지 선택됩니다.   
 \(주의!!  3번은 선택되지 않습니다.\)
@@ -157,7 +157,7 @@ for subject in upper:
 
 따라서 위와 같이 잘라낸 후 for문을 사용하거나, 또 다시 잘라내는 것도 물론 가능합니다.
 
-![](../.gitbook/assets/image%20%2821%29.png)
+![](../.gitbook/assets/image%20%2824%29.png)
 
 
 
@@ -171,7 +171,7 @@ print(subjects[:])    # 처음 ~ 끝
 
 범위 지정자의 숫자들은 이렇게 생략이 가능합니다. 시작 지점을 생략하면 "처음부터"라는 뜻이고, 끝 지점을 생략하면 "끝까지"라는 뜻이 됩니다.
 
-![](../.gitbook/assets/image%20%28105%29.png)
+![](../.gitbook/assets/image%20%28120%29.png)
 
 
 
@@ -183,7 +183,7 @@ print(subjects[2: -2]) # 2번째부터 끝에서 2번째까지
 
 숫자에 음수를 쓰는 것도 가능합니다. 순서에 음수는 없기 때문에 자동적으로 끝에서부터 ~번째라는 것으로 해석됩니다.
 
-![](../.gitbook/assets/image%20%28106%29.png)
+![](../.gitbook/assets/image%20%28121%29.png)
 
 
 
@@ -202,7 +202,7 @@ for s in str:
 
 이렇게 문자열을 for문에 넣고 출력하여 테스트해볼 수 있습니다.
 
-![](../.gitbook/assets/image%20%2856%29.png)
+![](../.gitbook/assets/image%20%2863%29.png)
 
 결과는 위와 같습니다. 즉 문자열은 단일 문자들로 이루어진 배열이라고 볼 수 있겠네요.
 
@@ -221,7 +221,7 @@ for info in infos:
 
 이 부분은 아래와 같이 출력됩니다.
 
-![](../.gitbook/assets/image%20%2836%29.png)
+![](../.gitbook/assets/image%20%2841%29.png)
 
 여기서 숫자값만 사용하기 위해 문자열을 잘라내 봅시다. \(제목과 채널은 생략하였습니다.\)
 
@@ -249,7 +249,7 @@ like = info.select('span.like')[0].text[5:].replace(',', '')
 ...
 ```
 
-![](../.gitbook/assets/image%20%2829%29.png)
+![](../.gitbook/assets/image%20%2833%29.png)
 
 2주차에서 다룬 적이 있는 replace\(\) 함수를 이용해, 텍스트에서 ', '가 존재하는 부분을 ''\(빈 문자열\)로 교체하도록 하였습니다.
 
