@@ -10,7 +10,7 @@
 
 ## 데이터 응집의 필요성
 
-![](../.gitbook/assets/image%20%2877%29.png)
+![](../.gitbook/assets/image%20%2882%29.png)
 
 스테이지 2에서 사용했던 3개의 배열 구조입니다.
 
@@ -35,7 +35,7 @@ if chn in channels:
 
 또 다른 문제도 있습니다. 채널 정보를 조회수 순으로 정렬할 필요가 생겼다고 해봅시다.
 
-![hits &#xBC30;&#xC5F4;&#xC774; &#xC815;&#xB82C;&#xB41C; &#xC0C1;&#xD0DC;&#xC785;&#xB2C8;&#xB2E4;.](../.gitbook/assets/image%20%28109%29.png)
+![hits &#xBC30;&#xC5F4;&#xC774; &#xC815;&#xB82C;&#xB41C; &#xC0C1;&#xD0DC;&#xC785;&#xB2C8;&#xB2E4;.](../.gitbook/assets/image%20%28120%29.png)
 
 파이썬에 제공하는 정렬 함수를 이용해 숫자 배열 하나를 정렬하는 것은 매우 쉽습니다.   
 \(Stage 4에서 다룹니다.\)
@@ -48,7 +48,7 @@ if chn in channels:
 
 다음은 배열 안에 배열도 넣을 수 있다는 점을 이용하여 이중 배열로 구성한 형태입니다.
 
-![&#xC57D;&#xC810;&#xC774; &#xBA85;&#xBC31;&#xD558;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xAD73;&#xC774; &#xAD6C;&#xD604;&#xD574;&#xBCF4;&#xC9C0;&#xB294; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.](../.gitbook/assets/image%20%28110%29.png)
+![&#xC57D;&#xC810;&#xC774; &#xBA85;&#xBC31;&#xD558;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xAD73;&#xC774; &#xAD6C;&#xD604;&#xD574;&#xBCF4;&#xC9C0;&#xB294; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.](../.gitbook/assets/image%20%28121%29.png)
 
 이 경우 한 번의 배열 접근으로 한 채널의 조회수와 좋아요 수를 모두 불러올 수 있습니다.
 
@@ -64,7 +64,7 @@ if chn in channels:
 
 그런데 다음과 같은 데이터 구조가 있다면 어떨까요?
 
-![](../.gitbook/assets/image%20%2817%29.png)
+![](../.gitbook/assets/image%20%2819%29.png)
 
 배열과 달리 값에 번호가 아닌 이름표가 붙어있습니다.
 
@@ -86,7 +86,7 @@ print(people['american'])
 print(people['japanese'])
 ```
 
-![](../.gitbook/assets/image%20%28113%29.png)
+![](../.gitbook/assets/image%20%28124%29.png)
 
 { } 안에 '이름': 값 의 형태로 요소들을 집어넣어 만들 수 있습니다.
 
@@ -104,7 +104,7 @@ members['python'] = 12
 print(members)
 ```
 
-![](../.gitbook/assets/image%20%2836%29.png)
+![](../.gitbook/assets/image%20%2838%29.png)
 
 빈 Dictionary는 { } 로 만들 수 있으며 현재 이름이 존재하지 않더라도 \[ \] 를 사용해 쉽게 새 값을 추가할 수 있습니다.
 
@@ -115,7 +115,7 @@ print(members)
 이제 hits와 likes 배열을 Dictionary를 이용해 meta 라는 하나의 배열로 합칠 수 있습니다.  
 \(metadata 는 프로그래밍 세계에서 "정보에 대한 정보" 라는 뜻으로 사용됩니다.\)
 
-![](../.gitbook/assets/image%20%2850%29.png)
+![](../.gitbook/assets/image%20%2854%29.png)
 
 ```python
 meta = []
@@ -154,7 +154,7 @@ for channel in channels:
 
 이제 두 개의 배열만 출력해도 모든 채널 정보를 볼 수 있습니다.
 
-![](../.gitbook/assets/image%20%28102%29.png)
+![](../.gitbook/assets/image%20%28111%29.png)
 
 meta 배열의 각 Dictionary에 값들이 예쁘게 들어있군요.
 
@@ -166,15 +166,15 @@ meta 배열의 각 Dictionary에 값들이 예쁘게 들어있군요.
 
 여전히 meta 배열을 정렬해도, channels 배열을 따라서 정렬하기가 힘듭니다.
 
-![](../.gitbook/assets/image%20%2850%29.png)
+![](../.gitbook/assets/image%20%2854%29.png)
 
 현재 채널명과 부가 정보를 별개의 배열로 저장하여  "번호" 라는 간접적인 수단으로 연결하고 있습니다. 
 
 이것 역시 Dictionary 구조로 바꿀 수 있지 않을까요?
 
-![&#xC608;&#xC0C1;&#xB418;&#xB294; Dictionary &#xAD6C;&#xC870;](../.gitbook/assets/image%20%2875%29.png)
+![&#xC608;&#xC0C1;&#xB418;&#xB294; Dictionary &#xAD6C;&#xC870;](../.gitbook/assets/image%20%2880%29.png)
 
-![](../.gitbook/assets/image%20%2892%29.png)
+![](../.gitbook/assets/image%20%2899%29.png)
 
 새로운 클립을 처리할 때, 이름만 가지고도 기존 값에 접근할 수 있게 되는 것이죠.
 
@@ -192,7 +192,7 @@ if chn in channels:
 
 channels 배열이 없는데 이 부분은 어떻게 처리해야 할까요?
 
-![](../.gitbook/assets/image%20%2875%29.png)
+![](../.gitbook/assets/image%20%2880%29.png)
 
 우리가 만드려하는 구조에서는 Dictionary의 '이름' 들이 채널명을 저장하는 channels의 역할을 대신하고 있습니다.
 
@@ -204,7 +204,7 @@ people = {'korean': 380, 'american': 42, 'japanese': 15}
 print(people.keys())
 ```
 
-![](../.gitbook/assets/image%20%2885%29.png)
+![](../.gitbook/assets/image%20%2891%29.png)
 
 Dictionary 클래스에 내장된 .keys\( \) 라는 함수를 이용하면, Dictionary의 key\('이름'\) 값들만 모아 배열로 되돌려 줍니다.
 
@@ -234,7 +234,7 @@ for chnInfo in chnInfos.items():
 
 \(.items\( \) 함수는 Stage 4에서 설명합니다.\)
 
-![](../.gitbook/assets/image%20%2851%29.png)
+![](../.gitbook/assets/image%20%2855%29.png)
 
 하나의 Dictionary에 각 채널의 정보가 잘 들어있습니다.
 

@@ -30,4 +30,6 @@
   * [Stage 4 - 정제된 데이터에서 가치를 창출해보자](3/stage-4.md)
   * [Challenge 2](3/challenge-2/README.md)
     * [모범 답안](3/challenge-2/solution.md)
+* [4주차 - 소중한 데이터를 사라지지않게 저장하기](4/README.md)
+  * [Stage 1 - 일단 가장 간단하게 저장해보자](4/stage-1.md)
 

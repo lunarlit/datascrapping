@@ -36,7 +36,7 @@ langs = ["Python", "Javascript", "Java", "C++", "Go", "Kotlin"]
 print(langs)
 ```
 
-![](../.gitbook/assets/image%20%287%29.png)
+![](../.gitbook/assets/image%20%288%29.png)
 
 langs를 print 한 결과입니다. 값들이 잘 들어있네요.
 
@@ -50,7 +50,7 @@ print(langs[5])
 
 이와 같이 배열 변수 뒤에 \[ \]를 붙이고, 그 안에 가져올 값의 순서를 넣으면 됩니다.
 
-![](../.gitbook/assets/image%20%282%29.png)
+![](../.gitbook/assets/image%20%283%29.png)
 
 출력 결과는 위와 같습니다.
 
