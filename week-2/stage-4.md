@@ -31,7 +31,7 @@ html = BeautifulSoup(raw, 'html.parser')
 
 BeautifulSoup 이라는 함수에 HTML 문서 텍스트를 담고있는 raw 변수와 또 다른 문자열을 전달했습니다.
 
-![](../.gitbook/assets/image%20%2897%29.png)
+![](../.gitbook/assets/image%20%28112%29.png)
 
 requests로 가져온 텍스트는 사실 HTML 문서가 아닙니다.
 
@@ -60,11 +60,11 @@ infos = html.select('div.cds')
 
 {% page-ref page="../week-1/stage-4.md" %}
 
-![&#xC5EC;&#xAE30;&#xC788;&#xB294; &#xD074;&#xB9BD; &#xD558;&#xB098;&#xD558;&#xB098;&#xAC00; div.cds&#xC5D0; &#xB2F4;&#xACA8;&#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.](../.gitbook/assets/image%20%2889%29.png)
+![&#xC5EC;&#xAE30;&#xC788;&#xB294; &#xD074;&#xB9BD; &#xD558;&#xB098;&#xD558;&#xB098;&#xAC00; div.cds&#xC5D0; &#xB2F4;&#xACA8;&#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.](../.gitbook/assets/image%20%28104%29.png)
 
 html.select\(\) 함수를 사용하면, html 변수에 담긴 HTML 문서 안에서 매개변수로 전달된 선택자를 갖는 요소만 선택됩니다.
 
-![](../.gitbook/assets/image%20%2813%29.png)
+![](../.gitbook/assets/image%20%2814%29.png)
 
 {% hint style="info" %}
 someHTML.select\('someSelector'\) 의 결과는 여러 요소가 존재할 경우를 상정하여 항상 배열로 돌려줍니다!
@@ -78,7 +78,7 @@ print(infos[0])
 
 배열에 담긴 첫번째 값을 출력해보겠습니다.
 
-![](../.gitbook/assets/image%20%2829%29.png)
+![](../.gitbook/assets/image%20%2831%29.png)
 
 {% hint style="info" %}
 가독성을 위해 불필요한 정보를 많이 생략하였으며, 색을 입혔습니다.  
@@ -106,7 +106,7 @@ print(clip1_title)
 
 이 결과값을 clip1\_title이라는 변수에 저장하고 출력해보았습니다.
 
-![](../.gitbook/assets/image%20%2836%29.png)
+![](../.gitbook/assets/image%20%2840%29.png)
 
 결과는 위와 같습니다.
 
@@ -120,7 +120,7 @@ print(clip1_title.text)
 
 출력 코드를 위와 같이 바꿔주면
 
-![](../.gitbook/assets/image%20%2835%29.png)
+![](../.gitbook/assets/image%20%2839%29.png)
 
 드디어 원하는 데이터를 처음으로 추출하는 데에 성공했습니다!
 

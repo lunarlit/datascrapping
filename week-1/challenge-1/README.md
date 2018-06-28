@@ -2,7 +2,7 @@
 
 ## 도전과제 1
 
-![](../../.gitbook/assets/image%20%2839%29.png)
+![](../../.gitbook/assets/image%20%2843%29.png)
 
 두 개의 링크 버튼을 만들어 봅시다.
 
