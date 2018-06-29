@@ -10,13 +10,13 @@
 
 ## 목표 설정 및 설계
 
-![](../.gitbook/assets/image%20%2828%29.png)
+![](../.gitbook/assets/image%20%2832%29.png)
 
 현재 데이터는 클립별로 배열에 들어있습니다. 우리는 TV 트렌드 분석 업무를 하고 있는 상황이며, 클립별 데이터를 가공하여 프로그램의 인기도를 알아보려 합니다.
 
 따라서 클립별 데이터를 채널별로 모아야 합니다.
 
-![](../.gitbook/assets/image%20%2865%29.png)
+![](../.gitbook/assets/image%20%2876%29.png)
 
 현재 만들어내려는 데이터의 모습입니다.
 
@@ -30,7 +30,7 @@ TOP 100의 클립 데이터 중 같은 채널끼리 모아 조회수, 좋아요 
 
 배열을 이용해 위 데이터를 표현해보기로 합니다.
 
-![](../.gitbook/assets/image%20%28113%29.png)
+![](../.gitbook/assets/image%20%28141%29.png)
 
 3개의 배열 channels, hits, likes를 가지고 있고 각각 채널명, 총 채널 조회수, 총 채널 좋아요 수를 가지고 있습니다.
 
@@ -92,13 +92,13 @@ print(likes)
 
 이러한 구조를 사용하면 infos에 담긴 모든 클립 정보를 처리할 때 다음과 같은 과정을 거칠 것입니다.
 
-![TOP 100&#xC740; &#xD56D;&#xC0C1; &#xBCC0;&#xD558;&#xAE30;&#xC5D0; &#xB370;&#xC774;&#xD130; &#xC790;&#xCCB4;&#xB294; &#xB2E4;&#xB97C; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.](../.gitbook/assets/image%20%2858%29.png)
+![TOP 100&#xC740; &#xD56D;&#xC0C1; &#xBCC0;&#xD558;&#xAE30;&#xC5D0; &#xB370;&#xC774;&#xD130; &#xC790;&#xCCB4;&#xB294; &#xB2E4;&#xB97C; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.](../.gitbook/assets/image%20%2867%29.png)
 
 데이터의 형태는 원하는대로 구성된 것 같습니다.
 
 그런데 채널명이 같은 데이터가 여럿 보이네요. 모든 클립 정보를 무작정 추가했기 때문입니다.
 
-![](../.gitbook/assets/image%20%28117%29.png)
+![](../.gitbook/assets/image%20%28145%29.png)
 
 이 두 데이터는 배열의 다른 번호에 저장되는 것이 아니라, 한 번호의 값에 합쳐져야 합니다.
 
@@ -182,7 +182,7 @@ for channel in channels:
 
 세 배열을 따로 출력하는 것이 아니라, 같은 번호끼리 묶어 출력하게 됩니다. 서로 길이가 달라 불편했던 기존 출력방식보다 훨씬 보기 좋습니다.
 
-![](../.gitbook/assets/image%20%28105%29.png)
+![](../.gitbook/assets/image%20%28132%29.png)
 
 그런데 출력 결과가 이게 뭐죠? 숫자가 이렇게 클 수가 있나요? 온 우주의 생명체가 모두 좋아요를 눌러도 이만큼은 안나올텐데요.
 
@@ -197,7 +197,7 @@ print('20' + '40')
 print(20 + 40)
 ```
 
-![](../.gitbook/assets/image%20%28143%29.png)
+![](../.gitbook/assets/image%20%28176%29.png)
 
 아하! 문자열 타입의 숫자는 더하면 그냥 연결된 결과가 나오는군요.
 
@@ -225,7 +225,7 @@ like = int(info.select('span.like')[0].text[5:].replace(',', ''))
 
 이제 hit과 like를 구할 때 숫자로 변환해 준다면 모든 문제가 해결될 것 같습니다.
 
-![](../.gitbook/assets/image%20%2898%29.png)
+![](../.gitbook/assets/image%20%28123%29.png)
 
 이제 정상적으로 결과가 나오는 것을 볼 수 있습니다. 
 
