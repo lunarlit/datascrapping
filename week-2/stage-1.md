@@ -22,7 +22,7 @@ Create New Project를 클릭합니다.
 
 
 
-![](../.gitbook/assets/image%20%28169%29.png)
+![](../.gitbook/assets/image%20%28172%29.png)
 
 프로젝트가 생성되면 좌측 창에서 회색 폴더 아이콘으로 된 프로젝트명 폴더를 우클릭하여 New &gt; Python File을 클릭합니다.
 
@@ -33,7 +33,7 @@ Create New Project를 클릭합니다.
 이름 부분에 새로 생길 파이썬 파일의 이름을 작성해줍니다.  
 helloworld라고 한번 지어볼까요?
 
-![](../.gitbook/assets/image%20%28170%29.png)
+![](../.gitbook/assets/image%20%28173%29.png)
 
 파일을 생성하면 비어있던 오른쪽 공간이 코드를 편집할 수 있는 공간으로 바뀝니다.
 
@@ -49,16 +49,16 @@ hello world는 모든 프로그래밍 언어를 처음 시작할 때 출력해�
 
 꼭 해야된다고 정해져 있는 것은 아니지만, 이 언어로 프로그램을 작동시키기 위해 최소한으로 어느 정도의 코드가 필요한 지 알아보는 일종의 문화라고 생각해주세요.
 
-![](../.gitbook/assets/image%20%2889%29.png)
+![](../.gitbook/assets/image%20%2890%29.png)
 
 편집 영역에 위와 같이 입력해주세요.
 
-![](../.gitbook/assets/image%20%28154%29.png)
+![](../.gitbook/assets/image%20%28157%29.png)
 
 다음으로 상단 메뉴에서 Run을 선택하여 세 번째에 위치한 Run을 눌러주세요.  
 \(메뉴를 선택하지 않고도 Alt + Shift + F10 을 눌러 실행가능합니다.\)
 
-![](../.gitbook/assets/image%20%28127%29.png)
+![](../.gitbook/assets/image%20%28129%29.png)
 
 가운데 뜨는 조그마한 창에서 파일명인 helloworld를 클릭하시거나, Enter를 눌러주시면
 

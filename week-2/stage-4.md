@@ -31,7 +31,7 @@ html = BeautifulSoup(raw, 'html.parser')
 
 BeautifulSoup 이라는 함수에 HTML 문서 텍스트를 담고있는 raw 변수와 또 다른 문자열을 전달했습니다.
 
-![](../.gitbook/assets/image%20%28173%29.png)
+![](../.gitbook/assets/image%20%28176%29.png)
 
 requests로 가져온 텍스트는 사실 HTML 문서가 아닙니다.
 
@@ -60,7 +60,7 @@ infos = html.select('div.cds')
 
 {% page-ref page="../week-1/stage-4.md" %}
 
-![&#xC5EC;&#xAE30;&#xC788;&#xB294; &#xD074;&#xB9BD; &#xD558;&#xB098;&#xD558;&#xB098;&#xAC00; div.cds&#xC5D0; &#xB2F4;&#xACA8;&#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.](../.gitbook/assets/image%20%28162%29.png)
+![&#xC5EC;&#xAE30;&#xC788;&#xB294; &#xD074;&#xB9BD; &#xD558;&#xB098;&#xD558;&#xB098;&#xAC00; div.cds&#xC5D0; &#xB2F4;&#xACA8;&#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.](../.gitbook/assets/image%20%28165%29.png)
 
 html.select\(\) 함수를 사용하면, html 변수에 담긴 HTML 문서 안에서 매개변수로 전달된 선택자를 갖는 요소만 선택됩니다.
 

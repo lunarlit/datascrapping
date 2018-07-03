@@ -223,25 +223,25 @@ img태그에 들어갈 그림의 주소를 얻기 위해 인터넷에서 원하�
 
 
 
-![](../.gitbook/assets/image%20%28136%29.png)
+![](../.gitbook/assets/image%20%28138%29.png)
 
 복사한 주소를 src 속성 안에 붙여넣어 주세요.
 
 
 
-![](../.gitbook/assets/image%20%2869%29.png)
+![](../.gitbook/assets/image%20%2870%29.png)
 
 a태그의 href 속성 안에도 이동할 주소를 입력하고, 여는 태그와 닫는 태그 사이에 링크를 표현할 텍스트도 작성해줍니다. 
 
 
 
-![](../.gitbook/assets/image%20%28133%29.png)
+![](../.gitbook/assets/image%20%28135%29.png)
 
 작성이 끝나면 왼쪽 위의 Run 버튼을 눌러주세요.
 
 
 
-![](../.gitbook/assets/image%20%28115%29.png)
+![](../.gitbook/assets/image%20%28116%29.png)
 
 작성한 HTML 코드가 오른쪽 아래의 결과창에 실제 웹페이지로 표시됩니다.  
 \(보안 문제로 인해 직접 링크가 연결되지는 않습니다. 우클릭으로 새 창에서 열어주세요.\)

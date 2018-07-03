@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Initial page](README.md)
+* [코알라 데이터수집 스터디 학생자료](README.md)
 * [들어가며](intro.md)
 * [1주차 - 웹 페이지는 어떻게 구성되어 있을까?](week-1/README.md)
   * [Stage 1 - HTML에 대해 알아보자](week-1/stage-1.md)

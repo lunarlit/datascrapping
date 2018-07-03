@@ -42,7 +42,7 @@ words = ['coffee', 'car', 'carpet', 'candy', 'cure', 'crisis', 'cucumber']
 print(sorted(words))
 ```
 
-![](../.gitbook/assets/image%20%2886%29.png)
+![](../.gitbook/assets/image%20%2887%29.png)
 
 위와 같이 문자나 문자열도 사전순\(Lexicographic\) 으로 훌륭하게 정렬하는 모습입니다.
 
@@ -90,7 +90,7 @@ print(sorted(scores))
 
 위와 같이 간단한 키-값 Dictionary를 만들어 정렬해보았습니다. 키는 한 자리 알파벳이고 값은 숫자인데요. 어떤 값을 기준으로 정렬이 될까요? 아니면 에러가 날까요?
 
-![](../.gitbook/assets/image%20%28114%29.png)
+![](../.gitbook/assets/image%20%28115%29.png)
 
 결과는 위와 같습니다.
 
@@ -113,7 +113,7 @@ for score in scores:
     print(score)
 ```
 
-![](../.gitbook/assets/image%20%2892%29.png)
+![](../.gitbook/assets/image%20%2893%29.png)
 
 배열 내의 요소를 반복해주는 for문에 Dictionary를 사용하였더니, 키의 배열을 사용하여 반복함을 알 수 있습니다.
 
@@ -124,7 +124,7 @@ for key in scores:
     print(key, scores[key])
 ```
 
-![](../.gitbook/assets/image%20%2872%29.png)
+![](../.gitbook/assets/image%20%2873%29.png)
 
 이를 잘 이해하면 이런 방식으로 이용하는 것도 가능합니다. 반복되는 키를 사용하여 scores에서 키가 가지고 있는 값을 함께 출력해줍니다.
 
@@ -140,7 +140,7 @@ for key in scores:
 print(scores.keys())
 ```
 
-![](../.gitbook/assets/image%20%28105%29.png)
+![](../.gitbook/assets/image%20%28106%29.png)
 
 .keys\( \)는 Dictionary 클래스의 내장 함수로, Dictionary에서 키의 배열을 뽑아 돌려줍니다. 
 
@@ -161,7 +161,7 @@ print(sorted(scores.values()))
 
 배열이니 이를 정렬하여 출력할 수도 있습니다.
 
-![](../.gitbook/assets/image%20%28113%29.png)
+![](../.gitbook/assets/image%20%28114%29.png)
 
 
 
@@ -242,7 +242,7 @@ scores.items\(\)의 요소들은 \('a', 65\)와 같은 형태이니 65를 반환
 print(sorted(scores.items(), key=sortKey, reverse=True))
 ```
 
-![](../.gitbook/assets/image%20%28171%29.png)
+![](../.gitbook/assets/image%20%28174%29.png)
 
 
 
@@ -278,7 +278,7 @@ for sortedInfo in sortedList:
 
 이 정렬 기준 함수를 사용해 정렬한 후, 그 결과 배열을 하나씩 출력하면 원하는 결과를 얻을 수 있습니다.
 
-![](../.gitbook/assets/image%20%28134%29.png)
+![](../.gitbook/assets/image%20%28136%29.png)
 
 2018년 6월 28일 19시 22분의 네이버 TV TOP 100 채널 조회수별 정렬 결과입니다.
 
