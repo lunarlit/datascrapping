@@ -38,4 +38,6 @@
   * [Stage 4 - 여러 페이지에서 데이터를 수집하고 저장해보자](week-4/stage-4.md)
   * [Challenge 2](week-4/challenge-2/README.md)
     * [모범 답안](week-4/challenge-2/solution.md)
+* [5주차 - 코드로 브라우저 조종하기](5/README.md)
+  * [Stage 1 - 정적 수집과 동적 수집 비교](5/stage-1.md)
 

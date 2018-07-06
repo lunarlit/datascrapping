@@ -17,7 +17,7 @@
 3. 물 붓기
 4. 에스프레소 붓기
 
-![](../.gitbook/assets/image%20%28112%29.png)
+![](../.gitbook/assets/image%20%28114%29.png)
 
 이를 표현하기 위해 다음과 같은 4줄의 프로그램이 필요합니다.
 
@@ -43,7 +43,7 @@ def makeAmericano():
 makeAmericano 라는 함수가 정의되었습니다.  
 이제 5잔의 아메리카노를 만드려면 이를 5번 실행하면 됩니다.
 
-![](../.gitbook/assets/image%20%2821%29.png)
+![](../.gitbook/assets/image%20%2822%29.png)
 
 ```python
 makeAmericano()
@@ -141,7 +141,7 @@ makeDripCoffee("칠레")
 
 ## 함수의 출력값
 
-![](../.gitbook/assets/image%20%2819%29.png)
+![](../.gitbook/assets/image%20%2820%29.png)
 
 이런 식으로 여러 개의 메뉴를 만들었습니다. 이제 음료가 완성된 것을 손님에게 알리려고 합니다. 알림은 이런 식입니다.
 

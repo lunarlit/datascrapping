@@ -14,19 +14,19 @@ csv도 엑셀로 열면 똑같이 보이는데 왜 xlsx로 된 엑셀 파일을 
 
 파일을 열어 조금 다뤄보면 알 수 있습니다.
 
-![](../.gitbook/assets/image%20%2854%29.png)
+![](../.gitbook/assets/image%20%2855%29.png)
 
 csv 파일은 말 그대로 "쉼표로 구분된 값들" 이 저장된 파일입니다. 
 
 바꿔 말하면 그 이상은 저장할 수 없다는 뜻이 됩니다.
 
-![](../.gitbook/assets/image%20%28160%29.png)
+![](../.gitbook/assets/image%20%28166%29.png)
 
 엑셀에서 사용할 수 있는 수식, 서식, 필터, 차트 등 강력한 스프레드시트의 기능들은 csv로 저장하고나면 사라져 버립니다.
 
 또다른 약점도 있습니다. csv는 무조건 위에서 아래로, 좌에서 우로 값을 채워나가기 때문에 내용을 자유롭게 구성해나가기가 힘듭니다.
 
-![](../.gitbook/assets/image%20%2842%29.png)
+![](../.gitbook/assets/image%20%2843%29.png)
 
 오른쪽의 엑셀 형태처럼 값을 보이게 하려면 왼쪽의 메모장처럼 입력해야 합니다.
 
@@ -40,7 +40,7 @@ csv 파일은 말 그대로 "쉼표로 구분된 값들" 이 저장된 파일입
 
 ## 엑셀 파일 만들어보기
 
-![](../.gitbook/assets/image%20%28126%29.png)
+![](../.gitbook/assets/image%20%28129%29.png)
 
 엑셀 파일을 다루기 위해서는 추가 라이브러리가 필요합니다.
 
@@ -54,7 +54,7 @@ csv 파일은 말 그대로 "쉼표로 구분된 값들" 이 저장된 파일입
 
 엑셀 파일을 다루는 다양한 파이썬 오픈소스 라이브러리가 있지만 여기서는 openpyxl을 사용해 보도록 하겠습니다.
 
-![](../.gitbook/assets/image%20%28118%29.png)
+![](../.gitbook/assets/image%20%28120%29.png)
 
 설치 성공 메시지가 확인되면 창들을 닫아주세요.  
 
@@ -68,7 +68,7 @@ wb.save('test.xlsx')
 
 이제 새로 파이썬 파일을 하나 만들어 위와 같이 입력 후 실행해 봅니다.
 
-![](../.gitbook/assets/image%20%2883%29.png)
+![](../.gitbook/assets/image%20%2884%29.png)
 
 코드가 있는 폴더에 test.xlsx 가 생성된 것을 볼 수 있습니다.
 
@@ -99,7 +99,7 @@ sheet.append([1, 2, 3, 4, 5])
 wb.save('test2.xlsx')
 ```
 
-![](../.gitbook/assets/image%20%2837%29.png)
+![](../.gitbook/assets/image%20%2838%29.png)
 
 위 코드의 실행 결과입니다.
 
@@ -204,7 +204,7 @@ sheet1['A2'] = '다시 첫번째 시트'
 wb.save('test3.xlsx')
 ```
 
-![](../.gitbook/assets/image%20%28110%29.png)
+![](../.gitbook/assets/image%20%28112%29.png)
 
 4행에서는 이전과 같이 .active로 시트를 불러오는 것이 아니라, 엑셀 파일 변수에서 \[ '시트 이름' \] 을 사용하여 불러오고 있습니다. \(openpyxl을 통해 기본 생성되는 시트의 이름이 Sheet 입니다.\)
 
@@ -245,7 +245,7 @@ test2.xlsx은 셀 조작에서 만든 파일입니다. load\_workbook 함수에 
 
 실행 후 test2.xlsx를 열어보면 기존 내용에서 시트 이름이 바뀌고 데이터가 잘 입력된 것을 볼 수 있습니다.
 
-![](../.gitbook/assets/image%20%2828%29.png)
+![](../.gitbook/assets/image%20%2829%29.png)
 
 {% hint style="danger" %}
 test2.xlsx가 열려있는 상태라면 쓰기 권한이 없어 오류가 생길 것입니다. 같은 파일 이름으로 저장하려면 꼭 열려있는 엑셀 파일을 닫고 실행해주세요.
@@ -292,7 +292,7 @@ excel.save(filename + '.xlsx')
 
 마지막으로 datetime 라이브러리를 이용해 오늘 날짜가 포함된 파일명을 생성하여 저장합니다.
 
-![](../.gitbook/assets/image%20%2892%29.png)
+![](../.gitbook/assets/image%20%2894%29.png)
 
 성공적으로 엑셀 파일에 담긴 모습입니다!
 
