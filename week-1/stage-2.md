@@ -105,7 +105,7 @@ src, href 와 같이 태그 내에 style이라는 속성을 추가하여 CSS를 
 
 이 코드의 결과는
 
-![](../.gitbook/assets/image%20%28155%29.png)
+![](../.gitbook/assets/image%20%28170%29.png)
 
 color: red; 이기 때문에 파란색이 아니고 빨간색입니다.
 
@@ -125,7 +125,7 @@ color: red; 이기 때문에 파란색이 아니고 빨간색입니다.
 
 이 코드의 결과로
 
-![](../.gitbook/assets/image%20%2867%29.png)
+![](../.gitbook/assets/image%20%2872%29.png)
 
 
 

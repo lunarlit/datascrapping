@@ -40,4 +40,8 @@
     * [모범 답안](week-4/challenge-2/solution.md)
 * [5주차 - 코드로 브라우저 조종하기](5/README.md)
   * [Stage 1 - 정적 수집과 동적 수집 비교](5/stage-1.md)
+  * [Stage 2 - 가상브라우저를 조종해보자](5/stage-2.md)
+  * [Challenge 1](5/challenge-1.md)
+  * [Stage 3 - 가상브라우저 고급 활용법](5/stage-3.md)
+  * [Stage 4 - 실습 예제 : 게시판 안으로 들어가기](5/stage-4.md)
 
