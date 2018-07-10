@@ -28,6 +28,8 @@ print("물 붓기")
 print("에스프레소 붓기")
 ```
 
+
+
 그런데 아메리카노를 만드는 과정은 언제나 똑같습니다. 주문이 들어올 때마다 이 4줄의 명령을 내려야 할까요? 이를 함수로 만들어봅시다.
 
 ```python
@@ -57,6 +59,8 @@ makeAmericano()
 
 단순 출력을 했을 때는 20줄이 필요했을 코드가 5줄로 줄어들었습니다.  
 \(물론 함수 정의를 포함하면 10줄이지만, 의미가 중복되는 코드가 많이 줄어들었죠.\)
+
+
 
 또 함수를 만들면 과정을 수정하고 싶을 때도 매우 유리합니다.
 
@@ -93,16 +97,32 @@ def makeAmericano():
 
 ![](../.gitbook/assets/image%20%2816%29.png)
 
+
+
 그렇다면 원두마다 함수를 따로 만들어야 할까요? 
 
-```text
-separated drip coffee functions
+```python
+def makeGuatemalaDripCoffee():
+    print("과테말라 원두 투입")
+    print("드리핑")
+    
+def makeColombiaDripCoffee():
+    print("콜롬비아 원두 투입")
+    print("드리핑")
 
-call functions
+def makeChileDripCoffee():
+    print("칠레 원두 투입")
+    print("드리핑")
+    
+makeGuatemalaDripCoffee()
+makeColombiaDripCoffee()
+makeChileDripCoffee()
 ```
 
 이것은 너무 비효율적인 것 같습니다.  
 원두 종류 빼고는 모두 중복되는 함수를 세 개나 만들어야 하니까요.
+
+
 
 함수의 입력값을 이용하면, 외부에서 실행 조건을 변경시킬 수가 있습니다.  
 이는 Stage 1에서 배운 **"변수"**가 있기에 가능합니다.
@@ -132,6 +152,8 @@ makeDripCoffee("칠레")
 
 입력값은 함수 이름 뒤에 오는 \(\) 사이에 집어넣어주면 됩니다. 우리가 여태 사용하던 print\(\) 안에 들어가는 값도 매개변수 였다는 것을 깨달으셨죠?
 
+
+
 입력값을 이용하면 코드가 훨씬 유연해집니다.  
 원두마다 함수를 따로 만들면 매장에 원두가 추가될 때마다 함수를 하나씩 더 만들어야 하지만, makeDripCoffee 함수를 이용하면 원두만 바꿔서 넣어주면 되거든요.
 
@@ -139,7 +161,7 @@ makeDripCoffee("칠레")
 
 
 
-## 함수의 출력값
+## 함수의 결과값
 
 ![](../.gitbook/assets/image%20%2822%29.png)
 
@@ -153,8 +175,15 @@ makeDripCoffee("칠레")
 
 그렇다면 이 출력을 각 함수에 넣어야 할까요?
 
-```text
-print independently code
+```python
+def makeAmericano():
+    print("에스프레소 샷 추출")
+    # 중간 생략...
+    print("주문하신 아메리카노 나왔습니다!")
+
+def makeCaffeLatte():
+    # ...
+    print("주문하신 카페라떼 나왔습니다!")
 ```
 
 이렇게 해도 작동은 하겠지만 별로 좋은 코드는 아닙니다.
@@ -166,7 +195,9 @@ print independently code
 다음으로는 역시 유연성이 떨어집니다.   
 멘트 앞에 "고객님! "을 붙이고 싶어지면, 함수의 개수만큼 수정할 일이 생깁니다.
 
-그렇다면 음료 이름을 변수로 사용하여 하나의 명령으로 처리가 가능할 것 같은데요...
+잘하면 음료 이름을 변수로 사용하는 하나의 명령으로 처리가 가능할 것 같은데요...
+
+
 
 ```python
 def makeAmericano():
@@ -195,4 +226,12 @@ print("주문하신", result, "나왔습니다!")
 ```
 
 결과값은 이렇게 출력할 수 있겠죠?
+
+
+
+```python
+print("주문하신", makeAmericano(), "나왔습니다!")
+```
+
+결과값의 흐름을 잘 이해하면 위와 같이 작성할 수도 있을 것입니다.
 
