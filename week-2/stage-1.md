@@ -71,6 +71,8 @@ Hello World!
 
 ## 변수란 무엇일까?
 
+> [https://github.com/coalastudy/python-datascrapping-code/blob/master/week2/stage1-0-variables.py](https://github.com/coalastudy/python-datascrapping-code/blob/master/week2/stage1-0-variables.py)
+
 방금 전 print\( \) 안에도 넣었던 "Hello World"는 **"값"**이라고 합니다.
 
 계산에 사용할 숫자, 수집한 데이터의 텍스트 등 **값은 실제로 사용되는 데이터를 의미**합니다.  

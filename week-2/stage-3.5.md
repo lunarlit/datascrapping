@@ -1,10 +1,12 @@
-# Stage 2.5 - 배열에 대해 알아보자
+# Stage 1.5 - 배열에 대해 알아보자
 
 Stage 4에서 배열이 꼭 필요한데, 구성 상 마땅치 않아 별도로 빼내었습니다.
 
 가볍게 읽어주세요!
 
 ## 배열이란 무엇일까?
+
+> [https://github.com/coalastudy/python-datascrapping-code/blob/master/week2/stage1-1-array.py](https://github.com/coalastudy/python-datascrapping-code/blob/master/week2/stage1-1-array.py)
 
 변수를 값을 저장하는 그릇에 비유를 했었습니다.
 
