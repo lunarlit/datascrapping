@@ -6,6 +6,8 @@
 
 ## 파이썬 기본 클래스를 사용해보자
 
+> [https://github.com/coalastudy/python-datascrapping-code/blob/master/week2/stage3-0-class.py](https://github.com/coalastudy/python-datascrapping-code/blob/master/week2/stage3-0-class.py)
+
 Stage 1에서 텍스트 값을 갖는 변수를 만들어 보았습니다. 프로그래밍에서는 사실 텍스트를 String\(문자열\) 이라고 부릅니다. 앞으로는 이 용어를 사용하겠습니다.
 
 데이터 수집을 하다보면 텍스트를 조작할 일이 많습니다.  
@@ -173,6 +175,8 @@ Settings 콘솔이 열리면 좌측 메뉴에서 Project: 프로젝트명 &gt; P
 
 
 ## requests 라이브러리의 사용
+
+> [https://github.com/coalastudy/python-datascrapping-code/blob/master/week2/stage3-1-requests.py](https://github.com/coalastudy/python-datascrapping-code/blob/master/week2/stage3-1-requests.py)
 
 ```python
 import requests

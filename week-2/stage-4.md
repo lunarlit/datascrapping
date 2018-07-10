@@ -6,6 +6,8 @@
 
 ## BeautifulSoup 라이브러리를 사용해보자!
 
+> [https://github.com/coalastudy/python-datascrapping-code/blob/master/week2/stage4.py](https://github.com/coalastudy/python-datascrapping-code/blob/master/week2/stage4.py)
+
 ```python
 import requests
 from bs4 import BeautifulSoup

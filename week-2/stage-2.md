@@ -6,6 +6,8 @@
 
 ## 함수란 무엇일까?
 
+> [https://github.com/coalastudy/python-datascrapping-code/blob/master/week2/stage2-0-function.py](https://github.com/coalastudy/python-datascrapping-code/blob/master/week2/stage2-0-function.py)
+
 정해진 일련의 명령을 손쉽게 반복할 수 있도록 저장하는 **매크로**같은 역할입니다.
 
 여러분이 카페의 커피 머신을 작동시키는 프로그램을 만든다고 가정해봅시다.
@@ -87,6 +89,8 @@ def makeAmericano():
 
 ## 함수의 입력값
 
+> [https://github.com/coalastudy/python-datascrapping-code/blob/master/week2/stage2-1-input.py](https://github.com/coalastudy/python-datascrapping-code/blob/master/week2/stage2-1-input.py)
+
 다음으로 드립 커피를 만드는 함수를 추가하려고 합니다.  
 그런데 드립커피를 만드는 과정은 아메리카노처럼 항상 일정하지 않습니다.  
 원두를 선택할 수가 있기 때문입니다.
@@ -162,6 +166,8 @@ makeDripCoffee("칠레")
 
 
 ## 함수의 결과값
+
+> [https://github.com/coalastudy/python-datascrapping-code/blob/master/week2/stage2-2-output.py](https://github.com/coalastudy/python-datascrapping-code/blob/master/week2/stage2-2-output.py)
 
 ![](../.gitbook/assets/image%20%2822%29.png)
 
