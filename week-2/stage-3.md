@@ -52,7 +52,7 @@ text declaration
 
 를 선언하는 순간, weekly 변수는 String 이 되어 String을 조작할 수 있는 수많은 함수가 모여있는 공간에 접근할 수 있게 됩니다.
 
-![weekly &#xB2E4;&#xC74C;&#xC5D0; . &#xC744; &#xC785;&#xB825;&#xD558;&#xBA74; PyCharm&#xC774; String &#xD074;&#xB798;&#xC2A4;&#xC758; &#xC0AC;&#xC6A9; &#xAC00;&#xB2A5; &#xD568;&#xC218;&#xB4E4;&#xC744; &#xBAA8;&#xB450; &#xBCF4;&#xC5EC;&#xC90D;&#xB2C8;&#xB2E4;.](../.gitbook/assets/image%20%28203%29.png)
+![weekly &#xB2E4;&#xC74C;&#xC5D0; . &#xC744; &#xC785;&#xB825;&#xD558;&#xBA74; PyCharm&#xC774; String &#xD074;&#xB798;&#xC2A4;&#xC758; &#xC0AC;&#xC6A9; &#xAC00;&#xB2A5; &#xD568;&#xC218;&#xB4E4;&#xC744; &#xBAA8;&#xB450; &#xBCF4;&#xC5EC;&#xC90D;&#xB2C8;&#xB2E4;.](../.gitbook/assets/image%20%28206%29.png)
 
 이 함수들은 파이썬 개발자들이 미리 작성하여 String 클래스 안에 모아둔 것입니다.
 

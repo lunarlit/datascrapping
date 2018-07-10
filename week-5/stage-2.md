@@ -41,7 +41,7 @@ selenium 라이브러리에서 webdriver 클래스를 불러와 아까 다운로
 
 ## selenium 사용법
 
-![](../.gitbook/assets/image%20%28195%29.png)
+![](../.gitbook/assets/image%20%28197%29.png)
 
 브라우저의 거의 모든 것을 실행할 수 있는 방대한 라이브러리이지만, 일단 위에 나온 함수 정도만 알면 현재 필요한만큼은 무리없이 사용할 수 있습니다.
 
@@ -57,7 +57,7 @@ driver.get('https://map.naver.com/')
 
 이제 위와 같이 드라이버 변수에서 .get\( \) 함수를 호출하면 매개변수로 전달된 주소로 이동합니다.
 
-![](../.gitbook/assets/image%20%28190%29.png)
+![](../.gitbook/assets/image%20%28192%29.png)
 
 
 

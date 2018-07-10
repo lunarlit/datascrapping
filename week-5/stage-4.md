@@ -10,7 +10,7 @@
 
 ## 상세 페이지 조회
 
-![](../.gitbook/assets/image%20%28162%29.png)
+![](../.gitbook/assets/image%20%28164%29.png)
 
 네이버 지도 예제를 계속 사용하도록 하겠습니다.
 
@@ -65,7 +65,7 @@ for data in list:
 
 첫번째 상세보기까지는 잘 눌리지만, 또다른 난관에 봉착합니다.
 
-![](../.gitbook/assets/image%20%28136%29.png)
+![](../.gitbook/assets/image%20%28138%29.png)
 
 바로 탭이 생기는 것인데요. 인간이 직접 사용할 때에는 자연스럽게 정보를 확인하고, 탭을 닫고, 리스트로 돌아가 다음 요소를 눌러볼 수 있습니다.
 
@@ -141,4 +141,79 @@ driver.get('https://map.naver.com' + link)
 이런 방식으로 상세 주소에 드라이버를 접속시킬 수 있습니다.
 
 
+
+![](../.gitbook/assets/image%20%28204%29.png)
+
+주소로 이동했을 경우 하나의 탭에서 이동이 이루어지기 때문에 뒤로를 누르면 원래 주소로 다시 돌아올 것입니다.
+
+그런데 구현하기전에 예상되는 문제가 있습니다.
+
+
+
+![](../.gitbook/assets/image%20%28131%29.png)
+
+지도 데이터가 동적으로 로딩되기 때문에 생기는 문제입니다. "신촌 치킨"을 검색 했건 안했건 주소가 https://map.naver.com/ 으로 동일한 것은 기억하실 겁니다.
+
+그런데 뒤로 버튼의 기능은 이전 상태로 되돌아가는 것이 아니라 이전에 접속했던 주소로 다시 접속하는 것입니다.
+
+즉, 주소를 통해 상세 페이지를 접속한 후 뒤로 버튼을 누르면 "신촌 치킨"이 검색된 상태가 아니라 초기 상태의 네이버 지도 페이지가 나옵니다.
+
+어떻게 할 방법이 없을까요?
+
+
+
+답은 "뒤로"를 안누르고도 수집을 계속할 수 있게 만드는 것입니다.
+
+![](../.gitbook/assets/image%20%28136%29.png)
+
+드라이버 변수를 두 개 만들어 하나는 지도 리스트, 하나는 상세 페이지를 조회하도록 합니다.
+
+driver1에서 얻은 상세 주소로 driver2에서 접속하는 것입니다. driver1에서는 상세 페이지로 직접 들어가지 않으므로 그대로 리스트를 계속 조사할 수 있고, driver2는 리스트에 상관없이 상세 페이지만 계속 조사하면 됩니다.
+
+
+
+```python
+from selenium import webdriver
+import time
+
+driver = webdriver.Chrome('./chromedriver')
+driver2 = webdriver.Chrome('./chromedriver')
+
+driver.get('https://map.naver.com/')
+driver.find_element_by_id('search-input').send_keys('신촌 스터디룸')
+driver.find_element_by_css_selector('#header > div.sch > fieldset > button').click()
+
+page = 1
+
+while True:
+    html = driver.page_source
+    soup = BeautifulSoup(html, 'html.parser')
+    list = soup.select('ul.lst_site > li')
+
+    for data in list:
+        detail_url = data.select_one('a.spm_sw_detail').attrs['href']
+        driver2.get('https://map.naver.com' + detail_url)
+        time.sleep(1)
+
+    # 페이지 이동 기능 생략...
+
+```
+
+{% hint style="warning" %}
+상세 페이지에 연속으로 빠르게 접근할 경우 네이버에서 네트워크에 부담을 주는 자동 수집기임을 감지하고 일시 차단을 부과합니다.
+
+2행의 import time으로 시간에 관련된 클래스를 로딩 후, 21행에 쓰인 time.sleep\( 초 단위 입력 \) 함수를 이용해 각 상세 페이지 접속마다 1초 정도의 시간을 갖도록 해주세요.
+{% endhint %}
+
+
+
+1번의 버튼 직접 누르기 방식은 time.sleep\( \) 을 하지 않아도 차단없이 잘 돌아가기 때문에 훨씬 빠릅니다. 
+
+그럼 왜 굳이 2번 링크 주소로 이동하는 방법을 배워야 하는지 의문이 생기시겠지만 경우에 따라 1번 방법을 사용할 수 없을 수도 있습니다. 
+
+예를 들면 이동 버튼을 눌렀을 때 새 탭으로 접속하는 것이 아니라 하나의 탭 안에서 이동하는 경우가 있겠지요?
+
+전에도 말씀드렸지만 웹 서비스는 제각기의 구조를 갖고 있기 때문에 여러 웹 서비스를 공략하기 위해서는 최대한 다양한 방법으로 접근할 줄 알아야 합니다.
+
+그 중에서도 브라우저를 2개 사용하는 것은 인간적인 사고로는 좀처럼 떠올리기가 어렵기 때문에 한번 소개해 보았습니다.
 

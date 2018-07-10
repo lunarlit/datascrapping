@@ -242,7 +242,7 @@ scores.items\(\)의 요소들은 \('a', 65\)와 같은 형태이니 65를 반환
 print(sorted(scores.items(), key=sortKey, reverse=True))
 ```
 
-![](../.gitbook/assets/image%20%28199%29.png)
+![](../.gitbook/assets/image%20%28201%29.png)
 
 
 
@@ -278,7 +278,7 @@ for sortedInfo in sortedList:
 
 이 정렬 기준 함수를 사용해 정렬한 후, 그 결과 배열을 하나씩 출력하면 원하는 결과를 얻을 수 있습니다.
 
-![](../.gitbook/assets/image%20%28153%29.png)
+![](../.gitbook/assets/image%20%28155%29.png)
 
 2018년 6월 28일 19시 22분의 네이버 TV TOP 100 채널 조회수별 정렬 결과입니다.
 
