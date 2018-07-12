@@ -1,0 +1,9 @@
+
+{
+    "plugins": ["disqus"],
+    "pluginsConfig": {
+        "disqus": {
+            "shortName": "coala-datascrapping"
+        }
+    }
+}
