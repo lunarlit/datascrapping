@@ -14,7 +14,7 @@
 
 그리고 클립 정보를 담은 배열을 수집하여 하나의 요소에 접근해보았는데요.
 
-{% page-ref page="../week-2/stage-3.5.md" %}
+{% page-ref page="../2/stage-1.5.md" %}
 
 이제 배열을 더 잘 사용할 수 있는 방법을 배워보겠습니다.
 
@@ -91,7 +91,7 @@ for문의 기본 문법은 위와 같습니다.
 
 이제 네이버 TV TOP 100 수집 프로그램으로 돌아가 봅시다.
 
-{% page-ref page="../week-2/stage-4.md" %}
+{% page-ref page="../2/stage-4.md" %}
 
 infos 라는 배열에 4위부터 100위까지의 클립 정보가 배열로 담겨있는 상황입니다.
 
@@ -99,10 +99,10 @@ infos 라는 배열에 4위부터 100위까지의 클립 정보가 배열로 담
 
 ```python
 for info in infos:
-    title = info.select('dt.title tooltip')[0].text
-    chn = info.select('dd.chn > a')[0].text
-    hit = info.select('span.hit')[0].text
-    like = info.select('span.like')[0].text
+    title = info.select_one('dt.title tooltip').text
+    chn = info.select_one('dd.chn > a').text
+    hit = info.select_one('span.hit').text
+    like = info.select_one('span.like').text
 
     print(chn, '/', title, '/', hit, '/', like)
 ```
@@ -213,8 +213,8 @@ for s in str:
 ```python
 for info in infos:
     ...
-    hit = info.select('span.hit')[0].text
-    like = info.select('span.like')[0].text
+    hit = info.select_one('span.hit').text
+    like = info.select_one('span.like').text
 
     print(chn, '/', title, '/', hit, '/', like)
 ```
@@ -228,8 +228,8 @@ for info in infos:
 ```python
 for info in infos:
     ...
-    hit = info.select('span.hit')[0].text[4:]
-    like = info.select('span.like')[0].text[5:]
+    hit = info.select_one('span.hit').text[4:]
+    like = info.select_one('span.like').text[5:]
 
     print(chn, '/', title, '/', hit, '/', like)
 ```
@@ -244,8 +244,8 @@ hit은 "재생 수"라는 텍스트가 끝나고 숫자가 나오는 4번부터,
 
 ```python
 ...
-hit = info.select('span.hit')[0].text[4:].replace(',', '')
-like = info.select('span.like')[0].text[5:].replace(',', '')
+hit = info.select_one('span.hit').text[4:].replace(',', '')
+like = info.select_one('span.like').text[5:].replace(',', '')
 ...
 ```
 
