@@ -19,7 +19,7 @@
 
 라이브러리 설치 방법이 기억나지 않으신다면 2주차의 Stage 3을 참고해주세요.
 
-{% page-ref page="../2/stage-3-html.md" %}
+{% page-ref page="../week-2/stage-3-html.md" %}
 
 
 

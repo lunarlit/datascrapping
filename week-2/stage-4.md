@@ -70,7 +70,7 @@ infos = html.select('div.cds')
 
 기억이 잘 나지 않으신다면 꼭 1주차의 Stage 4를 복습하고 오세요!
 
-{% page-ref page="../1/stage-4.md" %}
+{% page-ref page="../week-1/stage-4.md" %}
 
 
 
