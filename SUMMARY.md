@@ -22,6 +22,7 @@
   * [Challenge 2](week-2/challenge-2/README.md)
     * [모범 답안](week-2/challenge-2/undefined.md)
 * [3주차 - 데이터를 가공하여 가치있게 만들기](week-3/README.md)
+  * [Pre - 실습 코드 데이터](week-3/pre.md)
   * [Stage 1 - 모든 정보를 빠르게 가져오자](week-3/stage-1.md)
   * [Stage 2 - 정보를 의미있게 가공해보자](week-3/stage-2.md)
   * [Challenge 1](week-3/challenge-1/README.md)

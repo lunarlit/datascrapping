@@ -10,6 +10,10 @@
 
 ## 반복문 for
 
+{% embed data="{\"url\":\"https://github.com/coalastudy/python-datascrapping-code/blob/master/week3/stage1-0-list.py\",\"type\":\"link\",\"title\":\"coalastudy/python-datascrapping-code\",\"description\":\"Contribute to python-datascrapping-code development by creating an account on GitHub.\",\"icon\":{\"type\":\"icon\",\"url\":\"https://github.com/fluidicon.png\",\"aspectRatio\":0},\"thumbnail\":{\"type\":\"thumbnail\",\"url\":\"https://avatars2.githubusercontent.com/u/40313128?s=400&v=4\",\"width\":420,\"height\":420,\"aspectRatio\":1},\"caption\":\"코드를 참고하여 진행해 주세요.\"}" %}
+
+
+
 2주차에 배열에 대해 소개해드렸습니다.
 
 그리고 클립 정보를 담은 배열을 수집하여 하나의 요소에 접근해보았는데요.
@@ -88,6 +92,10 @@ for문의 기본 문법은 위와 같습니다.
 
 
 ## 데이터 수집에 적용
+
+{% embed data="{\"url\":\"https://github.com/coalastudy/python-datascrapping-code/blob/master/week3/stage1-1.py\",\"type\":\"link\",\"title\":\"coalastudy/python-datascrapping-code\",\"description\":\"Contribute to python-datascrapping-code development by creating an account on GitHub.\",\"icon\":{\"type\":\"icon\",\"url\":\"https://github.com/fluidicon.png\",\"aspectRatio\":0},\"thumbnail\":{\"type\":\"thumbnail\",\"url\":\"https://avatars2.githubusercontent.com/u/40313128?s=400&v=4\",\"width\":420,\"height\":420,\"aspectRatio\":1},\"caption\":\"코드를 참고하여 진행해 주세요.\"}" %}
+
+
 
 이제 네이버 TV TOP 100 수집 프로그램으로 돌아가 봅시다.
 
