@@ -1,6 +1,6 @@
 # Pre - 실습 코드 데이터
 
-Stage 1 - 리스트, for문 실습
+## Stage 1 - 리스트, for문 실습
 
 ```python
 subjects = ["파이썬", "페이스북 웹개발", "데이터 수집", "안드로이드", "알고리즘", "Javascript", "iOS"]
@@ -10,7 +10,7 @@ str2 = 'coala python study'
 
 
 
-Stage 2 - dictionary 실습
+## Stage 2 - dictionary 실습
 
 ```python
 people = {'korean': 380, 'american': 42, 'japanese': 15}
@@ -26,7 +26,7 @@ newlike = 2760
 
 
 
-Challenge 1
+## Challenge 1
 
 ```python
 subjects = ['파이썬', '자바스크립트', '루비', '코틀린', '자바스크립트', '파이썬',
@@ -38,7 +38,7 @@ subjects = ['파이썬', '자바스크립트', '루비', '코틀린', '자바스
 
 
 
-Stage 3 - if문 실습
+## Stage 3 - if문 실습
 
 ```python
 arr = ['파이썬', '자바스크립트', '루비', '고']
@@ -46,7 +46,7 @@ arr = ['파이썬', '자바스크립트', '루비', '고']
 
 
 
-Stage 3 - dictionary 고급 실습
+## Stage 3 - dictionary 고급 실습
 
 ```python
 chnInfos = {'하트시그널2': {'hit': 20000, 'like': 3800},
@@ -56,7 +56,7 @@ chnInfos = {'하트시그널2': {'hit': 20000, 'like': 3800},
 
 
 
-Stage 4 - 정렬 실습
+## Stage 4 - 정렬 실습
 
 ```python
 numbers = [94, 23, 64, 39, 25, 10, 63, 6, 234, 34, 63, 4, 86, 5, 24, 1, 631, 90]
