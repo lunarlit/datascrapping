@@ -32,6 +32,7 @@
   * [Challenge 2](week-3/challenge-2/README.md)
     * [모범 답안](week-3/challenge-2/undefined.md)
 * [4주차 - 소중한 데이터를 사라지지않게 저장하기](week-4/README.md)
+  * [Pre - 실습 코드 데이터](week-4/pre.md)
   * [Stage 1 - 일단 가장 간단하게 저장해보자](week-4/stage-1.md)
   * [Stage 2 - 파이썬으로 엑셀을 다뤄보자](week-4/stage-2.md)
   * [Challenge 1](week-4/challenge-1/README.md)
