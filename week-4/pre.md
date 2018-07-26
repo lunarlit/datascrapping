@@ -1,6 +1,6 @@
 # Pre - 실습 코드 데이터
 
-## Stage 1 - txt 파일 다루기
+## Stage 1 - txt 파일 다루기 {#5p}
 
 ```python
 # ---- 파일 쓰기 ----
@@ -32,7 +32,7 @@
 
 
 
-## Stage 1 - 네이버 TV 수집 결과 저장
+## Stage 1 - 네이버 TV 수집 결과 저장 {#10p}
 
 ```python
 import requests
@@ -74,7 +74,7 @@ f.<       >
 
 
 
-## Stage 1 - 시간 정보 포매팅
+## Stage 1 - 시간 정보 포매팅 {#13p}
 
 ```python
 import datetime
