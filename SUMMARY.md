@@ -42,6 +42,7 @@
   * [Challenge 2](week-4/challenge-2/README.md)
     * [모범 답안](week-4/challenge-2/undefined.md)
 * [5주차 - 코드로 브라우저 조종하기](5/README.md)
+  * [Pre - 실습 코드 데이터](5/pre.md)
   * [Stage 1 - 정적 수집과 동적 수집 비교](5/stage-1.md)
   * [Stage 2 - 가상브라우저를 조종해보자](5/stage-2.md)
   * [Challenge 1](5/challenge-1.md)
