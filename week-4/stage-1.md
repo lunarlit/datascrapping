@@ -20,7 +20,7 @@ f = open('test.txt', 'w')
 
 open\( \) 함수에 전달되는 두 매개변수 중 첫번째는 당연히 파일의 이름이고, 두번째는 파일을 다룰 모드입니다.
 
-![](../.gitbook/assets/image%20%28213%29.png)
+![](../.gitbook/assets/image%20%28216%29.png)
 
 이 모드의 값에 따라 위와 같이 파일에 대해 실행할 수 있는 기능이 다릅니다.
 
@@ -43,7 +43,7 @@ open의 결과값을 변수 f에 집어넣고 있습니다.
 
 사용이 끝난 파일은 꼭 .close\( \) 를 실행하여 권한을 반납하여야 합니다.
 
-![](../.gitbook/assets/image%20%28195%29.png)
+![](../.gitbook/assets/image%20%28198%29.png)
 
 위 코드를 실행하고 test.txt를 열어보면, hello world! 가 성공적으로 작성된 것을 볼 수 있습니다.
 
@@ -58,7 +58,7 @@ f.close()
 
 다음으로 위 코드를 바꾸어 파일을 추가 모드 \(append의 'a'\) 로 열어 내용을 작성해 보겠습니다.
 
-![](../.gitbook/assets/image%20%28151%29.png)
+![](../.gitbook/assets/image%20%28154%29.png)
 
 이 코드를 실행하고 test.txt를 열어보면, 기존 내용에 새로 작성한 내용이 더해진 것이 보입니다.
 
@@ -66,7 +66,7 @@ f.close()
 
 
 
-![](../.gitbook/assets/image%20%28167%29.png)
+![](../.gitbook/assets/image%20%28170%29.png)
 
 읽기 모드를 알아보기에 앞서, test.txt의 내용에 한 줄을 추가해 주세요.
 
@@ -127,7 +127,7 @@ f.close()
 
 위 코드들을 추가하여 실행시키면 다음과 같은 결과 파일을 얻을 수 있습니다.
 
-![](../.gitbook/assets/image%20%2864%29.png)
+![](../.gitbook/assets/image%20%2867%29.png)
 
 잘 저장이 되었습니다. 그런데 메모장은 아무래도 줄이 맞지 않아 데이터를 확인하기 불편하네요. 
 
@@ -147,7 +147,7 @@ f = open('test.csv', 'w')
 
 
 
-![](../.gitbook/assets/image%20%28142%29.png)
+![](../.gitbook/assets/image%20%28145%29.png)
 
 csv 파일은 이처럼 엑셀을 사용해 열 수 있습니다. 
 
@@ -166,7 +166,7 @@ open\( \) 함수를 이용해 파일을 쓰기 모드로 열면, 기존에 있�
 
 그렇다고 추가 모드로 열기엔 날짜별로 데이터가 구분되지 않아 불편할 것 같네요. 
 
-![](../.gitbook/assets/image%20%28209%29.png)
+![](../.gitbook/assets/image%20%28212%29.png)
 
 대신 수집하는 날짜마다 파일명을 바꾸어 'TOP100\_2018\_06\_28.csv' 와 같이 저장한다면 잘 구분되겠죠?
 
@@ -186,7 +186,7 @@ dt = datetime.datetime.now()
 print(dt)
 ```
 
-![](../.gitbook/assets/image%20%28123%29.png)
+![](../.gitbook/assets/image%20%28126%29.png)
 
 datetime이라는 클래스를 import하여 다음과 같이 현재 시간을 불러올 수 있습니다.
 
@@ -200,11 +200,11 @@ df = dt.strftime('%Y_%m_%d')
 print(df)
 ```
 
-![](../.gitbook/assets/image%20%2853%29.png)
+![](../.gitbook/assets/image%20%2856%29.png)
 
 datetime 클래스의 .strftime\( \) \(**str**ing **f**ormatted **time** 이라는 뜻이겠네요.\) 함수를 사용하면 날짜 데이터를 원하는 형태로 만들 수 있습니다.
 
-![](../.gitbook/assets/image%20%28152%29.png)
+![](../.gitbook/assets/image%20%28155%29.png)
 
 .strftime\( \) 함수에 전달되는 형식 문자열은 위와 같은 내용으로 구성됩니다. 
 

@@ -231,7 +231,7 @@ class not correct example code
 
 그래서 좀 더 정확한 위치를 알려주어야 합니다.
 
-![](../.gitbook/assets/image%20%28211%29.png)
+![](../.gitbook/assets/image%20%28214%29.png)
 
 이 때 사용할 수 있는 것이 자식 선택자입니다.  
 자식 선택자는 "부모 선택자 &gt; 자식 선택자"로 나타내며, 부모 선택자의 바로 아래 단계에 있는 직계 자식 요소들만 선택합니다.
@@ -246,7 +246,7 @@ div.post > span.title
 
 
 
-![](../.gitbook/assets/image%20%2871%29.png)
+![](../.gitbook/assets/image%20%2874%29.png)
 
 ```text
 id identifiable example code

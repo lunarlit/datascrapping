@@ -45,9 +45,11 @@
   * [Pre - 실습 코드 데이터](5/pre.md)
   * [Stage 1 - 정적 수집과 동적 수집 비교](5/stage-1.md)
   * [Stage 2 - 가상브라우저를 조종해보자](5/stage-2.md)
-  * [Challenge 1](5/challenge-1.md)
+  * [Challenge 1](5/challenge-1/README.md)
+    * [모범 답안](5/challenge-1/undefined.md)
   * [Stage 3 - 가상브라우저 고급 활용법](5/stage-3.md)
   * [Stage 4 - 실습 예제 : 게시판 안으로 들어가기](5/stage-4.md)
-  * [Challenge 2](5/challenge-2.md)
+  * [Challenge 2](5/challenge-2/README.md)
+    * [모범 답안](5/challenge-2/undefined.md)
 * [6주차 - 궁극의 네이버 수집기 만들기](6.md)
 

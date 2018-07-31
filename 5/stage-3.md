@@ -34,11 +34,11 @@
 
 여러가지 방법이 있겠지만 다음과 같은 방법을 택해보겠습니다.
 
-![](../.gitbook/assets/image%20%28188%29.png)
+![](../.gitbook/assets/image%20%28191%29.png)
 
 div.paginate 의 자식 태그들에 순서대로 번호를 매겨보면 위와 같습니다. 그러면 5페이지마다 어떤 규칙이 반복되는 것을 알 수 있습니다.
 
-![](../.gitbook/assets/image%20%2880%29.png)
+![](../.gitbook/assets/image%20%2883%29.png)
 
 현재 n페이지에 있다면, div.paginate의 자식 태그들 중 n%5+1번째 것을 누르면 됩니다. \(n%5는 n/5의 나머지입니다.\) 단, 5의 배수의 페이지일 때는 n%5+1 = 1이 아니라 6을 눌러야 하기 때문에 예외로 처리해야 합니다. 
 
@@ -155,7 +155,7 @@ while True:
 
 하지만 마지막엔 꼭 다음과 같은 에러를 만나게 됩니다.
 
-![](../.gitbook/assets/image%20%28148%29.png)
+![](../.gitbook/assets/image%20%28151%29.png)
 
 NoSuchElementException. "그런 요소가 없는데요?" 라는 오류입니다.
 
@@ -163,7 +163,7 @@ NoSuchElementException. "그런 요소가 없는데요?" 라는 오류입니다.
 
 이는 "신촌 스터디룸"을 검색했을 때 나온 메세지입니다.
 
-![](../.gitbook/assets/image%20%28175%29.png)
+![](../.gitbook/assets/image%20%28178%29.png)
 
 이 때 페이지는 4까지밖에 없는데, 5페이지를 누르라는 명령을 받아 오류가 난 것입니다.
 

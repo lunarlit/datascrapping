@@ -8,7 +8,7 @@
 
 10페이지까지 조사하여 질문글의 제목 리스트를 엑셀 파일 hashcode\_yyyy\_mm\_dd.xlsx 파일의 “질문 리스트” 시트에 저장해주세요. \(yyyy\_mm\_dd 부분은 오늘 날짜로 자동 입력되어야 합니다.\)
 
-![](../../.gitbook/assets/image%20%28132%29.png)
+![](../../.gitbook/assets/image%20%28135%29.png)
 
 
 

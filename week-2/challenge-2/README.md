@@ -8,11 +8,11 @@ Stage 4에서는 네이버 TOP 100의 4위 이하 클립 정보들을 불러와 
 
 \(div.cds는 4~100위의 클립을 가지고 있으므로 0번째가 4위입니다!\)
 
-![](../../.gitbook/assets/image%20%2879%29.png)
+![](../../.gitbook/assets/image%20%2882%29.png)
 
 출력 형식은 "클립명 / 채널명 / 재생 수" 입니다.
 
-![2018&#xB144; 6&#xC6D4; 19&#xC77C;&#xC758; &#xACB0;&#xACFC;&#xB294; &#xC774;&#xB807;&#xC2B5;&#xB2C8;&#xB2E4;.](../../.gitbook/assets/image%20%2859%29.png)
+![2018&#xB144; 6&#xC6D4; 19&#xC77C;&#xC758; &#xACB0;&#xACFC;&#xB294; &#xC774;&#xB807;&#xC2B5;&#xB2C8;&#xB2E4;.](../../.gitbook/assets/image%20%2862%29.png)
 
 
 

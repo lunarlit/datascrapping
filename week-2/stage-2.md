@@ -19,7 +19,7 @@
 3. 물 붓기
 4. 에스프레소 붓기
 
-![](../.gitbook/assets/image%20%28126%29.png)
+![](../.gitbook/assets/image%20%28129%29.png)
 
 이를 표현하기 위해 다음과 같은 4줄의 프로그램이 필요합니다.
 
@@ -47,7 +47,7 @@ def makeAmericano():
 makeAmericano 라는 함수가 정의되었습니다.  
 이제 5잔의 아메리카노를 만드려면 이를 5번 실행하면 됩니다.
 
-![](../.gitbook/assets/image%20%2824%29.png)
+![](../.gitbook/assets/image%20%2825%29.png)
 
 ```python
 makeAmericano()

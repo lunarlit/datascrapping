@@ -10,7 +10,7 @@
 
 ## 상세 페이지 조회
 
-![](../.gitbook/assets/image%20%28164%29.png)
+![](../.gitbook/assets/image%20%28167%29.png)
 
 네이버 지도 예제를 계속 사용하도록 하겠습니다.
 
@@ -37,7 +37,7 @@ for data in list:
 
 리스트를 찾아 list라는 변수에 배열로 집어넣고, for문을 돌며 각 리스트 요소에서 상세보기 버튼의 경로로 선택하여 클릭을 명령하고 있습니다.
 
-![](../.gitbook/assets/image%20%2899%29.png)
+![](../.gitbook/assets/image%20%28102%29.png)
 
 하지만 이런 에러를 마주하게 될 것입니다.
 
@@ -65,7 +65,7 @@ for data in list:
 
 첫번째 상세보기까지는 잘 눌리지만, 또다른 난관에 봉착합니다.
 
-![](../.gitbook/assets/image%20%28138%29.png)
+![](../.gitbook/assets/image%20%28141%29.png)
 
 바로 탭이 생기는 것인데요. 인간이 직접 사용할 때에는 자연스럽게 정보를 확인하고, 탭을 닫고, 리스트로 돌아가 다음 요소를 눌러볼 수 있습니다.
 
@@ -142,7 +142,7 @@ driver.get('https://map.naver.com' + link)
 
 
 
-![](../.gitbook/assets/image%20%28204%29.png)
+![](../.gitbook/assets/image%20%28207%29.png)
 
 주소로 이동했을 경우 하나의 탭에서 이동이 이루어지기 때문에 뒤로를 누르면 원래 주소로 다시 돌아올 것입니다.
 
@@ -150,7 +150,7 @@ driver.get('https://map.naver.com' + link)
 
 
 
-![](../.gitbook/assets/image%20%28131%29.png)
+![](../.gitbook/assets/image%20%28134%29.png)
 
 지도 데이터가 동적으로 로딩되기 때문에 생기는 문제입니다. "신촌 치킨"을 검색 했건 안했건 주소가 https://map.naver.com/ 으로 동일한 것은 기억하실 겁니다.
 
@@ -164,7 +164,7 @@ driver.get('https://map.naver.com' + link)
 
 답은 "뒤로"를 안누르고도 수집을 계속할 수 있게 만드는 것입니다.
 
-![](../.gitbook/assets/image%20%28136%29.png)
+![](../.gitbook/assets/image%20%28139%29.png)
 
 드라이버 변수를 두 개 만들어 하나는 지도 리스트, 하나는 상세 페이지를 조회하도록 합니다.
 
