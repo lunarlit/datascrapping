@@ -106,7 +106,7 @@ weekly = "    2주차 - 파이썬 기초부터 첫 데이터 수집까지    "
 
 
 
-![weekly &#xB2E4;&#xC74C;&#xC5D0; . &#xC744; &#xC785;&#xB825;&#xD558;&#xBA74; PyCharm&#xC774; String &#xD074;&#xB798;&#xC2A4;&#xC758; &#xC0AC;&#xC6A9; &#xAC00;&#xB2A5; &#xD568;&#xC218;&#xB4E4;&#xC744; &#xBAA8;&#xB450; &#xBCF4;&#xC5EC;&#xC90D;&#xB2C8;&#xB2E4;.](../.gitbook/assets/image%20%28209%29.png)
+![weekly &#xB2E4;&#xC74C;&#xC5D0; . &#xC744; &#xC785;&#xB825;&#xD558;&#xBA74; PyCharm&#xC774; String &#xD074;&#xB798;&#xC2A4;&#xC758; &#xC0AC;&#xC6A9; &#xAC00;&#xB2A5; &#xD568;&#xC218;&#xB4E4;&#xC744; &#xBAA8;&#xB450; &#xBCF4;&#xC5EC;&#xC90D;&#xB2C8;&#xB2E4;.](../.gitbook/assets/image%20%28220%29.png)
 
 이 함수들은 파이썬 개발자들이 미리 작성하여 String 클래스 안에 모아둔 것입니다.
 
@@ -126,7 +126,7 @@ weekly = "    2주차 - 파이썬 기초부터 첫 데이터 수집까지    "
 
 대신 그들은 전 세계의 다른 개발자들에게 책임을 맡깁니다.
 
-![](../.gitbook/assets/image%20%2855%29.png)
+![](../.gitbook/assets/image%20%2859%29.png)
 
 전 세계의 개발자들은 별 다른 계약 없이도, 파이썬을 이용해 유용한 기능들을 만들고 공유할 수 있습니다.
 
@@ -144,7 +144,7 @@ weekly = "    2주차 - 파이썬 기초부터 첫 데이터 수집까지    "
 
 ## 외부 라이브러리 설치 방법
 
-![](../.gitbook/assets/image%20%2843%29.png)
+![](../.gitbook/assets/image%20%2846%29.png)
 
 PyCharm의 File 메뉴를 열어 Settings 를 선택합니다.
 
@@ -154,7 +154,7 @@ Settings 콘솔이 열리면 좌측 메뉴에서 Project: 프로젝트명 &gt; P
 
 
 
-![](../.gitbook/assets/image%20%28104%29.png)
+![](../.gitbook/assets/image%20%28110%29.png)
 
 이와 같은 패키지 설치 콘솔이 나올 것입니다.
 
@@ -162,13 +162,13 @@ Settings 콘솔이 열리면 좌측 메뉴에서 Project: 프로젝트명 &gt; P
 
 
 
-![](../.gitbook/assets/image%20%2815%29.png)
+![](../.gitbook/assets/image%20%2816%29.png)
 
 잠시 기다리면 이렇게 녹색 알림으로 설치 완료 메세지가 나옵니다.
 
 
 
-![](../.gitbook/assets/image%20%2893%29.png)
+![](../.gitbook/assets/image%20%2897%29.png)
 
 마찬가지로 beautifulsoup4 도 설치해 주세요. \(Stage 4에서 사용합니다.\)
 
@@ -199,7 +199,7 @@ requests 는 방금 들여온 외부 라이브러리이자, **웹페이지에 �
 
 그 중 웹페이지의 내용을 요청하는 .get\(\) 함수를 사용하고, 매개 변수로 웹페이지의 주소를 입력합니다.
 
-![](../.gitbook/assets/image%20%28115%29.png)
+![](../.gitbook/assets/image%20%28121%29.png)
 
 사용한 주소는 네이버TV TOP100 의 주소입니다.
 
@@ -210,7 +210,7 @@ requests.get의 결과로 얻어진 req \(변수명이므로 마음대로 지어
 
 이제 print 함수를 사용해 이 raw를 출력해보겠습니다.
 
-![](../.gitbook/assets/image%20%28100%29.png)
+![](../.gitbook/assets/image%20%28106%29.png)
 
 1주차에 보던 HTML과 CSS 선택자로 이루어진 파일이 출력되었습니다!
 
