@@ -208,7 +208,7 @@ for n in range(1, 5):
 
 
 
-## Page 25 - 멀티 쓰레
+## Page 25 - 멀티 쓰레드
 
 ```python
 import requests
