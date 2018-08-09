@@ -53,4 +53,5 @@
     * [모범 답안](5/challenge-2/undefined.md)
 * [6주차 - 모든 학습내용 응용해보기](6/README.md)
   * [Stage 1 - 데이터 수집의 기본기 복습](6/stage-1.md)
+  * [Pre - 실습 코드 데이터](6/pre.md)
 
