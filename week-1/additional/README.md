@@ -4,7 +4,7 @@
 
 오늘은 먼저 상품 데이터의 선택자 경로를 정해봅시다.
 
-![](../../.gitbook/assets/image%20%28127%29.png)
+![](../../.gitbook/assets/image%20%28133%29.png)
 
 [https://search.shopping.naver.com/search/category.nhn?cat\_id=50001203](https://search.shopping.naver.com/search/category.nhn?cat_id=50001203) 
 

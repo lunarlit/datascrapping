@@ -4,7 +4,7 @@
 
 1주차 선택자 찾기 과제였던 해커뉴스 페이지에서 기사 제목을 수집해보세요. 첫 페이지에 나오지 않는 기사까지 수집해보세요!
 
-\[사진\]
+![](../../.gitbook/assets/image%20%2851%29.png)
 
 [https://news.ycombinator.com​/news?p=1](https://news.ycombinator.com​/news?p=1)
 

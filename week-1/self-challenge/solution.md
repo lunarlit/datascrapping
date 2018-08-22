@@ -1,6 +1,6 @@
 # 모범 답안
 
-![](../../.gitbook/assets/image%20%28107%29.png)
+![](../../.gitbook/assets/image%20%28113%29.png)
 
 예를 들어 네이버 실시간 급상승 검색어의 선택자 경로를 찾아보겠습니다.
 
@@ -8,7 +8,7 @@
 
 ### 1. 간결성
 
-![](../../.gitbook/assets/image%20%28356%29.png)
+![](../../.gitbook/assets/image%20%28374%29.png)
 
 검색어를 우클릭하여 검사를 누르면 손쉽게 해당 HTML 요소까지 이동할 수 있습니다.
 
@@ -22,25 +22,25 @@
 
 
 
-![](../../.gitbook/assets/image%20%28119%29.png)
+![](../../.gitbook/assets/image%20%28125%29.png)
 
 개발자 도구에서 Ctrl + F를 눌러 검색창을 열고 선택자 span.ah\_k를 검색합니다. 우측을 보면 총 41개가 검색되었다고 나옵니다. 실시간 급상승 검색어는 총 20개이니, 이것만 보아도 필요 이상의 데이터를 가져올 것으로 예상됩니다.
 
 
 
-![](../../.gitbook/assets/image%20%28226%29.png)
+![](../../.gitbook/assets/image%20%28236%29.png)
 
 엔터키를 계속 누르며 어떤 요소들이 이 선택자를 가지고 있는지 알아봅니다.
 
 
 
-![](../../.gitbook/assets/image%20%28300%29.png)
+![](../../.gitbook/assets/image%20%28313%29.png)
 
 span.ah\_r 은 순위를 의미하는 것 같습니다. 20위까지 도달했으니 이제 다음 나오는 데이터는 우리의 목표가 아닌 필요 이상의 데이터입니다.
 
 
 
-![](../../.gitbook/assets/image%20%28209%29.png)
+![](../../.gitbook/assets/image%20%28219%29.png)
 
 엔터를 더 쳐보면 이런 데이터에 도달합니다. 1~20위의 검색어가 똑같이 한번 더 반복이 되는데, 브라우저 상에서의 위치는 찾아볼 수 없습니다.
 
@@ -48,17 +48,17 @@ span.ah\_r 은 순위를 의미하는 것 같습니다. 20위까지 도달했으
 
 
 
-![](../../.gitbook/assets/image%20%28234%29.png)
+![](../../.gitbook/assets/image%20%28244%29.png)
 
-![](../../.gitbook/assets/image%20%28352%29.png)
+![](../../.gitbook/assets/image%20%28370%29.png)
 
 브라우저에 범위가 잡히는 검색어, 잡히지 않는 검색어 모두 부모 HTML 요소로 a.ah\_a를 가지고 있습니다. 더 거슬러 올라갑니다.
 
 
 
-![&#xBC94;&#xC704;&#xAC00; &#xC7A1;&#xD788;&#xB294; &#xAC80;&#xC0C9;&#xC5B4;&#xC758; &#xC870;&#xC0C1;&#xB4E4;](../../.gitbook/assets/image%20%2886%29.png)
+![&#xBC94;&#xC704;&#xAC00; &#xC7A1;&#xD788;&#xB294; &#xAC80;&#xC0C9;&#xC5B4;&#xC758; &#xC870;&#xC0C1;&#xB4E4;](../../.gitbook/assets/image%20%2892%29.png)
 
-![&#xBC94;&#xC704;&#xAC00; &#xC7A1;&#xD788;&#xC9C0; &#xC54A;&#xB294; &#xAC80;&#xC0C9;&#xC5B4;&#xC758; &#xC870;&#xC0C1;&#xB4E4;](../../.gitbook/assets/image%20%2825%29.png)
+![&#xBC94;&#xC704;&#xAC00; &#xC7A1;&#xD788;&#xC9C0; &#xC54A;&#xB294; &#xAC80;&#xC0C9;&#xC5B4;&#xC758; &#xC870;&#xC0C1;&#xB4E4;](../../.gitbook/assets/image%20%2827%29.png)
 
 두 검색어 모두 a.ah\_a, 그 부모 li.ah\_item, 그 부모 ul.ah\_l을 공유하고 있습니다.
 
@@ -66,11 +66,11 @@ span.ah\_r 은 순위를 의미하는 것 같습니다. 20위까지 도달했으
 
 한번 더 올라가면 div.ah\_roll\_area와 div.ah\_list로 드디어 달라지는 것을 볼 수 있습니다.
 
-![ah\_roll\_area](../../.gitbook/assets/image%20%28197%29.png)
+![ah\_roll\_area](../../.gitbook/assets/image%20%28207%29.png)
 
 roll\_area라고 하는 것을 보니 리스트가 돌아가며 하나씩 표시되는 전광판 형태를 의미한 클래스인 것 같습니다.
 
-![](../../.gitbook/assets/image%20%28208%29.png)
+![](../../.gitbook/assets/image%20%28218%29.png)
 
 그런데 구조를 파악하며 깨달으셨을 수도 있지만, 이 영역에서는 20위 검색어 다음에 1위 검색어가 한 번 더 나옵니다.
 
