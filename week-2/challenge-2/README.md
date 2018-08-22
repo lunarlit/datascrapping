@@ -2,42 +2,19 @@
 
 ## 도전과제 2
 
-Stage 4에서는 네이버 TOP 100의 4위 이하 클립 정보들을 불러와 보았고, 그 중 첫번째인 4위 클립의 제목을 출력해보았습니다.
-
-다음으로 4 ~ 8 위 클립들의 제목, 채널명, 재생 수를 출력해보세요.
-
-\(div.cds는 4~100위의 클립을 가지고 있으므로 0번째가 4위입니다!\)
-
-![](../../.gitbook/assets/image%20%2886%29.png)
-
-출력 형식은 "클립명 / 채널명 / 재생 수" 입니다.
-
-![2018&#xB144; 6&#xC6D4; 19&#xC77C;&#xC758; &#xACB0;&#xACFC;&#xB294; &#xC774;&#xB807;&#xC2B5;&#xB2C8;&#xB2E4;.](../../.gitbook/assets/image%20%2866%29.png)
-
-
-
-아래 코드에서 시작하세요.
-
 ```python
-import requests
-from bs4 import BeautifulSoup
-
-req = requests.get('https://tv.naver.com/r/')
-
-raw = req.text
-
-html = BeautifulSoup(raw, 'html.parser')
-
-infos = html.select('div.cds')
+ace_of_teams = ['JUV : Ronaldo', 'CHE : Hazard', 'LIV : Salah', 'MNU : Pogba', 'INT : Icardi', 'BCN : Suarez', 'RMD : Modric']
+podium = []
 ```
+
+위와 같은 데이터가 준비되어 있습니다. 오늘 배운 함수들을 종합적으로 사용하여 결과가 다음과 같이 출력되도록 만드세요.
+과정은 직접 생각하셔야 합니다!
 
 
 
 ### Self Hint
 
-1. 먼저 4위 클립의 정보부터 모두 출력해봅시다. 채널명, 재생 수의 데이터 경로를 찾아보세요.
-2. 형식에 맞게 출력하려면 print\(\) 함수를 어떻게 사용해야 할까요?
-3. 5 ~ 8위 클립을 출력하려면 어떤 숫자를 어떻게 바꿔야 할까요?
-
-
-
+1. '팀명 : 선수명'의 텍스트에서 팀명을 제거하려면 어떤 함수를 사용해야 할까요?
+2. 대문자로 바꾸려면 어떤 함수를 사용해야 할까요?
+3. podium 리스트는 내용이 없는 빈 리스트입니다. 편집한 텍스트를 여기에 추가하려면 어떻게 할까요?
+4. 출력 결과의 순서가 예시와 다르지는 않나요? 원인을 찾아 수정해보세요!
