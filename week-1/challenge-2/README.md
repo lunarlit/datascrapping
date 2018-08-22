@@ -11,17 +11,17 @@
 
 ![](../../.gitbook/assets/image-15.png)
 
-여러분은 스타트업 개발자 뉴스레터의 신입 기자입니다. 해외 업계 동향을 파악하기 위해[https://news.ycombinator.com](https://news.ycombinator.com/)[/](https://news.ycombinator.com/) 에서 위 사진에 파랗게 표시된 기사 제목의 경로를 찾아보세요.
+여러분은 스타트업 개발자 뉴스레터의 신입 기자입니다. 해외 업계 동향을 파악하기 위해[https://news.ycombinator.com](https://news.ycombinator.com/)[/](https://news.ycombinator.com/) 에서 위 사진에 파랗게 표시된 기사 제목의 경로를 찾아보세요. 그 선택자 경로로 다른 모든 기사 제목을 가져올 수 있어야 합니다.
 
 ## 2. 난이도 中
 
 ![](../../.gitbook/assets/image-9.png)
 
-여러분은 카카오 입사를 준비하는 취업준비생입니다. 카카오 개발팀에서 많이 쓰는 기술을 알아보기 위해 [http://tech.kakao.com](http://tech.kakao.com/)[/](http://tech.kakao.com/) 에서 위 사진에 파랗게 표시된 태그들의 경로를 찾아보세요.
+여러분은 카카오 입사를 준비하는 취업준비생입니다. 카카오 개발팀에서 많이 쓰는 기술을 알아보기 위해 [http://tech.kakao.com](http://tech.kakao.com/)[/](http://tech.kakao.com/) 에서 위 사진에 파랗게 표시된 태그의 경로를 찾아보세요. 그 선택자 경로로 다른 모든 태그를을 가져올 수 있어야 합니다.
 
 ## 3. 난이도 上
 
 ![](../../.gitbook/assets/image-34.png)
 
-여러분은 빅데이터를 이용해 주식 투자를 해보려는 투자자입니다. 대세 종목의 동향을 파악하기 위해 [http://](http://finance.naver.com/sise/lastsearch2.nhn)[finance.naver.com/sise/lastsearch2.nhn](http://finance.naver.com/sise/lastsearch2.nhn) 에서 위 사진에 파랗게 표시된 종목명들의 경로를 찾아보세요.
+여러분은 빅데이터를 이용해 주식 투자를 해보려는 투자자입니다. 대세 종목의 동향을 파악하기 위해 [http://](http://finance.naver.com/sise/lastsearch2.nhn)[finance.naver.com/sise/lastsearch2.nhn](http://finance.naver.com/sise/lastsearch2.nhn) 에서 위 사진에 파랗게 표시된 종목명의 경로를 찾아보세요. 그 선택자 경로로 다른 모든 종목명을 가져올 수 있어야 합니다.
 
