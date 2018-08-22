@@ -1,278 +1,236 @@
-# Stage 2 - 정보를 의미있게 가공해보자
+# Stage 2 - 가져온 문서에서 데이터를 추출해보자
 
-두 번째 스테이지에서는 준비된 클립별 정보를 취합하여 채널별로 정리합니다.
+이번 스테이지에서는 방금 가져온 HTML 문서에서 1주차에 배운 선택자 경로를 활용하여 의미를 갖는 데이터를 추출해 볼 것입니다.
 
-이는 네이버TV TOP100 페이지에서 제공되지 않는 정보입니다.
+이 과정에서 2주차에 학습했던 파이썬 문법들이 사용됩니다.
 
-데이터 수집 클래스이긴 하지만, 수집한 데이터를 다시 손으로 정리해야 한다면 반쪽짜리 도움밖에 되지 않는 것이기 때문에 이러한 내용도 다루게 되었습니다.
-
-데이터 분석 이론을 다루는 것은 아니지만, 여기에서 다루는 문법들을 손에 익힌다면 다른 이론의 적용은 쉬워질 것입니다.
-
-## 목표 설정 및 설계
-
-![](../.gitbook/assets/image%20%2840%29.png)
-
-현재 데이터는 클립별로 배열에 들어있습니다. 우리는 TV 트렌드 분석 업무를 하고 있는 상황이며, 클립별 데이터를 가공하여 프로그램의 인기도를 알아보려 합니다.
-
-따라서 클립별 데이터를 채널별로 모아야 합니다.
-
-![](../.gitbook/assets/image%20%2893%29.png)
-
-현재 만들어내려는 데이터의 모습입니다.
-
-TOP 100의 클립 데이터 중 같은 채널끼리 모아 조회수, 좋아요 수를 더하는 것입니다.
+2주 동안 잘 따라오셨다면 어렵지 않을 거에요. 그럼 첫번째 데이터 추출을 위해 출발!
 
 
-
-만들어진 데이터의 형태는 어떨까요?
-
-우리가 지금 알고있는, 연관된 데이터끼리 모을 수 있는 구조는 **"배열"** 입니다.
-
-배열을 이용해 위 데이터를 표현해보기로 합니다.
-
-![](../.gitbook/assets/image%20%28177%29.png)
-
-3개의 배열 channels, hits, likes를 가지고 있고 각각 채널명, 총 채널 조회수, 총 채널 좋아요 수를 가지고 있습니다.
-
-각 배열의 같은 번호를 조회하면 한 채널의 정보를 모두 얻을 수 있습니다.
-
-channels\[0\], hits\[0\], likes\[0\]을 출력하면 채널명이 '인형의 집' 이라는 것과 '인형의 집' 의 총 조회 수가 25803, 총 좋아요 수가 80이라는 것을 알 수 있겠네요.
-
-그럼 구현을 시작해 봅시다!
-
-
-
-## 배열에 새 값 추가하기
-
-먼저 세 배열 channels, hits, likes는 빈 배열에서 시작합니다.
+## BeautifulSoup 라이브러리를 사용해보자!
 
 ```python
-channels = []
-hits = []
-likes = []
+import requests
+from bs4 import BeautifulSoup
 ```
 
-빈 배열은 이렇게 \[ \] 안에 아무것도 넣지 않으면 됩니다.
+최상단의 import requests 아래에 BeautifulSoup을 불러오는 코드를 작성해줍니다.
+
+그런데 모양이 조금 다르죠?
+
+Stage 3에서 설치한 BeautifulSoup4 라이브러리의 변수명은 bs4이고, 이는 requests와 달리 여러 클래스들을 포함하고 있습니다.
+
+우리가 사용할 것은 그 여러 클래스 중 BeautifulSoup 뿐이라 bs4 중 BeautifulSoup 만 불러오겠다는 의미입니다.
 
 
+
+### 소스 코드를 살아있는 HTML로 만들기
 
 ```python
-for info in infos:
-    chn = info.select_one('dd.chn > a').text
-    hit = int(info.select_one('span.hit').text[4:].replace(',', ''))
-    like = int(info.select_one('span.like').text[5:].replace(',', ''))
+req = requests.get('https://tv.naver.com/r/')
+raw = req.text
 
-    channels.append(chn)
-    hits.append(hit)
-    likes.append(like)
+html = BeautifulSoup(raw, 'html.parser')
 ```
 
-그리고 infos를 처리하는 과정에서 얻어진 클립 정보를 준비한 세 배열에 각각 밀어넣으면 됩니다.  
-\(클립명은 더 이상 필요하지 않게 되었네요. Adios...\)
+다음으로 전체 HTML 문서는 한번 확인했으니 print 하는 코드를 지우고,  
+4번째 줄을 추가해줍니다.
 
-.append\(\) 는 배열 클래스에 내장된 함수로, 해당 배열에 매개 변수로 전달된 값 하나를 삽입합니다.
+BeautifulSoup 이라는 함수에 HTML 문서 텍스트를 담고있는 raw 변수와 또 다른 문자열을 전달했습니다.
+
+
+
+![](../.gitbook/assets/image%20%28219%29.png)
+
+requests로 가져온 텍스트는 사실 HTML 문서가 아닙니다.
+
+정확히 말하면 내용은 HTML 문서가 맞지만, String 타입의 일반적인 텍스트에 불과합니다.
+
+따라서 .strip\(\)이나 .replace\(\)와 같은 함수는 적용할 수 있지만, 내용 안의 태그명이나 클래스, ID 등이 의미를 갖지 않는 단순한 텍스트입니다.
+
+BeautifulSoup이라는 라이브러리는 이러한 String 클래스의 값을, 살아있는 HTML 문서로 바꾸어 줍니다.
+따라서 위 코드의 결과로 얻어진 html 이라는 변수는 태그 하나, 클래스 하나하나가 실제 웹페이지와 같은 의미를 가지고 있습니다.
+
+대신 html.strip\(\) 같은 텍스트 클래스 함수는 사용하지 못하겠죠?
+
+이렇게 변경된 HTML 클래스 변수의 기능을 사용해보면 의미가 명확해질 것입니다.
+
+
+
+### HTML 문서에서 필요한 요소만 선택하기
+
+```python
+infos = html.select('div.cds')
+```
+
+맨 아래에 위와 같은 코드를 입력해주세요.
+
+'div.cds' 라는 선택자 기억나시나요?
+
+1주차 스터디를 잘 들으신 분은 **"cds 클래스를 가진 div 태그"** 라는 것을 기억하실테고, 기억력이 좋으신 분들은 이 선택자가 네이버TV TOP100의 클립 하나하나의 정보를 담고있다는 사실까지 기억하실 겁니다.
+
+기억이 잘 나지 않으신다면 꼭 1주차의 Stage 4를 복습하고 오세요!
+
+{% page-ref page="../week-1/stage-4.md" %}
+
+
+
+![](../.gitbook/assets/image%20%28203%29.png)
+
+여기있는 클립 하나하나가 div.cds에 담겨있습니다.
+
+
+
+우리의 최종 목표는 클립의 제목, 채널명, 조회수, 좋아요 수를 가져오는 것이지만, 응집성을 고려하여 먼저 클립 전체 정보 HTML을 거점으로 하여 수집하기로 했었습니다.
+
+바로 여기서 이 클립 전체 정보를 가져오겠습니다.
+
+html.select\(\) 함수를 사용하면, html 변수에 담긴 HTML 문서 안에서 입력된 선택자를 갖는 요소를 리스트 타입으로 모두 가져옵니다.
+
+```python
+infos = html.select('div.cds')
+```
+
+![](../.gitbook/assets/image%20%2825%29.png)
 
 {% hint style="info" %}
-여러 개를 한번에 삽입하려면 다른 함수를 사용하여야 합니다.  
-여기서는 필요하지 않은 기능이지만 관심이 있으시다면  
-[https://wikidocs.net/14\#extend](https://wikidocs.net/14#extend) 를 참고해주세요.
+HTML변수.select\('선택자'\) 의 결과는 여러 요소가 존재할 경우를 상정하여 결과를 항상 리스트로 돌려줍니다!
+
+결과가 하나뿐이어도 크기가 1인 리스트에 담아 돌려주니, 리스트가 아닌 요소를 찾을 때에는 아래에서 소개할 select\_one\(\) 함수를 쓰는 것이 좋습니다.
 {% endhint %}
 
 
 
-이렇게 얻은 결과를 확인해봅시다.
+### 선택된 요소 뜯어보기
+
+이 정보들 중 하나를 출력해볼까요?
 
 ```python
-print(channels)
-print(hits)
-print(likes)
+print(infos[0])
 ```
 
+리스트에 담긴 첫번째 값을 출력해보겠습니다.
 
+![](../.gitbook/assets/image%20%2857%29.png)
 
-이러한 구조를 사용하면 infos에 담긴 모든 클립 정보를 처리할 때 다음과 같은 과정을 거칠 것입니다.
-
-![TOP 100&#xC740; &#xD56D;&#xC0C1; &#xBCC0;&#xD558;&#xAE30;&#xC5D0; &#xB370;&#xC774;&#xD130; &#xC790;&#xCCB4;&#xB294; &#xB2E4;&#xB97C; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.](../.gitbook/assets/image%20%2880%29.png)
-
-데이터의 형태는 원하는대로 구성된 것 같습니다.
-
-그런데 채널명이 같은 데이터가 여럿 보이네요. 모든 클립 정보를 무작정 추가했기 때문입니다.
-
-![](../.gitbook/assets/image%20%28182%29.png)
-
-이 두 데이터는 배열의 다른 번호에 저장되는 것이 아니라, 한 번호의 값에 합쳐져야 합니다.
+{% hint style="info" %}
+가독성을 위해 불필요한 정보를 많이 생략하였으며, 색을 입혔습니다.  
+실제 결과창에는 훨씬 읽기 어려운 단색의 텍스트가 나올 것입니다.  
+내용도 TOP 100이 계속 변하기 때문에 다를 것입니다.
+{% endhint %}
 
 
 
-## 조건문 if에 대해 배워보자
+리스트 infos의 첫 번째 값인 info\[0\]은 위와 같은 정보를 담고 있었습니다.
+1주차 Stage 4에서 크롬 개발자 도구를 통해 확인한 실제 클립 정보와 같죠?
+그리고 목표하고 있는 클립 제목에 점점 더 가까워지고 있습니다.
 
-그렇다면 for문에서 새로 처리할 클립이 들어왔을 때 두 가지 경우가 생깁니다.
 
-1. 이미 배열에 해당 채널의 정보가 있는 상황이라면 - 해당 번호에 조회수와 좋아요 수를 더한다.
-2. 배열에 해당 채널의 정보가 없다면 - 채널명, 조회수, 좋아요 수를 각 배열에 추가한다.
 
-이렇게 현재 상태에 따라 다른 코드를 실행해야 하는 경우 조건문 if가 사용됩니다.
+다시 **print\(infos\[0\]\) 코드를 삭제**하고 더 깊게 들어가봅시다.
+
+
+
+### 최종 목표값 추출하기
 
 ```python
-if 채널이 channels에 존재하면:
-    hits의 해당 부분에 hit 더하기
-    likes의 해당 부분에 like 더하기
+clip1 = infos[0]
+clip1_title = clip1.select_one('dt.title tooltip')
+print(clip1_title)
 ```
 
-for문과 비슷한 구조로 이루어져 있네요. if 다음에 등장하는 조건이 만족될 때에만 들여쓰기한 부분의 코드가 실행됩니다.
+방금 보았던 infos\[0\]의 정보를 clip1 변수에 담았습니다.
 
-사용되는 조건은 **"참"** 혹은 **"거짓"** 둘 중 하나가 되는 문장이어야 합니다.
+이 clip1 역시 HTML 문서이기 때문에 .select\_one\(\) 을 호출할 수 있습니다.
 
-사용할 수 있는 문장은 다음과 같습니다.
+{% hint style="info" %}
+select\_one\(\) 함수는 select\(\) 함수와 마찬가지로 HTML 요소 내에서 매개변수로 전달된 선택자를 갖는 요소를 찾아줍니다.
 
-### 같음 비교 문장
+다른 점은 여러 개가 존재할 수 있는 요소도 맨 처음 나오는 하나만 돌려준다는 것입니다!
 
-어떤 변수나 값이 조건과 일치할 때를 검사합니다.
+따라서 클립 정보 리스트와 같이 여러 개를 가져와야 할 경우는 select\(\) 함수, 클립 내의 제목같이 하나만 존재하는 값을 가져올때는 select\_one\(\) 함수를 쓰는 것이 좋습니다.
+{% endhint %}
+
+
+
+클립 제목에 도달할 수 있는 선택자 경로인 'tooltip' 을 사용하여 제목을 추출합니다.
+
+이 결과값을 clip1\_title이라는 변수에 저장하고 출력해보았습니다.
+
+![](../.gitbook/assets/image%20%2870%29.png)
+
+결과는 위와 같습니다.
+
+클립 제목을 담고 있는 tooltip 태그를 성공적으로 추출하였습니다!
+
+
+
+그런데 데이터로서 사용하려면 태그는 필요가 없겠죠? HTML 값에 .text 로 접근하면, 태그를 제외하고 담고 있는 텍스트만 얻을 수 있습니다.
 
 ```python
-a = 1
-b = 2
-
-if a == 1:
-    print('a가 같다') 
-    
-if b == 1:
-    print('b가 같다')
+print(clip1_title.text)
 ```
 
-### 다름 비교 문장
+출력 코드를 위와 같이 바꿔주면
 
-어떤 변수나 값이 조건과 다를 때를 검사합니다.
+![](../.gitbook/assets/image%20%2869%29.png)
+
+드디어 원하는 데이터만을 추출하는 데에 성공했습니다. 짝짝짝!
+
+
 
 ```python
-a = '코알라'
-b = '파이썬'
-
-if a != '파이썬':
-    print('a가 다르다')
-if b != '파이썬':
-    print('b가 다르다')
+infos = html.select('div.cds')
+clip1 = infos[0]
+clip1_title = clip1.select_one('dt.title tooltip')
+print(clip1_title)
 ```
 
-### 종속 비교 문장
-
-어떤 변수나 값이 배열 안에 들어있는지 / 들어있지 않은지 검사합니다.
+html 이후의 코드는 위와 같은데, 설명을 위해 불필요한 변수가 많이 생겼습니다.
 
 ```python
-arr = [1, 3, 5, 7, 9]
-
-if 1 in arr:
-    print('1이 있다')
-
-if 2 not in arr:
-    print('2가 없다')
+print(infos[0].select_one('dt.title tooltip').text)
 ```
 
+이렇게 체이닝을 이용해 한줄로 표현해도 동일한 출력 결과를 얻을 수 있습니다.
+
+이처럼 한번만 사용하고 말 변수는 가독성이 심하게 떨어지지 않는다면 만들지 않는 것이 좋습니다.
 
 
-여기서는 channels 배열에 현재 조사중인 클립의 채널이 들어있는지 검사하여야 하기 때문에 종속 비교 문장을 사용합니다.
+
+이제 기존에 준비했던 선택자 경로들을 이용해서 나머지 정보들도 추출해봅시다.
+
+
+```python
+print(clip1.select_one('tooltip').text)
+print(clip1.select_one('dd.chn > a').text)
+print(clip1.select_one('span.hit').text)
+print(clip1.select_one('span.like').text)
+```
+
+clip1이 div.cds 선택자를 갖는 HTML이기 때문에, 서브 선택자 경로들은 div.cds 의 자손부터 작성하면 됩니다.
+
+
+
+
+한 클립의 정보를 모두 추출해 보았으니 마지막으로 for 문을 사용하여 모든 클립의 정보를 추출해 보겠습니다.
 
 ```python
 for info in infos:
-    chn = info.select('dd.chn > a')[0].text
-    hit = int(info.select('span.hit')[0].text[4:].replace(',', ''))
-    like = int(info.select('span.like')[0].text[5:].replace(',', ''))
+    title = info.select_one('tooltip').text
+    chn = info.select_one('dd.chn > a').text
+    hit = info.select_one('span.hit').text
+    like = info.select_one('span.like').text
 
-    if chn in channels:
-        idx = channels.index(chn)
-        hits[idx] = hits[idx] + hit
-        likes[idx] = likes[idx] + like
+    print(chn, '/', title, '/', hit, '/', like)
 ```
 
-채널명 chn이 배열 channels에 들어있는 경우를 처리합니다.
+infos = html.select('div.cds') 를 실행하면, 'div.cds' 선택자를 갖는 모든 HTML 요소가 infos에 리스트로 들어오게 됩니다.
 
-.index\( \) 함수는 배열 클래스에 내장된 함수로, 매개변수로 전달된 값의 번호를 돌려줍니다.
+즉, for문을 사용해 리스트의 각 클립 HTML에 반복하여 명령을 내릴 수 있게 된다는 뜻입니다.
 
-이 번호를 이용해 hits 배열과 likes 배열의 해당 부분을 수정할 수 있습니다.
+각 값이 어떤 의미인지는 알아야 나중에 사용이 편하므로 먼저 데이터를 추출해 title, chn, hit, like 라는 변수에 넣어두고, print 함수를 이용해 한번에 출력해보도록 합시다.
 
-이제 새로 들어온 클립의 채널 정보가 존재하지 않을 때도 처리해 봅시다.
+![](../.gitbook/assets/image%20%28157%29.png)
 
-
-
-
-
-```python
-if chn in channels: # 만약 channels 배열에 chn이 들어있으면
-    ...
-
-else:               # 들어있지 않으면 
-    channels.append(chn)
-    hits.append(hit)
-    likes.append(like)
-```
-
-else는 "만약 그렇지 않다면" 이라는 뜻으로, if문과 짝을 이루어 사용합니다.
-
-if문이 실행되지 않는 조건일 경우, 아래의 else 문이 실행됩니다.  
-\(else문이 항상 있어야 하는 것은 아닙니다. else 문이 없으면 아무것도 실행되지 않습니다.\)
-
-채널 정보가 없는 경우 처음에 했던대로 그냥 새로 추가하기만 하면 됩니다.
-
-
-
-이제 결과를 출력해봅시다.
-
-.index\( \) 함수를 사용할 수 있으니 다음과 같이 보기 좋게 출력하는 것이 가능합니다.
-
-```python
-for channel in channels:
-    idx = channels.index(channel)
-    print(channel, '/', hits[idx], '/', likes[idx])
-```
-
-세 배열을 따로 출력하는 것이 아니라, 같은 번호끼리 묶어 출력하게 됩니다. 서로 길이가 달라 불편했던 기존 출력방식보다 훨씬 보기 좋습니다.
-
-![](../.gitbook/assets/image%20%28164%29.png)
-
-그런데 출력 결과가 이게 뭐죠? 숫자가 이렇게 클 수가 있나요? 온 우주의 생명체가 모두 좋아요를 눌러도 이만큼은 안나올텐데요.
-
-
-
-## 타입 변환
-
-다음 예를 한 번 봅시다.
-
-```python
-print('20' + '40')
-print(20 + 40)
-```
-
-![](../.gitbook/assets/image%20%28222%29.png)
-
-아하! 문자열 타입의 숫자는 더하면 그냥 연결된 결과가 나오는군요.
-
-그렇다면 우리의 저 어마어마한 결과값 역시 이런 오류때문에 나온 거라고 추측해볼 수 있겠습니다. 
-
-실제로 HTML 문서의 모든 값은 문자열\(String\) 입니다. 
-
-앞에 붙은 "조회수" 같은 글자를 떼거나 중간의 쉼표를 제거하는 작업도 해주었지만, 자동으로 숫자로 변하지는 않는 것이죠.
-
-```text
-print(int('20') + int('40'))
-```
-
-문자열 타입의 숫자는 int\(\) 라는 내장함수를 사용해 간단히 실제 숫자로 바꾸어줄 수 있습니다.   
-\(integer\[정수\] 의 약자입니다.\) 
-
-단, 순수한 숫자만을 포함하지 않은 문자열을 매개변수로 쓸 경우 오류가 생깁니다. 쉼표도 안됩니다!
-
-
-
-```python
-hit = int(info.select('span.hit')[0].text[4:].replace(',', ''))
-like = int(info.select('span.like')[0].text[5:].replace(',', ''))
-```
-
-이제 hit과 like를 구할 때 숫자로 변환해 준다면 모든 문제가 해결될 것 같습니다.
-
-![](../.gitbook/assets/image%20%28154%29.png)
-
-이제 정상적으로 결과가 나오는 것을 볼 수 있습니다. 
-
-복면가왕이나 뮤직뱅크의 조회수는 오류가 아닌가 싶기도 하지만 실제 값이 맞습니다!
-
+멋지군요! 여러분은 이제 막 데이터 수집가가 되셨습니다.

@@ -226,3 +226,58 @@ f = open(filename + '.csv', 'w')
 
 이럴 경우 시간, 분, 초 단위까지 필요에 따라 활용해서 파일명을 변경해야겠습니다.\)
 
+
+
+
+
+
+
+
+
+## Dictionary를 소개합니다
+
+그런데 다음과 같은 데이터 구조가 있다면 어떨까요?
+
+![](../.gitbook/assets/image%20%2827%29.png)
+
+배열과 달리 값에 번호가 아닌 이름표가 붙어있습니다.
+
+저장되는 데이터가 약간 늘어나긴 하지만, 코드를 쉽게 이해할 수 있게 된다는 것은 비교할 수 없는 장점입니다.
+
+이렇게 { } 로 둘러싸여 있으며, 내부 요소가 '이름' : 값 으로 구성된 집합을 **Dictionary** 라고 합니다.
+
+아래와 같이 사용할 수 있습니다.
+
+```python
+people = {'korean': 380, 'american': 42, 'japanese': 15}
+
+print(people)
+print(people['korean'])
+
+people['american'] = 63
+
+print(people['american'])
+print(people['japanese'])
+```
+
+![](../.gitbook/assets/image%20%28191%29.png)
+
+{ } 안에 '이름': 값 의 형태로 요소들을 집어넣어 만들 수 있습니다.
+
+배열에서와 마찬가지로 \[ \] 를 사용하지만 안에 번호 대신 이름을 넣어 값을 찾아오거나 수정할 수 있습니다.
+
+
+
+```python
+members = {}
+
+members['datascrap'] = 18
+members['web'] = 24
+members['python'] = 12
+
+print(members)
+```
+
+![](../.gitbook/assets/image%20%2858%29.png)
+
+빈 Dictionary는 { } 로 만들 수 있으며 현재 이름이 존재하지 않더라도 \[ \] 를 사용해 쉽게 새 값을 추가할 수 있습니다.

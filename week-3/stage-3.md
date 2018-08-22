@@ -1,242 +1,164 @@
-# Stage 3 - 정보를 효과적으로 가공해보자
+# Stage 3 - 다른 웹페이지에도 응용해보자
 
-세 번째 스테이지에서는 배열과 다른 방식으로 데이터를 모아서 저장하는 Dictionary에 대해 집중적으로 알아볼 것입니다.
+데이터 수집 클래스에서 가장 중요한 것은 당연히 데이터 수집입니다. 그리고 여러분은 방금 데이터 수집하는 법을 배웠습니다.
 
-많은 데이터를 다뤄야 하는 데이터 수집에서는 적절한 데이터 구조를 선택하는 것이 속도에 많은 영향을 미칩니다.
+데이터 수집을 제대로 익혀두지 않으면 앞으로 어떤 화려한 가공이나 활용 방식을 배워도 쓸모가 없습니다.
 
-배열에서 사용하는 번호가 아니라 인터넷 계정의 ID와 비슷한 **"키 값"** 을 이용해 데이터를 저장하는 Dictionary를 사용하여 프로그램을 개선해 보겠습니다.
-
-
-
-## 데이터 응집의 필요성
-
-![](../.gitbook/assets/image%20%28122%29.png)
-
-스테이지 2에서 사용했던 3개의 배열 구조입니다.
-
-이를 이용해 만족스러운 결과를 도출하긴 했지만, 사실 우리의 목적에 가장 적합한 구조는 아닙니다.
-
-```python
-if chn in channels:
-    idx = channels.index(chn)
-    hits[idx] = hits[idx] + hit
-    likes[idx] = likes[idx] + like
-```
-
-세 개의 배열의 같은 번호에 접근하기 위해 위와 같은 코드를 사용했었습니다. 
-
-하지만 이는 각 배열의 길이가 같고 모두 제 위치에 있는 것이 보장될 때만 유효한 코드입니다. 
-
-현재는 단순한 데이터를 수집하고 있기 때문에 크기나 순서에 오류가 생길 일은 없지만, 하나라도 값이 밀린다면 전체 정보가 틀어지게 됩니다.
-
-그리고 지금은 채널마다 두 개의 추가 정보만 가지고 있지만, 유지해야 할 정보가 늘어날수록 이 취약점은 급격히 위험도가 올라가게 됩니다.
+그렇기 때문에 다시 한 번 다른 페이지를 통해 데이터 최초 수집의 흐름을 다져보겠습니다.
 
 
+## 네이버 뉴스 수집 시작!
 
-또 다른 문제도 있습니다. 채널 정보를 조회수 순으로 정렬할 필요가 생겼다고 해봅시다.
+이번에는 네이버 검색, 그 중에서도 뉴스 검색을 수집해 볼텐데요.
 
-![hits &#xBC30;&#xC5F4;&#xC774; &#xC815;&#xB82C;&#xB41C; &#xC0C1;&#xD0DC;&#xC785;&#xB2C8;&#xB2E4;.](../.gitbook/assets/image%20%28185%29.png)
+![](../.gitbook/assets/image%20%28174%29.png)
 
-파이썬에 제공하는 정렬 함수를 이용해 숫자 배열 하나를 정렬하는 것은 매우 쉽습니다.   
-\(Stage 4에서 다룹니다.\)
-
-하지만 나머지 두 개의 배열도 따라서 정렬하는 것은 굉장히 어려운 문제로 이어집니다.
+먼저 어떤 키워드로 뉴스를 검색해서 나오는 기사들을 단순히 수집하려고 합니다.
 
 
+https://search.naver.com/search.naver?where=news&query=아시안게임
 
-한 채널의 정보들을 묶어서 저장할 수 있다면 문제들을 해결할 수 있을텐데요.
-
-다음은 배열 안에 배열도 넣을 수 있다는 점을 이용하여 이중 배열로 구성한 형태입니다.
-
-![&#xC57D;&#xC810;&#xC774; &#xBA85;&#xBC31;&#xD558;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xAD73;&#xC774; &#xAD6C;&#xD604;&#xD574;&#xBCF4;&#xC9C0;&#xB294; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.](../.gitbook/assets/image%20%28186%29.png)
-
-이 경우 한 번의 배열 접근으로 한 채널의 조회수와 좋아요 수를 모두 불러올 수 있습니다.
-
-![](../.gitbook/assets/image%20%282%29.png)
-
-하지만 내부 배열의 0번이 조회수, 1번이 좋아요라는 것을 어딘가에 기록해둬야만 하죠.
-
-코드의 명확성과 가독성을 해치는 일입니다.
-
-
-
-## Dictionary를 소개합니다
-
-그런데 다음과 같은 데이터 구조가 있다면 어떨까요?
-
-![](../.gitbook/assets/image%20%2827%29.png)
-
-배열과 달리 값에 번호가 아닌 이름표가 붙어있습니다.
-
-저장되는 데이터가 약간 늘어나긴 하지만, 코드를 쉽게 이해할 수 있게 된다는 것은 비교할 수 없는 장점입니다.
-
-이렇게 { } 로 둘러싸여 있으며, 내부 요소가 '이름' : 값 으로 구성된 집합을 **Dictionary** 라고 합니다.
-
-아래와 같이 사용할 수 있습니다.
-
-```python
-people = {'korean': 380, 'american': 42, 'japanese': 15}
-
-print(people)
-print(people['korean'])
-
-people['american'] = 63
-
-print(people['american'])
-print(people['japanese'])
-```
-
-![](../.gitbook/assets/image%20%28191%29.png)
-
-{ } 안에 '이름': 값 의 형태로 요소들을 집어넣어 만들 수 있습니다.
-
-배열에서와 마찬가지로 \[ \] 를 사용하지만 안에 번호 대신 이름을 넣어 값을 찾아오거나 수정할 수 있습니다.
-
+검색창에 '아시안게임'을 검색했을 떄의 뉴스 화면 주소입니다. (실제 인터넷 창에서 접속한 것과 조금 다를 수도 있습니다.)
 
 
 ```python
-members = {}
+import requests
+from bs4 import BeautifulSoup
 
-members['datascrap'] = 18
-members['web'] = 24
-members['python'] = 12
-
-print(members)
+raw = requests.get('https://search.naver.com/search.naver?&where=news&query=아시안게임').text
+html = BeautifulSoup(raw, 'html.parser')
 ```
 
-![](../.gitbook/assets/image%20%2858%29.png)
+HTML 페이지를 요청하고 HTML 코드를 받아와 텍스트 타입에서 HTML 타입으로 바꾸는 작업은 항상 동일합니다.
 
-빈 Dictionary는 { } 로 만들 수 있으며 현재 이름이 존재하지 않더라도 \[ \] 를 사용해 쉽게 새 값을 추가할 수 있습니다.
+그런데 가져온 html 데이터를 출력해보면
+
+사용 중이신 PC 또는 네트워크에서 네이버의 안정적인 검색 서비스를 방해하는 내용이 감지되었습니다. 네이버는 안정적인 검색 서비스를 제공하고자, 검색 서비스를 방해하는 비정상적인 움직임이 발견될 시 시스템에 의해 해당 네트워크의 검색을 일시적으로 제한하고 있습니다. 보안 절차를 통과하면 검색 서비스를 정상적으로 이용하실 수 있습니다. 보안 절차를 통과하려면 [제한 해제] 버튼을 클릭하세요.
+※ "비정상적인 검색"이란? : 프로그램등을 이용, 특정 단어를 반복적으로 대량으로 입력하는 등 네이버 검색 서비스의 안정성을 방해하는 검색 패턴을 의미합니다. 
+
+뉴스 기사 데이터는 없고 위와 같은 경고 메시지만 발견할 수 있습니다.
+
+
+## 안티 크롤링 (Anti-crawling)
+
+[사진]
+
+데이터는 기업의 자산이기 때문에 여러 방법으로 수집을 방해하려 합니다.
+이는 데이터수집에 어느정도 익숙해졌을 경우에도 종종 어려움의 원인이 됩니다.
+이럴 경우 미리 여러가지 우회 방법을 습득하고 있다가 하나씩 시도해보아야 합니다.
+
+인터넷 공간은 공용 공개가 약속된 곳이기 때문에 데이터 수집 자체가 위법인 것은 아닙니다.
+그러나 아래 기사와 같은 부정경쟁 수단으로 사용해서는 안될 것입니다.
+
+[링크]
+[판결] ‘웹사이트 무단 크롤링’ 소송… 잡코리아, 사람인에 승소
 
 
 
-## 데이터 수집에 응용
+## 안티 - 안티 크롤링
 
-이제 hits와 likes 배열을 Dictionary를 이용해 meta 라는 하나의 배열로 합칠 수 있습니다.  
-\(metadata 는 프로그래밍 세계에서 "정보에 대한 정보" 라는 뜻으로 사용됩니다.\)
+[사진]
 
-![](../.gitbook/assets/image%20%2876%29.png)
+우리가 사용하는 인터넷 브라우저들은 웹 페이지 접속 시 브라우저의 정보를 담아 보냅니다.
+
+네이버 뉴스에서 우리의 접속 요청을 프로그램으로 판단한 이유는 이 브라우저 정보가 없었기 때문입니다.
 
 ```python
-meta = []
+raw = requests.get('https://search.naver.com/search.naver?&where=news&query=아시안게임', headers={'User-Agent': 'Mozilla/5.0'}).text
 ```
 
-먼저 hits와 likes 배열 정의를 지우고 meta라는 하나의 배열로 바꿉니다.
+requests.get 함수에 headers={'User-Agent': 'Mozilla/5.0'} 라는 부분을 추가합니다. 파이어폭스 브라우저가 보내는 브라우저 정보를 우리 요청에 똑같이 삽입하는 것입니다. 이제 우리의 요청은 파이어폭스 브라우저 접속 요청과 같습니다.
 
+
+
+## 선택자 경로 어게인
+
+지겨우실 수도 있겠지만, 선택자 경로 선정이야말로 최초 데이터 수집에서도 가장 중요한 부분입니다.
+
+코드야 기억이 안나면 베껴 쓰면 그만이지만, 선택자 경로는 웹페이지마다, 수집하려는 데이터마다 다르기 때문입니다.
+
+
+[사진]
+
+F12를 눌러 개발자 도구를 열고, 기사 제목에서 검사를 눌러 기사 제목의 HTML 위치를 찾습니다.
+
+
+
+[사진]
+
+부모 HTML 요소로 거슬러 올라가며 기사 전체를 커버하는 HTML 요소를 찾습니다.
+추후 이 수집기를 응용하여 언론사, 요약 내용, 연관 뉴스 등을 검색해야 할 수도 있기 때문에, 최소의미단위를 기사 제목이 아니라 기사 전체 정보로 잡아 놓는 것이 좋기 때문입니다.
+
+
+
+[사진]
+
+발견한 HTML의 왼쪽 화살표를 접어 자식 요소들을 보이지 않게 합니다.
+이 때 비슷한 모양을 가진 형제 HTML들이 보이고,
+각각에 마우스를 가져다 대었을 때 다른 기사들이 커버된다면 성공입니다!
+
+
+이제 발견했으니 선택자 경로를 정해야 합니다.
+첫 번째 기사의 선택자는 li#sp_nws1 입니다.
+하지만 페이지의 기사들을 모두 불러오려면 고유한 값을 갖는 id는 사용할 수 없습니다.
+li와 같은 태그명은 너무 흔히 사용하는 것이라 기사 이외의 요소가 선택될 확률이 큽니다.
+발견한 요소 자체로 정확성을 확보할 수 없다면 부모 요소로 올라가 살펴봅니다.
+
+
+기사들을 감싸는 부모 HTML인 ul.type01은 어떨까요?
+
+[사진]
+
+type01 역시 클래스이므로 검증을 해야합니다.
+
+Ctrl + F를 눌러 검색해봅시다.
+여러 번 엔터를 눌러도 기사 리스트를 커버하는 ul.type01만 검색이 됩니다.
+
+이제 .type01 > li 라는 선택자 경로를 사용하면 페이지 내의 기사들을 정확히 불러올 수 있다는 사실이 검증되었습니다.
+
+
+
+## 세부 데이터 추출
+
+```python
+articles = html.select('.type01 > li')
+
+for article in articles:
+    journal = ...기사 정보에서 언론사명 추출
+    title = ...기사 정보에서 제목 추출
+
+    print(journal, title)
+
+```
+
+이제 HTML 타입의 .select( ) 함수를 사용하여 기사 리스트를 articles 변수에 담습니다.
+
+다시 for 문 안에서 각 기사에 대한 세부 정보를 추출해 내야 합니다.
+
+여기서는 언론사명과 기사 제목을 뽑아내 보겠습니다.
+
+
+[사진]
+
+다시 기사 HTML 안에서 기사 제목의 위치를 찾습니다.
+a._sp_each_title 은 검색 결과 기사 제목에만 사용되는 것을 알 수 있습니다.
 
 
 ```python
-if chn in channels:
-    idx = channels.index(chn)
-    meta[idx]['hit'] = meta[idx]['hit'] + hit
-    meta[idx]['like'] = meta[idx]['like'] + like
+import requests
+from bs4 import BeautifulSoup
+
+raw = requests.get('https://search.naver.com/search.naver?&where=news&query=아시안게임', headers={'User-Agent': 'Mozilla/5.0'}).text
+html = BeautifulSoup(raw, 'html.parser')
+
+articles = html.select('.type01 > li')
+
+for article in articles:
+    journal = article.select_one('span._sp_each_source').text
+    title = article.select_one('a._sp_each_title').text
+
+    print(journal, title)
 ```
 
-이제 hit과 like 배열을 따로 수정하지 않고, meta 배열의 해당 번호로 찾은 Dictionary에서 이름을 통해 값을 수정합니다.
-
-
-
-```python
-else:
-    channels.append(chn)
-    meta.append({'hit': hit, 'like': like})
-```
-
-채널이 존재하지 않는 경우에도 meta 배열에 새로운 Dictionary를 만들어 추가합니다.
-
-
-
-```python
-for channel in channels:
-    idx = channels.index(channel)
-    print(channel, '/', meta[idx])
-```
-
-이제 두 개의 배열만 출력해도 모든 채널 정보를 볼 수 있습니다.
-
-![](../.gitbook/assets/image%20%28172%29.png)
-
-meta 배열의 각 Dictionary에 값들이 예쁘게 들어있군요.
-
-
-
-## 데이터 수집에 응용 2
-
-아직 문제가 모두 해결되지는 않았습니다.
-
-여전히 meta 배열을 정렬해도, channels 배열을 따라서 정렬하기가 힘듭니다.
-
-![](../.gitbook/assets/image%20%2876%29.png)
-
-현재 채널명과 부가 정보를 별개의 배열로 저장하여  "번호" 라는 간접적인 수단으로 연결하고 있습니다. 
-
-이것 역시 Dictionary 구조로 바꿀 수 있지 않을까요?
-
-![&#xC608;&#xC0C1;&#xB418;&#xB294; Dictionary &#xAD6C;&#xC870;](../.gitbook/assets/image%20%28119%29.png)
-
-![](../.gitbook/assets/image%20%28156%29.png)
-
-새로운 클립을 처리할 때, 이름만 가지고도 기존 값에 접근할 수 있게 되는 것이죠.
-
-channels와 meta 배열을 모두 없애고 다음과 같은 전체 채널 정보 Dictionary를 만듭니다.
-
-```python
-chnInfos = {}
-```
-
-
-
-```python
-if chn in channels:
-```
-
-channels 배열이 없는데 이 부분은 어떻게 처리해야 할까요?
-
-![](../.gitbook/assets/image%20%28119%29.png)
-
-우리가 만드려하는 구조에서는 Dictionary의 '이름' 들이 채널명을 저장하는 channels의 역할을 대신하고 있습니다.
-
-
-
-```python
-people = {'korean': 380, 'american': 42, 'japanese': 15}
-
-print(people.keys())
-```
-
-![](../.gitbook/assets/image%20%28137%29.png)
-
-Dictionary 클래스에 내장된 .keys\( \) 라는 함수를 이용하면, Dictionary의 key\('이름'\) 값들만 모아 배열로 되돌려 줍니다.
-
-이 배열이 channels와 완전히 같으니 대신 사용할 수 있겠습니다.
-
-```python
-for info in infos:
-    chn = info.select('dd.chn > a')[0].text
-    hit = int(info.select('span.hit')[0].text[4:].replace(',', ''))
-    like = int(info.select('span.like')[0].text[5:].replace(',', ''))
-
-    if chn in chnInfos.keys():
-        chnInfos[chn]['hit'] += hit
-        chnInfos[chn]['like'] += like
-    else:
-        chnInfos[chn] = {'hit': hit, 'like': like}
-```
-
-channels와 meta로 나뉜 구조에서, chnInfos에 모든 것을 같이 저장하는 구조가 되었습니다.
-
-출력하여 확인해봅시다.
-
-```python
-for chnInfo in chnInfos.items():
-    print(chnInfo)
-```
-
-\(.items\( \) 함수는 Stage 4에서 설명합니다.\)
-
-![](../.gitbook/assets/image%20%2877%29.png)
-
-하나의 Dictionary에 각 채널의 정보가 잘 들어있습니다.
-
-이제 예상되는 문제를 해결하였으니 다음 스테이지에서 실제로 정렬해보도록 하겠습니다.
-
+언론사명도 마찬가지로 선택자를 확정한 후 출력해봅니다.
+이제 수집 전 과정이 좀 익숙해 지셨나요?
