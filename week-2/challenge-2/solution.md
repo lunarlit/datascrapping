@@ -10,5 +10,5 @@ for player in ace_of_teams:
 
 podium.sort()
 print(podium)
-
 ```
+
