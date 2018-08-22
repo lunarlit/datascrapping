@@ -21,6 +21,7 @@
   * [Stage 4 - 리스트에 대해 더 알아보자](week-2/stage-4-list2.md)
   * [Challenge 2](week-2/challenge-2/README.md)
     * [모범 답안](week-2/challenge-2/solution.md)
+  * [추가 과제](week-2/additional.md)
 * [3주차 - 처음으로 데이터 수집해보기](week-3.md)
 * [4주차 - 수집한 데이터를 가공하여 가치있게 만들기](week-4.md)
 * [5주차 - 소중한 데이터를 사라지지않게 저장하기](5.md)

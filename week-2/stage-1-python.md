@@ -32,26 +32,26 @@ Create New Project를 클릭합니다.
 
 
 
-![](../.gitbook/assets/image%20%28309%29.png)
+![](../.gitbook/assets/image%20%28310%29.png)
 
 2주차이므로 week2 라는 하위 폴더를 만들어 코드를 저장하겠습니다. 주차별, 주제별로 코드를 잘 분류하는 습관을 들이는 것이 좋습니다.
 
 
 
-![](../.gitbook/assets/image%20%28174%29.png)
+![](../.gitbook/assets/image%20%28175%29.png)
 
 방금 만든 week2 폴더를 우클릭하여 New &gt; Python File을 클릭합니다.
 
 
 
-![](../.gitbook/assets/image%20%28265%29.png)
+![](../.gitbook/assets/image%20%28266%29.png)
 
 이름 부분에 첫번째 스테이지에 사용할 파이썬 파일의 이름을 작성해줍니다.  
 stage1이라고 한번 지어볼까요?
 
 
 
-![](../.gitbook/assets/image%20%28163%29.png)
+![](../.gitbook/assets/image%20%28164%29.png)
 
 파일을 생성하면 비어있던 오른쪽 공간이 코드를 편집할 수 있는 공간으로 바뀝니다.
 
@@ -67,11 +67,11 @@ hello world는 모든 프로그래밍 언어를 처음 시작할 때 출력해�
 
 꼭 해야된다고 정해져 있는 것은 아니지만, 이 언어로 프로그램을 작동시키기 위해 최소한으로 어느 정도의 코드가 필요한 지 알아보는 일종의 문화라고 생각해주세요.
 
-![](../.gitbook/assets/image%20%28176%29.png)
+![](../.gitbook/assets/image%20%28177%29.png)
 
 편집 영역에 위와 같이 입력해주세요.
 
-![](../.gitbook/assets/image%20%28290%29.png)
+![](../.gitbook/assets/image%20%28291%29.png)
 
 다음으로 상단 메뉴에서 Run을 선택하여 세 번째에 위치한 Run을 눌러주세요.
 
@@ -83,13 +83,13 @@ hello world는 모든 프로그래밍 언어를 처음 시작할 때 출력해�
 
 
 
-![](../.gitbook/assets/image%20%28344%29.png)
+![](../.gitbook/assets/image%20%28345%29.png)
 
 가운데 뜨는 조그마한 창에서 파일명인 stage1을 클릭하시거나, Enter를 눌러주시면
 
 
 
-![](../.gitbook/assets/image%20%28291%29.png)
+![](../.gitbook/assets/image%20%28292%29.png)
 
 아래쪽에 새로운 창이 열리며 hello world! 가 출력됩니다.
 
@@ -136,7 +136,7 @@ available = True
 
 값에는 여러 타입이 있는데요. 타입마다 작성하는 방법과 할 수 있는 일이 다릅니다.
 
-![](../.gitbook/assets/image%20%28115%29.png)
+![](../.gitbook/assets/image%20%28116%29.png)
 
 
 
@@ -206,9 +206,9 @@ print(company)
 
 코드를 작성하기 위해 변수명, 함수명 등을 쓰기 시작하면 바로 그 알파벳으로 시작하는 함수나 변수들의 리스트가 제안됩니다. ↑↓ 화살표로 선택 후 Enter를 누르거나 마우스로 클릭하여 바로 자동완성 시킬 수 있습니다.
 
-![](../.gitbook/assets/image%20%28212%29.png)
+![](../.gitbook/assets/image%20%28213%29.png)
 
-![](../.gitbook/assets/image%20%28285%29.png)
+![](../.gitbook/assets/image%20%28286%29.png)
 
 변수 subject가 이미 준비되어 있다면 print\(subject\) 14글자를 작성하는 데에 p, Enter, s, Enter 네 번만 누르면 됩니다.
 
@@ -220,7 +220,7 @@ print(company)
 
 이럴 때는 마우스로 끝 부분을 클릭하여 엔터를 치거나 키보드의 → 버튼으로 이동한 후 엔터를 치는데요.
 
-![](../.gitbook/assets/image%20%28142%29.png)
+![](../.gitbook/assets/image%20%28143%29.png)
 
 단축키 Shift + Enter를 사용하면 커서가 행의 중간에 있는 경우에도 바로 다음 줄로 개행이 됩니다.
 
@@ -228,7 +228,7 @@ print(company)
 
 
 
-![](../.gitbook/assets/image%20%28170%29.png)
+![](../.gitbook/assets/image%20%28171%29.png)
 
 이외에도 자주 유용하게 쓸 수 있는 단축키를 모아봤습니다.
 

@@ -6,7 +6,7 @@
 
 
 
-![](../.gitbook/assets/image%20%28185%29.png)
+![](../.gitbook/assets/image%20%28186%29.png)
 
 먼저 새로운 스테이지가 되면 학습 내용이 뒤섞이지 않도록 새 파일을 만드시는 것을 권장합니다.
 
@@ -103,7 +103,7 @@ abs, len, max 등은 print와 마찬가지로 python에 기본적으로 내장�
 
 
 
-![](../.gitbook/assets/image%20%28177%29.png)
+![](../.gitbook/assets/image%20%28178%29.png)
 
 함수는 함수명\(입력값1, 입력값2...\) 의 형태로 호출되며, 실행이 종료된 후에는 결과값으로 바뀝니다.
 
@@ -164,7 +164,7 @@ print(str)
 
 대부분의 문자열 타입 함수는 편집의 대상이 되는 원본 값을 직접 수정하지 않습니다. 대신 수정 결과를 함수 결과로 내놓을 뿐입니다. 따라서 str.replace\(\) 의 결과를 new\_str에 저장하면, '무궁화'가 '진달래'로 바뀐 결과는 new\_str에 들어있고 str은 원본 그대로 유지됩니다.
 
-![&#xC704; &#xCF54;&#xB4DC;&#xC758; &#xCD9C;&#xB825; &#xACB0;&#xACFC;](../.gitbook/assets/image%20%28281%29.png)
+![&#xC704; &#xCF54;&#xB4DC;&#xC758; &#xCD9C;&#xB825; &#xACB0;&#xACFC;](../.gitbook/assets/image%20%28282%29.png)
 
 원본 str을 바꾸고 싶다면 str = str.replace\('무궁화', '코스모스'\) 처럼 결과를 다시 원본 변수에 할당하면 됩니다.
 
@@ -181,9 +181,9 @@ print(spaced_str.strip())
 
 .upper\(\)는 영문 소문자를 대문자로 바꾸어 돌려주는 함수, .strip\(\)은 문자열의 좌우 공백 문자를 제거해주는 함수입니다.
 
-![&#xC704; &#xCF54;&#xB4DC;&#xC758; &#xCD9C;&#xB825; &#xACB0;&#xACFC;](../.gitbook/assets/image%20%28328%29.png)
+![&#xC704; &#xCF54;&#xB4DC;&#xC758; &#xCD9C;&#xB825; &#xACB0;&#xACFC;](../.gitbook/assets/image%20%28329%29.png)
 
-![](../.gitbook/assets/image%20%28268%29.png)
+![](../.gitbook/assets/image%20%28269%29.png)
 
 이외에도 다양한 문자열 타입 함수가 있습니다. 재미를 느끼신 분은 [https://wikidocs.net/13\#\_16](https://wikidocs.net/13#_16) 에서 더 많은 함수를 알아보고, 연습 문제도 풀어보세요!
 
