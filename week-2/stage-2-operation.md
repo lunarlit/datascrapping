@@ -6,7 +6,7 @@
 
 
 
-![](../.gitbook/assets/image%20%28192%29.png)
+![](../.gitbook/assets/image%20%28201%29.png)
 
 먼저 새로운 스테이지가 되면 학습 내용이 뒤섞이지 않도록 새 파일을 만드시는 것을 권장합니다.
 
@@ -67,7 +67,7 @@ print("ㅎ" * 10)     # ㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎ
 
 
 
-![](../.gitbook/assets/image%20%2813%29.png)
+![](../.gitbook/assets/image%20%2814%29.png)
 
 여러분은 print\(\) 함수를 사용할 때 어떤 생각을 하나요? 입력된 텍스트가 거치는 과정과 사용되는 기술들을 속속들이 알고있으신가요?
 
@@ -91,19 +91,19 @@ print(max(15, 363, 166, 2, 97, 218))
 
 abs, len, max 등은 print와 마찬가지로 python에 기본적으로 내장되어 언제든지 사용 가능한 함수입니다.
 
-![](../.gitbook/assets/image%20%2890%29.png)
+![](../.gitbook/assets/image%20%2895%29.png)
 
 문자열의 길이를 뽑아내거나, 여러 숫자 중 최대값을 찾는 등 실제 함수 내부에서 작동하는 기능은 훨씬 복잡하겠지만 우리는 단순히 "문자열을 넣으면 길이가 나온다", "여러 숫자를 넣으면 최대값이 나온다" 라는 사실만 알고 사용하면 됩니다.
 
 
 
-![&#xC2E4;&#xC81C; &#xB0B4;&#xC7A5; &#xD568;&#xC218;&#xC758; &#xC815;&#xC758;](../.gitbook/assets/image%20%2815%29.png)
+![&#xC2E4;&#xC81C; &#xB0B4;&#xC7A5; &#xD568;&#xC218;&#xC758; &#xC815;&#xC758;](../.gitbook/assets/image%20%2816%29.png)
 
 물론 함수가 마술 상자는 아닙니다. 숨겨진 곳에 정확한 작동 방식이 여러 줄로 작성되어있고, 우리가 함수 이름을 불러 호출하면 그 곳에 작성되어있는 기능이 실행되는 것입니다.
 
 
 
-![](../.gitbook/assets/image%20%28183%29.png)
+![](../.gitbook/assets/image%20%28192%29.png)
 
 함수는 함수명\(입력값1, 입력값2...\) 의 형태로 호출되며, 실행이 종료된 후에는 결과값으로 바뀝니다.
 
@@ -111,13 +111,13 @@ abs, len, max 등은 print와 마찬가지로 python에 기본적으로 내장�
 
 
 
-![](../.gitbook/assets/image%20%2885%29.png)
+![](../.gitbook/assets/image%20%2890%29.png)
 
 대부분의 프로그래밍 언어는 오른쪽에서 왼쪽으로 실행됩니다. 따라서 먼저 len\('welcome to coala study'\) 함수가 실행되고 그 결과인 23이 도출되어 length\_of\_text에 할당되는 순서입니다.
 
 함수의 입력값으로 또 다른 함수를 사용할 수도 있습니다. 이 경우 가장 안쪽에 있는 함수부터 실행됩니다.
 
-![](../.gitbook/assets/image%20%2862%29.png)
+![](../.gitbook/assets/image%20%2866%29.png)
 
 위의 예제에서는 함수 print\(\)에서 출력할 값으로 max\(15, 363, 166, 2, 97, 218\) 을 사용하고 있습니다. 먼저 안쪽에 있는 max\(\) 함수가 실행되어 최대값 363을 결과로 반환하고, 코드는 print\(363\) 이 되어 363을 콘솔 창에 출력합니다.
 
@@ -144,7 +144,7 @@ idx = str.index('꽃')
 
 이는 "타입 함수"로, 오로지 특정 타입의 값에만 사용할 수 있도록 만들어진 함수입니다.
 
-![](../.gitbook/assets/image%20%28108%29.png)
+![](../.gitbook/assets/image%20%28115%29.png)
 
 위에서 쓰인 .replace\(\)나 .index\(\)는 문자열 편집에 특화된 함수이기 때문에 문자열 변수에서만 호출할 수 있습니다.
 
@@ -164,7 +164,7 @@ print(str)
 
 대부분의 문자열 타입 함수는 편집의 대상이 되는 원본 값을 직접 수정하지 않습니다. 대신 수정 결과를 함수 결과로 내놓을 뿐입니다. 따라서 str.replace\(\) 의 결과를 new\_str에 저장하면, '무궁화'가 '진달래'로 바뀐 결과는 new\_str에 들어있고 str은 원본 그대로 유지됩니다.
 
-![&#xC704; &#xCF54;&#xB4DC;&#xC758; &#xCD9C;&#xB825; &#xACB0;&#xACFC;](../.gitbook/assets/image%20%28293%29.png)
+![&#xC704; &#xCF54;&#xB4DC;&#xC758; &#xCD9C;&#xB825; &#xACB0;&#xACFC;](../.gitbook/assets/image%20%28305%29.png)
 
 원본 str을 바꾸고 싶다면 str = str.replace\('무궁화', '코스모스'\) 처럼 결과를 다시 원본 변수에 할당하면 됩니다.
 
@@ -181,15 +181,15 @@ print(spaced_str.strip())
 
 .upper\(\)는 영문 소문자를 대문자로 바꾸어 돌려주는 함수, .strip\(\)은 문자열의 좌우 공백 문자를 제거해주는 함수입니다.
 
-![&#xC704; &#xCF54;&#xB4DC;&#xC758; &#xCD9C;&#xB825; &#xACB0;&#xACFC;](../.gitbook/assets/image%20%28342%29.png)
+![&#xC704; &#xCF54;&#xB4DC;&#xC758; &#xCD9C;&#xB825; &#xACB0;&#xACFC;](../.gitbook/assets/image%20%28359%29.png)
 
-![](../.gitbook/assets/image%20%28279%29.png)
+![](../.gitbook/assets/image%20%28291%29.png)
 
 이외에도 다양한 문자열 타입 함수가 있습니다. 재미를 느끼신 분은 [https://wikidocs.net/13\#\_16](https://wikidocs.net/13#_16) 에서 더 많은 함수를 알아보고, 연습 문제도 풀어보세요!
 
 
 
-![](../.gitbook/assets/image%20%2845%29.png)
+![](../.gitbook/assets/image%20%2847%29.png)
 
 문자열 타입 함수는 파이썬 자체에 내장되어있기 때문에 위와 같이 문자열 타입에 .을 찍으면 사용 가능한 함수들이 자동으로 제시됩니다. 자동완성 적극적으로 활용하셔야 합니다!
 
