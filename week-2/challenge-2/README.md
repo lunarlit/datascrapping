@@ -13,7 +13,7 @@ print(podium)
 
 위와 같은 데이터가 준비되어 있습니다. 오늘 배운 함수들을 종합적으로 사용하여 결과가 다음과 같이 출력되도록 만드세요. 과정은 직접 생각하셔야 합니다!
 
-![&#xCD9C;&#xB825; &#xACB0;&#xACFC;](../../.gitbook/assets/image%20%2838%29.png)
+![&#xCD9C;&#xB825; &#xACB0;&#xACFC;](../../.gitbook/assets/image%20%2839%29.png)
 
 ### 
 

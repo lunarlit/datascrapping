@@ -60,7 +60,7 @@
 태그는 각각의 고유한 역할을 가집니다.  
 하나의 태그를 먼저 보겠습니다.
 
-![HTML &#xD0DC;&#xADF8;&#xC758; &#xAE30;&#xBCF8; &#xAD6C;&#xC870;&#xC785;&#xB2C8;&#xB2E4;.](../.gitbook/assets/image%20%28342%29.png)
+![HTML &#xD0DC;&#xADF8;&#xC758; &#xAE30;&#xBCF8; &#xAD6C;&#xC870;&#xC785;&#xB2C8;&#xB2E4;.](../.gitbook/assets/image%20%28354%29.png)
 
 ```markup
 <span>X심 봉지라면 4종 기획 세트</span>
@@ -74,7 +74,7 @@
 
 다음으로 여러 개의 태그가 중첩 구조를 이루는 예시를 보겠습니다.
 
-![&#xD0DC;&#xADF8; 1&#xC758; &#xC0AC;&#xC774;&#xC5D0; &#xD0DC;&#xADF8; 2&#xAC00; &#xB0B4;&#xC6A9;&#xC73C;&#xB85C; &#xB4E4;&#xC5B4;&#xAC00;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &quot;&#xB0B4;&#xC6A9;&#xBB3C;&quot;&#xC740; &#xD0DC;&#xADF8; 2&#xC758; &#xB0B4;&#xC6A9;&#xC785;&#xB2C8;&#xB2E4;.](../.gitbook/assets/image%20%2881%29.png)
+![&#xD0DC;&#xADF8; 1&#xC758; &#xC0AC;&#xC774;&#xC5D0; &#xD0DC;&#xADF8; 2&#xAC00; &#xB0B4;&#xC6A9;&#xC73C;&#xB85C; &#xB4E4;&#xC5B4;&#xAC00;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &quot;&#xB0B4;&#xC6A9;&#xBB3C;&quot;&#xC740; &#xD0DC;&#xADF8; 2&#xC758; &#xB0B4;&#xC6A9;&#xC785;&#xB2C8;&#xB2E4;.](../.gitbook/assets/image%20%2883%29.png)
 
 ```markup
 <div>
@@ -104,47 +104,47 @@
 
 이러한 특징을 "태그의 트리 구조", 혹은 "태그가 부모 - 자식 구조를 이룬다" 라고 말합니다. 아래의 쇼핑몰 디자인을 보고 이러한 구조를 분석해 보겠습니다.
 
-![](../.gitbook/assets/image%20%28167%29.png)
+![](../.gitbook/assets/image%20%28171%29.png)
 
 눈에 보이지는 않지만 전체 화면을 감싸는 스케치북이 있다고 합시다. 이를 &lt;전체 물품 리스트 태그&gt;라고 부르겠습니다. 
 
 웹페이지에서 데이터를 조직적으로 보여주기 위해서는 구역을 잘 나누어야 합니다. 먼저 큰 스케치북을 두 줄로 나눕니다. 각각은 전체 물품 리스트 태그의 자식 태그가 됩니다.
 
-![](../.gitbook/assets/image%20%28316%29.png)
+![](../.gitbook/assets/image%20%28326%29.png)
 
 
 
 또 한줄 한줄의 태그 안에는 5개의 물건 태그가 들어갑니다.
 
-![](../.gitbook/assets/image%20%2878%29.png)
+![](../.gitbook/assets/image%20%2879%29.png)
 
 마지막으로 각 물건 태그는 사진 태그와 정보 태그로 나뉠 것이고, 정보 태그는 여러 정보들을 자식 태그로 가질 것입니다.
 
-![](../.gitbook/assets/image%20%28113%29.png)
+![](../.gitbook/assets/image%20%28117%29.png)
 
 
 
 이를 처음부터 표시해보면 다음과 같습니다. 
 
-![](../.gitbook/assets/image%20%28192%29.png)
+![](../.gitbook/assets/image%20%28197%29.png)
 
 들여쓰기가 깊어질수록 더 작고 세부적인 정보를 다루며, 이들을 감싸는 부모 태그들이 구조를 이루어 전체 페이지를 표현합니다.
 
 이 부모 - 자식 구조를 도식화하면 다음과 같이 나무를 닮은 모양이 되기 때문에 트리 구조라고 부르기도 합니다.
 
-![&#xB098;&#xBB34;&#xB97C; &#xB2EE;&#xC740; &#xBD80;&#xBAA8;-&#xC790;&#xC2DD; &#xAD6C;&#xC870;](../.gitbook/assets/image%20%28109%29.png)
+![&#xB098;&#xBB34;&#xB97C; &#xB2EE;&#xC740; &#xBD80;&#xBAA8;-&#xC790;&#xC2DD; &#xAD6C;&#xC870;](../.gitbook/assets/image%20%28113%29.png)
 
 
 
 자, 그럼 여러분이 웹 개발자라면 다음 페이지를 만들기 위해 어떻게 구조를 만드시겠어요? 태그명 같은 것에는 상관없이 자유롭게 HTML 구조를 그려보세요!
 
-![](../.gitbook/assets/image%20%2891%29.png)
+![](../.gitbook/assets/image%20%2893%29.png)
 
 
 
 저는 아래와 같이 그려보았습니다.
 
-![](../.gitbook/assets/image%20%28218%29.png)
+![](../.gitbook/assets/image%20%28227%29.png)
 
 
 
