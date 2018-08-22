@@ -82,7 +82,7 @@ for문이 선언되는 순간 일반 실행 공간과 분리된 공간이 형성
 
 
 
-![](../.gitbook/assets/image%20%28188%29.png)
+![](../.gitbook/assets/image%20%28189%29.png)
 
 분리된 공간에서는 바깥 공간의 변수를 사용할 수 있습니다. 
 
@@ -95,7 +95,7 @@ for문이 선언되는 순간 일반 실행 공간과 분리된 공간이 형성
 
 리스트 타입 역시 리스트를 편집할 수 있는 여러 타입 함수를 제공합니다.
 
-![](../.gitbook/assets/image%20%28324%29.png)
+![](../.gitbook/assets/image%20%28325%29.png)
 
 
 
@@ -116,7 +116,7 @@ cities.sort()
 print(cities)
 ```
 
-![&#xCD9C;&#xB825; &#xACB0;&#xACFC;](../.gitbook/assets/image%20%28262%29.png)
+![&#xCD9C;&#xB825; &#xACB0;&#xACFC;](../.gitbook/assets/image%20%28263%29.png)
 
 리스트 타입 함수들은 문자열과 달리 원본 리스트를 직접 수정합니다.
 
