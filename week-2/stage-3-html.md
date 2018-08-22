@@ -1,4 +1,4 @@
-# Stage 3 - 리스트를 다루어보자
+# Stage 3 - HTML 문서를 가져와보자
 
 스테이지 3에서는 데이터를 모아놓을 수 있는 리스트라는 구조에 대해 배워보겠습니다.
 
@@ -30,8 +30,6 @@ langs = ["Python", "Javascript", "Java", "C++", "Go", "Kotlin"]
 
 이와 같이 \[ \] 안에 쉼표로 구분된 여러 값을 넣으면, 값들의 리스트가 한번에 langs 변수에 저장됩니다.
 
-
-
 ```python
 print(langs)
 ```
@@ -60,8 +58,6 @@ print(langs[5])
 컴퓨터는 낭비를 싫어해요.
 {% endhint %}
 
-
-
 ```python
 lang1 = "Python"
 lang2 = "Ruby"
@@ -76,11 +72,9 @@ langs = [lang1, "Javascript", lang2, "Java", 16, number]
 
 심지어 리스트의 항목으로 다른 리스트를 넣을 수도 있습니다.
 
-
 리스트의 일부분만 사용하고 싶을때가 있습니다.
-
 
 ~~
 
-
 이를 응용하면 문자열에서도 원하는 부분을 잘라낼 수 있습니다.
+

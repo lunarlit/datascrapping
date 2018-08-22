@@ -1,5 +1,6 @@
+# Stage 1 - 모든 정보를 빠르게 가져오자
 
-## 외부 라이브러리
+### 외부 라이브러리
 
 이렇게 파이썬 개발자들이 파이썬에 자체적으로 몇 가지 클래스를 내장해 두었지만, 우리가 사용하고 싶은 여러 다양한 기능들이 모두 있을까요?
 
@@ -21,9 +22,7 @@
 
 구체적인 내용은 requests 라이브러리를 사용하며 알아보겠습니다.
 
-
-
-## 외부 라이브러리 설치 방법
+### 외부 라이브러리 설치 방법
 
 ![](../.gitbook/assets/image%20%2846%29.png)
 
@@ -33,29 +32,21 @@ Settings 콘솔이 열리면 좌측 메뉴에서 Project: 프로젝트명 &gt; P
 
 선택 후 우측의 초록색 + 버튼을 누릅니다.
 
-
-
 ![](../.gitbook/assets/image%20%28110%29.png)
 
 이와 같은 패키지 설치 콘솔이 나올 것입니다.
 
 검색 창에 requests를 검색하여 아래의 Install Package를 눌러줍니다.
 
-
-
 ![](../.gitbook/assets/image%20%2816%29.png)
 
 잠시 기다리면 이렇게 녹색 알림으로 설치 완료 메세지가 나옵니다.
-
-
 
 ![](../.gitbook/assets/image%20%2897%29.png)
 
 마찬가지로 beautifulsoup4 도 설치해 주세요. \(Stage 4에서 사용합니다.\)
 
-
-
-## requests 라이브러리의 사용
+### requests 라이브러리의 사용
 
 > [https://github.com/coalastudy/python-datascrapping-code/blob/master/week2/stage3-1-requests.py](https://github.com/coalastudy/python-datascrapping-code/blob/master/week2/stage3-1-requests.py)
 
@@ -64,8 +55,6 @@ import requests
 ```
 
 먼저 파일의 최상단에 다음과 같이 requests 라이브러리를 사용하겠다는 명령을 작성합니다.
-
-
 
 ```python
 req = requests.get('https://tv.naver.com/r/')
@@ -97,16 +86,11 @@ requests.get의 결과로 얻어진 req \(변수명이므로 마음대로 지어
 
 아직 아무 의미도 갖지 못하는 정보이지만, 첫 데이터 수집에 성공한 것을 축하드립니다!
 
-스크롤을 내려보면 분량이 엄청나게 많은 것을 알 수 있습니다.   
-실제로 웹서비스를 만들 때 이렇게 많은 코드가 사용되는데요.   
+스크롤을 내려보면 분량이 엄청나게 많은 것을 알 수 있습니다.  
+실제로 웹서비스를 만들 때 이렇게 많은 코드가 사용되는데요.  
 다음 스테이지에서는 이 코드의 모래사장에서 바늘을 찾아보도록 하겠습니다.
 
-
-
-
-
-
-# Stage 1 - 모든 정보를 빠르게 가져오자
+## Stage 1 - 모든 정보를 빠르게 가져오자
 
 첫 번째 스테이지에서는 배열 데이터의 요소를 일괄적으로 처리할 수 있는 반복문에 대해 배워봅니다.
 
@@ -114,19 +98,13 @@ requests.get의 결과로 얻어진 req \(변수명이므로 마음대로 지어
 
 또한 수집한 데이터를 1차로 가공하는 간단한 방법도 살펴보겠습니다.
 
-
-
-## 반복문 for
+### 반복문 for
 
 {% embed data="{\"url\":\"https://github.com/coalastudy/python-datascrapping-code/blob/master/week3/stage1-0-list.py\",\"type\":\"link\",\"title\":\"coalastudy/python-datascrapping-code\",\"description\":\"Contribute to python-datascrapping-code development by creating an account on GitHub.\",\"icon\":{\"type\":\"icon\",\"url\":\"https://github.com/fluidicon.png\",\"aspectRatio\":0},\"thumbnail\":{\"type\":\"thumbnail\",\"url\":\"https://avatars2.githubusercontent.com/u/40313128?s=400&v=4\",\"width\":420,\"height\":420,\"aspectRatio\":1},\"caption\":\"코드를 참고하여 진행해 주세요.\"}" %}
-
-
 
 2주차에 배열에 대해 소개해드렸습니다.
 
 그리고 클립 정보를 담은 배열을 수집하여 하나의 요소에 접근해보았는데요.
-
-{% page-ref page="../week-2/stage-1.5.md" %}
 
 이제 배열을 더 잘 사용할 수 있는 방법을 배워보겠습니다.
 
@@ -135,8 +113,6 @@ requests.get의 결과로 얻어진 req \(변수명이므로 마음대로 지어
 ```python
 subjects = ["파이썬", "페이스북 웹개발", "데이터 수집", "안드로이드", "알고리즘", "Javascript", "iOS"]
 ```
-
-
 
 이는 print 함수를 통해 간단히 출력할 수 있고, \[ \] 안에 번호를 넣어 요소 하나하나도 따로 사용할 수 있습니다.
 
@@ -148,8 +124,6 @@ print(subjects[0], '/', subjects[1], '/', subjects[3])
 ![](../.gitbook/assets/image%20%2812%29.png)
 
 그런데 이 배열 요소들 뒤에 "스터디" 를 붙여 출력해야 할 일이 생겼습니다. 어떻게 해야 할까요?
-
-
 
 ```python
 print(subjects[0] + " 스터디", subjects[1] + " 스터디", subjects[2] + " 스터디", subjects[3] + " 스터디", 
@@ -173,13 +147,11 @@ for subject in subjects:
 
 for 문을 작성하고 실행할 기능을 정의해 주기만 하면, subjects 배열 내의 모든 요소에 대해 같은 기능을 반복하여 실행합니다.
 
-for subject in subjects:  는 영어 문장처럼 해석하면, "subjects 안의 subject에 대하여" 라는 뜻입니다. 여기서 subjects는 미리 정의해 둔 배열의 변수명이며, subject는 미리 정의한 것이 아니라 for 문 안에서 임시로 사용할 매개 변수입니다.
+for subject in subjects: 는 영어 문장처럼 해석하면, "subjects 안의 subject에 대하여" 라는 뜻입니다. 여기서 subjects는 미리 정의해 둔 배열의 변수명이며, subject는 미리 정의한 것이 아니라 for 문 안에서 임시로 사용할 매개 변수입니다.
 
 ![](../.gitbook/assets/image%20%28183%29.png)
 
 for 문 내부에서는 위와 같은 기능이 실행되고 있다고 볼 수 있습니다. subjects의 모든 요소가 한 번씩 subject에 할당되어 명령해 둔 작업을 반복 수행합니다.
-
-
 
 ```python
 for 매개변수 in 배열:
@@ -192,18 +164,14 @@ for 매개변수 in 배열:
 
 for문의 기본 문법은 위와 같습니다.
 
-가장 주의할 점은, 들여쓰기 된 부분만 반복 실행할 기능으로 간주한다는 것입니다. 
+가장 주의할 점은, 들여쓰기 된 부분만 반복 실행할 기능으로 간주한다는 것입니다.
 
 들여쓰기가 끝나면 for문도 끝납니다.  
 위 코드를 예로 들면 내용 1과 2는 배열의 모든 요소에 대해 반복 수행되지만 내용 3은 for문의 모든 반복이 끝난 후 한 번 실행되는 일반적인 문장입니다.
 
-
-
-## 데이터 수집에 적용
+### 데이터 수집에 적용
 
 {% embed data="{\"url\":\"https://github.com/coalastudy/python-datascrapping-code/blob/master/week3/stage1-1.py\",\"type\":\"link\",\"title\":\"coalastudy/python-datascrapping-code\",\"description\":\"Contribute to python-datascrapping-code development by creating an account on GitHub.\",\"icon\":{\"type\":\"icon\",\"url\":\"https://github.com/fluidicon.png\",\"aspectRatio\":0},\"thumbnail\":{\"type\":\"thumbnail\",\"url\":\"https://avatars2.githubusercontent.com/u/40313128?s=400&v=4\",\"width\":420,\"height\":420,\"aspectRatio\":1},\"caption\":\"코드를 참고하여 진행해 주세요.\"}" %}
-
-
 
 이제 네이버 TV TOP 100 수집 프로그램으로 돌아가 봅시다.
 
@@ -229,9 +197,7 @@ for info in infos:
 
 97개의 클립 정보가 성공적으로 출력되었습니다!
 
-
-
-## 배열 자르기
+### 배열 자르기
 
 잠깐 다시 배열 예제로 돌아와 주세요.
 
@@ -257,10 +223,8 @@ print(subjects[1:3])
 
 ![](../.gitbook/assets/image%20%28180%29.png)
 
-이렇게 \[ \] 안에 1:3 이라는 값을 넣으면, 배열의 1번부터 3번 **이전** 값까지 선택됩니다.   
-\(주의!!  3번은 선택되지 않습니다.\)
-
-
+이렇게 \[ \] 안에 1:3 이라는 값을 넣으면, 배열의 1번부터 3번 **이전** 값까지 선택됩니다.  
+\(주의!! 3번은 선택되지 않습니다.\)
 
 이처럼 범위 지정에 의해 선택된 값은, 그 부분을 잘라낸 또 다른 배열이 됩니다.
 
@@ -275,8 +239,6 @@ for subject in upper:
 
 ![](../.gitbook/assets/image%20%2838%29.png)
 
-
-
 좀 더 발전된 사용방법도 알아볼까요?
 
 ```python
@@ -289,8 +251,6 @@ print(subjects[:])    # 처음 ~ 끝
 
 ![](../.gitbook/assets/image%20%28204%29.png)
 
-
-
 ```python
 print(subjects[-1])    # 끝에서 첫번째
 print(subjects[-3:])   # 끝에서 두개
@@ -301,9 +261,7 @@ print(subjects[2: -2]) # 2번째부터 끝에서 2번째까지
 
 ![](../.gitbook/assets/image%20%28207%29.png)
 
-
-
-## 데이터 수집에 적용 2
+### 데이터 수집에 적용 2
 
 신기하긴한데, 갑자기 왜 다뤘는지 궁금하셨죠?
 
