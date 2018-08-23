@@ -16,7 +16,7 @@ for subject in subjects:
     counter[subject] += 1
 
 print(counter)
-
 ```
 
 Stage 2의 네이버 TV 예제와 같이 리스트를 두 번 순회하며 첫 번째에는 키를 준비하여 값을 0으로 초기화하고, 두 번째 순회에서는 해당 키의 값에 1씩 추가하고 있습니다.
+

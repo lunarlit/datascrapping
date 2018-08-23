@@ -1,4 +1,3 @@
-
 # 모범 답안
 
 ```python
@@ -37,3 +36,4 @@ for sortedInfo in sortedList:
 ```
 
 22행과 26행에서 계산한 score를 dictionary에 추가해주고 있고, 30행에서는 정렬 함수의 기준을 score로 바꾸어 주었습니다.
+

@@ -30,8 +30,6 @@
 # f.close()
 ```
 
-
-
 ## Stage 1 - 네이버 TV 수집 결과 저장 {#10p}
 
 ```python
@@ -56,7 +54,7 @@ for info in infos:
         chnInfos[chn]['like'] += like
     else:
         chnInfos[chn] = {'hit': hit, 'like': like}
-        
+
 
 def sortKey(item):
     return item[1]['hit']
@@ -72,8 +70,6 @@ for sortedInfo in sortedList:
 f.<       >
 ```
 
-
-
 ## Stage 1 - 시간 정보 포매팅 {#13p}
 
 ```python
@@ -87,8 +83,6 @@ df = dt.strftime(<       >)
 
 # print(df)
 ```
-
-
 
 ## Stage 2 - 엑셀 파일 다루기 {#16p}
 
@@ -146,14 +140,9 @@ df = dt.strftime(<       >)
 # wb.save('test2.xlsx')
 ```
 
-
-
 ## Stage 3 - url을 분석하여 데이터 수집하기 {#32p}
 
-
-
 ```python
-
 from urllib import <    >, <    >
 from bs4 import BeautifulSoup
 
@@ -173,12 +162,9 @@ for i in range(3):
         print(journal, title)
 ```
 
-
-
 ## Stage 3  수집한 데이터 가공하기 {#35p}
 
 ```python
-
 from urllib import request, parse
 from bs4 import BeautifulSoup
 
@@ -207,14 +193,9 @@ for key in journalTitles:
     print(key, journalTitles[key])
 ```
 
-
-
 ## Stage 4 - 여러 페이지 수집 실습 {#39p}
 
-
-
 ```python
-
 from bs4 import BeautifulSoup
 from urllib import request, parse
 import openpyxl

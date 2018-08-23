@@ -8,7 +8,7 @@
 
 {% page-ref page="week-3/" %}
 
-{% page-ref page="week-4.md" %}
+{% page-ref page="week-4/" %}
 
 
 
