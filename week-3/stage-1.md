@@ -18,7 +18,7 @@
 
 대신 그들은 전 세계의 다른 개발자들에게 책임을 맡깁니다.
 
-![](../.gitbook/assets/image%20%28381%29.png)
+![](../.gitbook/assets/image%20%28384%29.png)
 
 전 세계의 개발자들은 별 다른 계약 없이도, 파이썬을 이용해 유용한 기능들을 만들고 공유할 수 있습니다.
 
@@ -45,7 +45,7 @@ Settings 콘솔이 열리면 좌측 메뉴에서 Project: 프로젝트명 &gt; P
 
 
 
-![](../.gitbook/assets/image%20%28254%29.png)
+![](../.gitbook/assets/image%20%28255%29.png)
 
 이와 같은 패키지 설치 콘솔이 나올 것입니다.
 
@@ -53,13 +53,13 @@ Settings 콘솔이 열리면 좌측 메뉴에서 Project: 프로젝트명 &gt; P
 
 
 
-![](../.gitbook/assets/image%20%28216%29.png)
+![](../.gitbook/assets/image%20%28217%29.png)
 
 잠시 기다리면 이렇게 녹색 알림으로 설치 완료 메세지가 나옵니다.
 
 
 
-![](../.gitbook/assets/image%20%28198%29.png)
+![](../.gitbook/assets/image%20%28199%29.png)
 
 마찬가지로 beautifulsoup4 도 설치해 주세요. \(Stage 4에서 사용합니다.\)
 

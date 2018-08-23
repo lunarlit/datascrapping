@@ -8,7 +8,7 @@
 
 ### 1. 간결성
 
-![](../../.gitbook/assets/image%20%28374%29.png)
+![](../../.gitbook/assets/image%20%28377%29.png)
 
 검색어를 우클릭하여 검사를 누르면 손쉽게 해당 HTML 요소까지 이동할 수 있습니다.
 
@@ -28,19 +28,19 @@
 
 
 
-![](../../.gitbook/assets/image%20%28236%29.png)
+![](../../.gitbook/assets/image%20%28237%29.png)
 
 엔터키를 계속 누르며 어떤 요소들이 이 선택자를 가지고 있는지 알아봅니다.
 
 
 
-![](../../.gitbook/assets/image%20%28313%29.png)
+![](../../.gitbook/assets/image%20%28314%29.png)
 
 span.ah\_r 은 순위를 의미하는 것 같습니다. 20위까지 도달했으니 이제 다음 나오는 데이터는 우리의 목표가 아닌 필요 이상의 데이터입니다.
 
 
 
-![](../../.gitbook/assets/image%20%28219%29.png)
+![](../../.gitbook/assets/image%20%28220%29.png)
 
 엔터를 더 쳐보면 이런 데이터에 도달합니다. 1~20위의 검색어가 똑같이 한번 더 반복이 되는데, 브라우저 상에서의 위치는 찾아볼 수 없습니다.
 
@@ -48,9 +48,9 @@ span.ah\_r 은 순위를 의미하는 것 같습니다. 20위까지 도달했으
 
 
 
-![](../../.gitbook/assets/image%20%28244%29.png)
+![](../../.gitbook/assets/image%20%28245%29.png)
 
-![](../../.gitbook/assets/image%20%28370%29.png)
+![](../../.gitbook/assets/image%20%28373%29.png)
 
 브라우저에 범위가 잡히는 검색어, 잡히지 않는 검색어 모두 부모 HTML 요소로 a.ah\_a를 가지고 있습니다. 더 거슬러 올라갑니다.
 
@@ -66,11 +66,11 @@ span.ah\_r 은 순위를 의미하는 것 같습니다. 20위까지 도달했으
 
 한번 더 올라가면 div.ah\_roll\_area와 div.ah\_list로 드디어 달라지는 것을 볼 수 있습니다.
 
-![ah\_roll\_area](../../.gitbook/assets/image%20%28207%29.png)
+![ah\_roll\_area](../../.gitbook/assets/image%20%28208%29.png)
 
 roll\_area라고 하는 것을 보니 리스트가 돌아가며 하나씩 표시되는 전광판 형태를 의미한 클래스인 것 같습니다.
 
-![](../../.gitbook/assets/image%20%28218%29.png)
+![](../../.gitbook/assets/image%20%28219%29.png)
 
 그런데 구조를 파악하며 깨달으셨을 수도 있지만, 이 영역에서는 20위 검색어 다음에 1위 검색어가 한 번 더 나옵니다.
 

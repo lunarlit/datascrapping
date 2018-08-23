@@ -1,6 +1,6 @@
 # Challenge 1
 
-![](../../.gitbook/assets/image%20%28182%29.png)
+![](../../.gitbook/assets/image%20%28183%29.png)
 
 네이버 TOP 100 에서 1~3위와 4~100위 클립은 형식이 분리되어 있습니다. 
 
