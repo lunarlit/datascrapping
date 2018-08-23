@@ -1,128 +1,207 @@
+# Stage 3 - 조건문 if에 대해 알아보자
+
+지금까지 작성한 코드는 얄짤없이 처음부터 끝까지 모두 실행됩니다.
+
+하지만 경우에 따라 실행되기도 하고, 실행되지 않기도 하는 코드를 만들 수 있다면 좋지 않을까요?
+
+결제를 하려는 데 잔액이 충분하면 결제 창으로 이동하지만 부족하면 에러 메세지를 띄워야 할 수도 있고, 조건에 따라 다른 코드가 실행되어야 하는 경우는 굉장히 많습니다.
+
+조건문 if의 사용법을 습득하고 좀 더 유연한 코드를 만들어 봅시다.
+
+
+## 참과 거짓
+
+2주차 파이썬 기초학습에서 변수를 설명드릴 때 잠깐 참/거짓 타입에 대해 언급한 적이 있습니다. 여태까지 사용되지 않았지만 참/거짓 타입은 이 조건문에서 큰 힘을 발휘합니다.
+
+ 참/거짓 타입은 값이 True, False 두 종류밖에 없지만, 참과 거짓을 만들어낼 수 있는 경우는 무척 많습니다.
+
+ 참/거짓을 만들어내는데 쓰이는 비교 연산자 4종을 소개해 드리겠습니다.
+
+ [비교 연산자 표]
+
+
+
+```python
+print(1 == 1)
+print(3 > 5)
+print('-------')
+
+a = '파이썬'
+b = '파이선'
+print(a == '파이썬')
+print(a != b)
+print('-------')
+
+arr = ['파이썬', '자바스크립트', '루비', '고']
+print(b in arr)
+print(a not in arr)
+print('-------')
+```
+
+값과 값, 값과 변수, 변수와 변수를 비교하는 것 모두 가능합니다.
+
 
 
 ## 조건문 if에 대해 배워보자
 
-그렇다면 for문에서 새로 처리할 클립이 들어왔을 때 두 가지 경우가 생깁니다.
-
-1. 이미 배열에 해당 채널의 정보가 있는 상황이라면 - 해당 번호에 조회수와 좋아요 수를 더한다.
-2. 배열에 해당 채널의 정보가 없다면 - 채널명, 조회수, 좋아요 수를 각 배열에 추가한다.
-
-이렇게 현재 상태에 따라 다른 코드를 실행해야 하는 경우 조건문 if가 사용됩니다.
+이제 if문을 배우고 사용해 보겠습니다.
 
 ```python
-if 채널이 channels에 존재하면:
-    hits의 해당 부분에 hit 더하기
-    likes의 해당 부분에 like 더하기
+if (참/거짓 값 혹은 비교 연산):
+    조건이 참일 경우 실행할 명령
 ```
 
-for문과 비슷한 구조로 이루어져 있네요. if 다음에 등장하는 조건이 만족될 때에만 들여쓰기한 부분의 코드가 실행됩니다.
+if문의 기본적인 형태는 위와 같습니다. if 다음에 참, 거짓을 판별할 조건을 쓰고 :을 찍은 후,
+아래 줄부터 조건이 참일 때 실행할 기능을 for문과 같이 Space 4칸, 혹은 Tab 1칸 들여쓰면 됩니다.
 
-사용되는 조건은 **"참"** 혹은 **"거짓"** 둘 중 하나가 되는 문장이어야 합니다.
-
-사용할 수 있는 문장은 다음과 같습니다.
-
-### 같음 비교 문장
-
-어떤 변수나 값이 조건과 일치할 때를 검사합니다.
 
 ```python
 a = 1
-b = 2
 
-if a == 1:
-    print('a가 같다') 
-    
-if b == 1:
-    print('b가 같다')
+if a < 2:
+    print('a는 2보다 작다.')
 ```
 
-### 다름 비교 문장
+위 예시에서는 a = 1 이므로 1 < 2로 조건이 참이 됩니다.
+따라서 실행할 경우 'a는 2보다 작다.' 라는 메세지가 출력됩니다.
 
-어떤 변수나 값이 조건과 다를 때를 검사합니다.
+a를 3으로 바꾼 후 다시 실행해보면 메세지가 출력되지 않을 것입니다.
+
+
+### 조건이 성립하지 않을 경우 실행할 else
+
+위 예제에서 a가 2보다 작지 않으면 사용자는 어떤 메세지도 보지 못한 채 프로그램이 종료됩니다.
+
+조건이 성립하지 않을 때에는 'a는 2보다 작지 않다.' 라는 메세지를 보여줘야 하지 않을까요?
+
+if 문의 조건이 성립하지 않는 경우 실행할 기능을 if와 연결된 else 문에 정의할 수 있습니다.
 
 ```python
-a = '코알라'
-b = '파이썬'
+a = 2
 
-if a != '파이썬':
-    print('a가 다르다')
-if b != '파이썬':
-    print('b가 다르다')
+if a < 2:
+    print('a는 2보다 작다.')
+else:
+    print('a는 2보다 작지 않다.')
 ```
 
-### 종속 비교 문장
+else는 위와 같이 if 조건이 성립할 때 실행할 기능을 모두 작성한 이후, 들여쓰기를 다시 빼내어 else: 라고 작성하고 다시 아래 줄부터 들여쓰기하여 조건이 성립하지 않을 때 실행할 기능을 작성합니다.
 
-어떤 변수나 값이 배열 안에 들어있는지 / 들어있지 않은지 검사합니다.
+
+종속 연산자 in과 not in도 사용해 볼까요?
 
 ```python
-arr = [1, 3, 5, 7, 9]
+subjects = ['파이썬', '자바스크립트', '루비', '고']
 
-if 1 in arr:
-    print('1이 있다')
+if '자바' not in subjects:
+    subjects.append('자바')
+else:
+    print('이미 존재하는 과목입니다.')
 
-if 2 not in arr:
-    print('2가 없다')
+print(subjects)
 ```
 
+arr라는 리스트에 몇 가지 프로그래밍 과목명이 들어있습니다.
+
+그리고 if 문에서는 '자바' 라는 문자열이 subjects에 들어있지 않은지를 물어보고 있습니다. (not in!)
+
+그래서 들어있지 않다면 subjects 리스트에 '자바' 를 추가해주고, 들어 있다면 '이미 존재하는 과목입니다.' 라는 메세지를 출력하게 됩니다.
 
 
-여기서는 channels 배열에 현재 조사중인 클립의 채널이 들어있는지 검사하여야 하기 때문에 종속 비교 문장을 사용합니다.
+## 네이버 TV 예제 개선하기
+
+현재 저희 코드의 흐름은 아래와 같습니다.
 
 ```python
+raw = requests.get(~~).text
+html = BeautifulSoup(~~)
+
+infos = html.select('div.cds')
+chn_infos = {}
+
 for info in infos:
-    chn = info.select('dd.chn > a')[0].text
-    hit = int(info.select('span.hit')[0].text[4:].replace(',', ''))
-    like = int(info.select('span.like')[0].text[5:].replace(',', ''))
+    chn = info에서 추출
 
-    if chn in channels:
-        idx = channels.index(chn)
-        hits[idx] = hits[idx] + hit
-        likes[idx] = likes[idx] + like
+    chn_infos[chn] = {'hit': 0, 'like': 0} 을 준비한다
+
+for info in infos:
+    chn = info에서 추출
+    hit = info에서 추출
+    like = info에서 추출
+
+    chn_infos[chn]['hit'] 에 hit을 더한다
+    chn_infos[chn]['like'] 에 like를 더한다
+
+
+print(chn_infos)
 ```
 
-채널명 chn이 배열 channels에 들어있는 경우를 처리합니다.
+잘 작동하지만, 불필요한 동작들이 많이 보입니다.
 
-.index\( \) 함수는 배열 클래스에 내장된 함수로, 매개변수로 전달된 값의 번호를 돌려줍니다.
+[사진]
 
-이 번호를 이용해 hits 배열과 likes 배열의 해당 부분을 수정할 수 있습니다.
+같은 클립 리스트를 두 번이나 순회해야 하는 것도 맘에 들지 않고, 특히 첫 번째 순회에서는 똑같은 채널명에 {'hit': 0, 'like': 0} 을 여러번 할당하게 됩니다.
 
-이제 새로 들어온 클립의 채널 정보가 존재하지 않을 때도 처리해 봅시다.
+이렇게 구현한 이유는 if-else를 배우지 않아서 채널명이 키로 들어있는 경우, 들어있지 않은 경우를 나누어 처리할 수 없었기 때문입니다.
 
-
-
-
+방금 배운 if-else를 사용하여 이 흐름을 깔끔하게 개선해 보겠습니다.
 
 ```python
-if chn in channels: # 만약 channels 배열에 chn이 들어있으면
-    ...
+raw = requests.get(~~).text
+html = BeautifulSoup(~~)
 
-else:               # 들어있지 않으면 
-    channels.append(chn)
-    hits.append(hit)
-    likes.append(like)
+infos = html.select('div.cds')
+chn_infos = {}
+
+for info in infos:
+    chn = info에서 추출
+    hit = info에서 추출
+    like = info에서 추출
+
+    if chn in chn_infos.keys():
+        chn_infos[chn]['hit'] 에 hit을 더한다
+        chn_infos[chn]['like'] 에 like를 더한다
+
+    else:
+        chn_infos[chn] = {'hit': hit, 'like': like}
+
+print(chn_infos)
 ```
 
-else는 "만약 그렇지 않다면" 이라는 뜻으로, if문과 짝을 이루어 사용합니다.
+두 번의 순회를 한 번으로 줄였습니다.
 
-if문이 실행되지 않는 조건일 경우, 아래의 else 문이 실행됩니다.  
-\(else문이 항상 있어야 하는 것은 아닙니다. else 문이 없으면 아무것도 실행되지 않습니다.\)
+if-else를 이용해 키가 Dictionary에 들어있는지 아닌지를 검사하여 들어있다면 키에 접근하여 값을 갱신하고, 들어있지 않다면 키에 Dictionary를 새로 할당하는 구조입니다.
 
-채널 정보가 없는 경우 처음에 했던대로 그냥 새로 추가하기만 하면 됩니다.
-
+새로 할당할 때는 {'hit': 0, 'like': 0} 이 아니라 현재 순회중인 클립 정보를 즉시 반영하여 {'hit': hit, 'like': like} 로 초기화 해줍니다.
 
 
-이제 결과를 출력해봅시다.
-
-.index\( \) 함수를 사용할 수 있으니 다음과 같이 보기 좋게 출력하는 것이 가능합니다.
+위 의사 코드를 실제로 구현하면 아래와 같습니다.
 
 ```python
-for channel in channels:
-    idx = channels.index(channel)
-    print(channel, '/', hits[idx], '/', likes[idx])
+import requests
+from bs4 import BeautifulSoup
+
+raw = requests.get('https://tv.naver.com/r/').text
+html = BeautifulSoup(raw, 'html.parser')
+
+infos = html.select('div.cds')
+
+chn_infos = {}
+
+for info in infos:
+    chn = info.select_one('dd.chn > a').text
+    hit = int(info.select_one('span.hit').text[4:].replace(',', ''))
+    like = int(info.select_one('span.like').text[5:].replace(',', ''))
+
+    if chn in chn_infos.keys():
+        chn_infos[chn]['hit'] += hit
+        chn_infos[chn]['like'] += like
+    else:
+        chn_infos[chn] = {'hit': hit, 'like': like}
+
+
+for chn_info in chn_infos.items():
+    print(chn_info)
 ```
 
-세 배열을 따로 출력하는 것이 아니라, 같은 번호끼리 묶어 출력하게 됩니다. 서로 길이가 달라 불편했던 기존 출력방식보다 훨씬 보기 좋습니다.
-
-![](../.gitbook/assets/image%20%28164%29.png)
-
-그런데 출력 결과가 이게 뭐죠? 숫자가 이렇게 클 수가 있나요? 온 우주의 생명체가 모두 좋아요를 눌러도 이만큼은 안나올텐데요.
+이처럼 조건문을 잘 이용하면 불필요한 동작없이 깔끔한 코드 흐름을 구현할 수 있습니다!

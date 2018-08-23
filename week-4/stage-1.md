@@ -78,13 +78,13 @@ Dictionary에 새로운 값을 추가하려면 어떻게 해야 할까요?
 ## 중첩 Dictionary 구조
 
 ```python
-chnInfos = {'하트시그널2': {'hit': 20000, 'like': 3800},
+chn_infos = {'하트시그널2': {'hit': 20000, 'like': 3800},
             '미스터션샤인': {'hit': 18000, 'like': 3500},
             '쇼미더머니7': {'hit': 25000, 'like': 2200}}
             
-print(chnInfos)
-print(chnInfos['하트시그널2'])
-print(chnInfos['미스터션샤인']['hit'])
+print(chn_infos)
+print(chn_infos['하트시그널2'])
+print(chn_infos['미스터션샤인']['hit'])
 ```
 
 중첩 리스트와 유사하게, Dictionary의 키와 연결된 값이 또다른 Dictionary인 경우입니다.
@@ -93,24 +93,24 @@ print(chnInfos['미스터션샤인']['hit'])
 
 [중첩 Dictionary 접근 사진]
 
-chnInfos[첫 번째 키][두 번째 키] 를 사용하면 가장 안쪽의 값까지 접근할 수 있습니다.
+chn_infos[첫 번째 키][두 번째 키] 를 사용하면 가장 안쪽의 값까지 접근할 수 있습니다.
 
 
 
 ### 중첩 Dictionary 구조의 수정
 
 ```python
-chnInfos['하트시그널2']['hit'] = chnInfos['하트시그널2']['hit'] + 4900
-chnInfos['하트시그널2']['like'] += 280
+chn_infos['하트시그널2']['hit'] = chn_infos['하트시그널2']['hit'] + 4900
+chn_infos['하트시그널2']['like'] += 280
 
-print(chnInfos['하트시그널2'])
+print(chn_infos['하트시그널2'])
 ```
 
 이러한 2중 접근자 역시 변수처럼 다룰 수 있습니다.
 
 예시에서는 하트시그널의 조회수에 4900을 더하여 다시 하트시그널의 조회수 값으로 할당하고 있습니다.
 
-그러면 chnInfos의 '하트시그널2' 키와 연결된 값 Dictionary 안에서, 'hit' 키와 연결된 값이 수정됩니다.
+그러면 chn_infos의 '하트시그널2' 키와 연결된 값 Dictionary 안에서, 'hit' 키와 연결된 값이 수정됩니다.
 
 
 
@@ -132,18 +132,18 @@ print(chnInfos['하트시그널2'])
 
 ### 중첩 Dictionary 구조의 내부 키-값 추가
 
-chnInfos에 새로운 채널인 '꽃보다할배'에 대한 정보를 입력하려고 합니다.
+chn_infos에 새로운 채널인 '꽃보다할배'에 대한 정보를 입력하려고 합니다.
 
 ```python
 newchn = '꽃보다할배'
 newhit = 19400
 newlike = 2760
 
-chnInfos[newchn]['hit'] = newhit
-chnInfos[newchn]['like'] = newlike
+chn_infos[newchn]['hit'] = newhit
+chn_infos[newchn]['like'] = newlike
 ```
 
-chnInfos의 채널 키 중 '꽃보다할배' 는 없지만, Dictionary는 없는 키도 알아서 추가해주니 위와 같이 작성하면 될까요?
+chn_infos의 채널 키 중 '꽃보다할배' 는 없지만, Dictionary는 없는 키도 알아서 추가해주니 위와 같이 작성하면 될까요?
 
 실제로 실행해보면 오류가 납니다.
 
@@ -153,20 +153,90 @@ chnInfos의 채널 키 중 '꽃보다할배' 는 없지만, Dictionary는 없는
 위의 단순 Dictionary 키-값 추가 예제에서는 'german' 키를 통해 접근하려던 people이라는 Dictionary가 존재하고 있기 때문에 새 키를 생성할 수 있었습니다.
 
 
-하지만 여기서는 다릅니다. 코드는 오른쪽에서 왼쪽으로 실행되기 때문에, 프로그램은 'hit'이란 키로 접근하기 위해 먼저 chnInfos[newchn] 이라는 Dictionary를 찾습니다. 하지만 chnInfos는 newchn 키를 가지고 있지 않기 때문에, 해당 Dictionary 자체가 없습니다.
+하지만 여기서는 다릅니다. 코드는 오른쪽에서 왼쪽으로 실행되기 때문에, 프로그램은 'hit'이란 키로 접근하기 위해 먼저 chn_infos[newchn] 이라는 Dictionary를 찾습니다. 하지만 chn_infos는 newchn 키를 가지고 있지 않기 때문에, 해당 Dictionary 자체가 없습니다.
 
 여기서 프로그램은 "Dictionary가 있어야 키를 추가하던 수정하던 할 거 아냐" 라며 오류를 내고 종료합니다.
 
 ```python
-chnInfos[newchn] = {'hit': newhit, 'like': newlike}
+chn_infos[newchn] = {'hit': newhit, 'like': newlike}
 ```
 
 그래서 중첩 Dictionary 구조에서는 존재하지 않는 키를 건너뛰어 접근하면 안되고, 먼저 키를 생성하도록 명령해야 합니다.
 
-여기서는 chnInfos의 newchn 키에 새로운 Dictionary를 만들어 할당해주고 있습니다.
+여기서는 chn_infos의 newchn 키에 새로운 Dictionary를 만들어 할당해주고 있습니다.
 
-chnInfos는 멀쩡히 존재하고 있는 Dictionary이기 때문에 오류없이 새 키가 잘 추가됩니다.
+chn_infos는 멀쩡히 존재하고 있는 Dictionary이기 때문에 오류없이 새 키가 잘 추가됩니다.
 
 
 
 ### Dictionary의 여러가지 변형
+
+이렇게 멋진 장점을 가지고 있는 Dictionary이지만, 때에 따라 리스트의 사용법이 필요할 때가 있습니다.
+
+축적한 데이터를 for문을 통해 반복 처리하고 싶은 경우나 뒤에 나올 정렬을 수행해야 할 때가 그렇죠.
+
+이를 위해 Dictionary 클래스에는 몇 가지 함수가 준비되어 있습니다.
+
+
+```python
+people = {'korean': 380, 'american': 42, 'japanese': 15, 'german': 26, 'french': 7, 'chinese': 213, 'canadian': 11}
+
+print(people.keys())
+print(people.values())
+print(people.items())
+```
+
+[출력 결과]
+
+먼저 .keys() 함수는 이름에서도 알 수 있듯이, Dictionary의 모든 키만을 뽑아 리스트로 만들어 줍니다.
+
+당연히 .values() 함수는 반대로 값들을 리스트로 만들어 주겠죠?
+
+마지막으로 .items() 함수는 한 쌍의 키와 값을 "튜플"에 넣어 리스트로 만들어 줍니다.
+
+튜플이란 () 로 감싸져 있는 데이터 구조입니다. 생성 후 수정이 불가능하다는 점 빼고는 [] 로 감싸는 리스트와 거의 같다고 보시면 됩니다.
+
+즉, 리스트 안의 요소 하나하나가 수정불가 리스트(튜플) 인 중첩 리스트 구조입니다.
+
+따라서 people.items()[1][0] 은 'american' 이 됩니다.
+
+이렇게 Dictionary를 리스트로 변형시키면, 다음과 같이 for문으로 반복 처리할 수가 있습니다.
+
+
+```python
+for p_item in people.items():
+    print('There are', p_item[1], p_item[0] + 's')
+```
+[출력 결과]
+
+people.items()의 각 요소는 ('korean', 380) 과 같은 튜플입니다. 따라서 반복 매개 변수 p_item의 [0] 인덱스에 'korean', [1] 인덱스에 380이 들어있게 됩니다.
+
+
+
+
+중첩 Dictionary 구조에도 적용이 가능합니다.
+
+
+```python
+chn_infos = {'하트시그널2': {'hit': 20000, 'like': 3800},
+            '미스터션샤인': {'hit': 18000, 'like': 3500},
+            '쇼미더머니7': {'hit': 25000, 'like': 2200}}
+
+print(chn_infos.keys())
+print(chn_infos.values())
+print(chn_infos.items())
+```
+[출력 결과]
+
+
+여기서 Dictionary의 내용을 반복 처리하려면 다음과 같습니다.
+
+
+```python
+for chn_info in chn_infos.items():
+    print(chn_info[0], '의 조회수는', chn_info[1]['hit'], '입니다.')
+```
+
+chn_infos.items()의 각 요소는 ('하트시그널2', {'hit': 20000, 'like': 3800}) 과 같은 튜플입니다. 
+따라서 반복 매개 변수 chn_info의 [0] 인덱스에 '하트시그널2', [1] 인덱스에 {'hit': 20000, 'like': 3800} 가 들어갑니다. 
+조회수 숫자까지 도달하기 위해서는 chn_info[1]['hit'] 으로 Dictionary 안까지 들어가야겠죠?

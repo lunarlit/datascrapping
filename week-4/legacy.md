@@ -2,8 +2,8 @@
 
 네이버 뉴스 while
 
-
-
+hascode excel
+solution
 
 
 
@@ -215,3 +215,94 @@ while (page-1) * 10 < total:
 10행에서 전체 양을 보여주고 13행에서 현재 처리중인 페이지를 출력해주고 있습니다. 
 
 많은 데이터를 수집하기 시작하면 시간이 꽤 걸리기 때문에 이런 안내 메세지를 사용하여 진행도를 확인할 수 있게 만드는 것이 좋습니다.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Challenge 2
+
+## 도전과제 2
+
+여러분이 코딩 강의를 준비하는 코알라의 코스 매니저라고 생각해봅시다. 
+
+사람들이 어떤 기술을 많이 공부하고 궁금증을 가지는지 알아보기 위해서 [https://hashcode.co.kr/](https://hashcode.co.kr/) 의 데이터를 수집하려고 합니다. 
+
+10페이지까지 조사하여 질문글의 제목 리스트를 엑셀 파일 hashcode\_yyyy\_mm\_dd.xlsx 파일의 “질문 리스트” 시트에 저장해주세요. \(yyyy\_mm\_dd 부분은 오늘 날짜로 자동 입력되어야 합니다.\)
+
+![](../../.gitbook/assets/image%20%28142%29.png)
+
+
+
+### Self Hint
+
+1. 질문글의 제목은 어떻게 수집할까요? 데이터 선택자 경로를 찾아봅시다.
+2. 페이지는 어떻게 이동시킬까요? 웹사이트의 페이지를 변경시키며 힌트를 찾아봅시다.
+3. 엑셀 파일에 데이터를 추가하는 것은 \[ \], .cell\( \), .append\( \) 등 여러 방법 중 어떤 것을 사용하는게 좋을까요?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# 모범 답안
+
+```python
+
+from bs4 import BeautifulSoup
+from urllib import request
+import openpyxl
+import datetime
+
+xl = openpyxl.Workbook()
+sheet = xl.active
+sheet.title = "질문 리스트"
+
+for page in range(1, 11):
+    print(page, 'page를 수집하는 중입니다...')
+    raw = request.urlopen('https://hashcode.co.kr/?page=' + str(page))
+    html = BeautifulSoup(raw, 'html.parser')
+
+    list = html.select('.question-list-item')
+
+    for question in list:
+        title = question.select_one('div.question h4 > a').text
+        sheet.append([title])
+        
+print('수집 완료!')
+
+filename = 'hashcode_' + datetime.datetime.now().strftime("%Y_%m_%d")
+xl.save(filename + '.xlsx')
+```
+

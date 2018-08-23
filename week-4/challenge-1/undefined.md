@@ -1,65 +1,22 @@
 # 모범 답안
 
-
-
 ```python
-import requests
-from bs4 import BeautifulSoup
-import datetime
-import openpyxl
+subjects = ['파이썬', '자바스크립트', '루비', '코틀린', '자바스크립트', '파이썬',
+            '파이썬', 'C++', 'iOS', '파이썬', 'Go', '안드로이드', '파이썬', '루비',
+            'C++', 'iOS', '안드로이드', '파이썬', '파이썬', '자바스크립트', '루비',
+            '안드로이드', '자바', '파이썬', '파이썬', 'C++', 'iOS', '파이썬',
+            'Go', '자바', '파이썬', '루비', 'C++', 'iOS', '안드로이드', '파이썬']
 
-req = requests.get('https://tv.naver.com/r/')
-raw = req.text
-html = BeautifulSoup(raw, 'html.parser')
+counter = {}
 
+for subject in subjects:
+    counter[subject] = 0
 
-infos = html.select('.cds_info')
-chnInfos = {}
+for subject in subjects:
+    counter[subject] += 1
 
-excel = openpyxl.Workbook()
-sheet = excel.active
-sheet.title = '조회수별 정렬'
+print(counter)
 
-
-for info in infos:
-    chn = info.select('dd.chn > a')[0].text
-    hit = int(info.select('span.hit')[0].text[4:].replace(',', ''))
-    like = int(info.select('span.like')[0].text[5:].replace(',', ''))
-
-    if chn not in chnInfos.keys():
-        chnInfos[chn] = {'hit': hit, 'like': like}
-    else:
-        chnInfos[chn]['hit'] += hit
-        chnInfos[chn]['like'] += like
-
-
-def sortKey(item):
-    return item[1]['hit']
-
-
-sortedList = sorted(chnInfos.items(), key=sortKey, reverse=True)
-
-for sortedInfo in sortedList:
-    sheet.append([sortedInfo[0], sortedInfo[1]['hit'], sortedInfo[1]['like']])
-
-# ---- 새로 추가된 부분 ----
-
-def sortByLike(item):
-    return item[1]['like']
-
-
-sheet2 = excel.create_sheet('좋아요별 정렬')
-
-sortedList = sorted(chnInfos.items(), key=sortByLike, reverse=True)
-
-for sortedInfo in sortedList:
-    sheet2.append([sortedInfo[0], sortedInfo[1]['hit'], sortedInfo[1]['like']])
-
-# ----------------------
-
-dt = datetime.datetime.now()
-filename = dt.strftime("TOP_100_%Y_%m_%d")
-
-excel.save(filename + '.xlsx')
 ```
 
+Stage 2의 네이버 TV 예제와 같이 리스트를 두 번 순회하며 첫 번째에는 키를 준비하여 값을 0으로 초기화하고, 두 번째 순회에서는 해당 키의 값에 1씩 추가하고 있습니다.

@@ -1,30 +1,39 @@
+
 # 모범 답안
 
 ```python
-
+import requests
 from bs4 import BeautifulSoup
-from urllib import request
-import openpyxl
-import datetime
 
-xl = openpyxl.Workbook()
-sheet = xl.active
-sheet.title = "질문 리스트"
+raw = requests.get('https://tv.naver.com/r/').text
+html = BeautifulSoup(raw, 'html.parser')
 
-for page in range(1, 11):
-    print(page, 'page를 수집하는 중입니다...')
-    raw = request.urlopen('https://hashcode.co.kr/?page=' + str(page))
-    html = BeautifulSoup(raw, 'html.parser')
+infos = html.select('div.cds')
 
-    list = html.select('.question-list-item')
+chn_infos = {}
 
-    for question in list:
-        title = question.select_one('div.question h4 > a').text
-        sheet.append([title])
-        
-print('수집 완료!')
+for info in infos:
+    chn = info.select_one('dd.chn > a').text
+    hit = int(info.select_one('span.hit').text[4:].replace(',', ''))
+    like = int(info.select_one('span.like').text[5:].replace(',', ''))
+    score = (like * 350 + hit) / 100
 
-filename = 'hashcode_' + datetime.datetime.now().strftime("%Y_%m_%d")
-xl.save(filename + '.xlsx')
+    if chn not in chn_infos.keys():
+        chn_infos[chn] = {'hit': hit, 'like': like, 'score': score}
+    else:
+        chn_infos[chn]['hit'] += hit
+        chn_infos[chn]['like'] += like
+        chn_infos[chn]['score'] += score
+
+
+def sortKey(item):
+    return item[1]['score']
+
+
+sortedList = sorted(chn_infos.items(), key=sortKey, reverse=True)
+
+for sortedInfo in sortedList:
+    print(sortedInfo)
 ```
 
+22행과 26행에서 계산한 score를 dictionary에 추가해주고 있고, 30행에서는 정렬 함수의 기준을 score로 바꾸어 주었습니다.
