@@ -6,7 +6,7 @@
 
 ## 목표 선정
 
-![](../.gitbook/assets/image%20%28383%29.png)
+![](../.gitbook/assets/image%20%28429%29.png)
 
 3주차부터 본격적으로 데이터를 수집해 볼 텐데요. 네이버 TV TOP 100 페이지에서 각 클립의 제목, 채널명, 조회수, 좋아요 수를 수집하게 됩니다.
 
@@ -14,11 +14,9 @@
 
 따라서 먼저 4위 클립의 정보를 찾아가 보도록 하겠습니다.
 
-
-
 ## 1. 처음부터 따라 내려가는 방법
 
-![](../.gitbook/assets/image%20%28271%29.png)
+![](../.gitbook/assets/image%20%28303%29.png)
 
 크롬 브라우저에서 네이버 TV TOP 100\([https://tv.naver.com/r\)에](https://tv.naver.com/r%29에) 접속하고 F12를 눌러 개발자 도구를 열어주세요.
 
@@ -28,8 +26,6 @@
 
 바로 현재 마우스를 대고있는 태그가 커버하는 범위를 나타내는 것입니다.
 
-
-
 ![](../.gitbook/assets/image-24.png)
 
 div\#wrap에 마우스를 대 보았더니, 브라우저 창에 색이 입혀지는 것을 볼 수 있습니다.
@@ -38,13 +34,11 @@ div\#wrap에 마우스를 대 보았더니, 브라우저 창에 색이 입혀지
 
 범위가 너무 넓으니 div\#wrap 좌측의 세모 버튼을 눌러 내부로 더 들어가 봅시다.
 
-![](../.gitbook/assets/image%20%28242%29.png)
+![](../.gitbook/assets/image%20%28270%29.png)
 
 div\#wrap의 내부입니다.
 
-
-
-![](../.gitbook/assets/image%20%28168%29.png)
+![](../.gitbook/assets/image%20%28183%29.png)
 
 script 태그는 HTML 요소가 아니므로 무시하셔도 좋으며, 나머지는 각각 div\#header, div\#aside, div\#container, div.floating\_top 입니다. 각 div에 다시 마우스를 대보면 div\#wrap의 구조를 더 잘 파악할 수 있습니다.
 
@@ -54,7 +48,7 @@ script 태그는 HTML 요소가 아니므로 무시하셔도 좋으며, 나머�
 
 div.top100이라는 자식 요소 안에 또 다시 div.cate\_tit2, div.top\_main, div\#content가 있네요.
 
-![](../.gitbook/assets/image%20%28180%29.png)
+![](../.gitbook/assets/image%20%28198%29.png)
 
 최상위 3개 클립은 div.top\_main에, 나머지 97개는 div\#content에 들어있는 것을 확인할 수 있습니다.
 
@@ -78,43 +72,27 @@ div\#wrap &gt; div\#container &gt; div.top100 &gt; div\#content &gt; div.top100\
 
 이와 반대로 가장 작은 요소로부터 거슬러 올라가는 방법도 있습니다.
 
-![](../.gitbook/assets/image%20%28310%29.png)
+![](../.gitbook/assets/image%20%28350%29.png)
 
 먼저 원하는 부분을 우클릭하여 "검사" 라는 버튼을 누릅니다. \(개발자 도구가 열려있는 상태여야 합니다!\)
 
-
-
-![](../.gitbook/assets/image%20%28345%29.png)
+![](../.gitbook/assets/image%20%28386%29.png)
 
 그러면 개발자 도구에서 바로 우클릭한 부분까지 내려갑니다.
 
 그런데 4위 클립 정보를 넘어서 너무 디테일한 제목 태그까지 도달하고 말았네요. 원하는 적절한 범위가 선택될 때까지 거슬러 올라갑니다.
 
-
-
-![](../.gitbook/assets/image%20%28386%29.png)
+![](../.gitbook/assets/image%20%28432%29.png)
 
 찾아낸 요소 div.cds를 선택자로 사용합니다.
 
-
-
 깜짝 실습!
 
-![](../.gitbook/assets/image%20%28193%29.png)
+![](../.gitbook/assets/image%20%28214%29.png)
 
 [https://news.ycombinator.com](https://news.ycombinator.com) 에 접속하여 첫 번째 기사 제목의 선택자를 찾아 보세요.
 
-
-
 정답은...
-
-
-
-
-
-
-
-
 
 a.storylink 입니다.
 

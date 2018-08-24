@@ -18,7 +18,7 @@ numbers = [94, 23, 64, 39, 25, 10, 63, 6, 234, 34, 63, 4, 86, 5, 24, 1, 631, 90]
 print(sorted(numbers))
 ```
 
-![](../.gitbook/assets/image%20%2843%29.png)
+![](../.gitbook/assets/image%20%2844%29.png)
 
 위와 같은 숫자 배열 정도는 간단히 정렬하여 출력할 수 있습니다.
 
@@ -45,7 +45,7 @@ words = ['coffee', 'car', 'carpet', 'candy', 'cure', 'crisis', 'cucumber']
 print(sorted(words))
 ```
 
-![](../.gitbook/assets/image%20%28107%29.png)
+![](../.gitbook/assets/image%20%28115%29.png)
 
 위와 같이 문자나 문자열도 사전순\(Lexicographic\) 으로 훌륭하게 정렬하는 모습입니다.
 
@@ -65,7 +65,7 @@ mixed = [3, '호날두', 'Python', 15, '메시', 'Data']
 print(sorted(mixed))
 ```
 
-![](../.gitbook/assets/image%20%2874%29.png)
+![](../.gitbook/assets/image%20%2877%29.png)
 
 숫자와 문자열이 섞인 배열으로도 테스트 해보았더니 다음과 같은 오류가 발생했습니다.
 
@@ -89,7 +89,7 @@ print(sorted(scores))
 
 위와 같이 간단한 키-값 Dictionary를 만들어 정렬해보았습니다. 키는 한 자리 알파벳이고 값은 숫자인데요. 어떤 값을 기준으로 정렬이 될까요? 아니면 에러가 날까요?
 
-![](../.gitbook/assets/image%20%28139%29.png)
+![](../.gitbook/assets/image%20%28149%29.png)
 
 결과는 위와 같습니다.
 
@@ -176,7 +176,7 @@ scores.items\(\) 의 리스트 요소들은 \('h', 16\), \('b', 24\) 등의 튜�
 print(sorted(scores.items(), key=sortKey, reverse=True))
 ```
 
-![](../.gitbook/assets/image%20%28216%29.png)
+![](../.gitbook/assets/image%20%28240%29.png)
 
 ## 채널 정보 정렬
 
@@ -184,7 +184,7 @@ print(sorted(scores.items(), key=sortKey, reverse=True))
 
 Stage 3의 마지막 부분에서 출력해본 chn\_infos.items\(\)는 다음과 같았습니다.
 
-![](../.gitbook/assets/image%20%2877%29.png)
+![](../.gitbook/assets/image%20%2881%29.png)
 
 Dictionary의 키인 채널명과 'hit'과 'like'를 가지고 있는 Dictionary 값이 튜플을 이루고 있습니다.
 
@@ -208,7 +208,7 @@ for sortedInfo in sortedList:
 
 이 정렬 기준 함수를 사용해 정렬한 후, 그 결과 배열을 하나씩 출력하면 원하는 결과를 얻을 수 있습니다.
 
-![](../.gitbook/assets/image%20%28167%29.png)
+![](../.gitbook/assets/image%20%28182%29.png)
 
 2018년 6월 28일 19시 22분의 네이버 TV TOP 100 채널 조회수별 정렬 결과입니다.
 

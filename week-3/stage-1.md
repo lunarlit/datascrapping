@@ -8,8 +8,6 @@
 
 여태까지 문자열 클래스, 리스트 클래스에 대해 배워 보았고 6주 과정 안에서 Dictionary와 Tuple이라는 기본 클래스도 배워볼 것입니다.
 
-
-
 ## 외부 라이브러리
 
 이렇게 파이썬 개발자들이 파이썬에 자체적으로 몇 가지 클래스를 내장해 두었지만, 우리가 사용하고 싶은 여러 다양한 기능들이 모두 있을까요?
@@ -18,7 +16,7 @@
 
 대신 그들은 전 세계의 다른 개발자들에게 책임을 맡깁니다.
 
-![](../.gitbook/assets/image%20%28384%29.png)
+![](../.gitbook/assets/image%20%28430%29.png)
 
 전 세계의 개발자들은 별 다른 계약 없이도, 파이썬을 이용해 유용한 기능들을 만들고 공유할 수 있습니다.
 
@@ -31,11 +29,9 @@
 
 구체적인 내용은 requests 라이브러리를 사용하며 알아보겠습니다.
 
-
-
 ## 외부 라이브러리 설치 방법
 
-![](../.gitbook/assets/image%20%2867%29.png)
+![](../.gitbook/assets/image%20%2870%29.png)
 
 PyCharm의 File 메뉴를 열어 Settings 를 선택합니다.
 
@@ -43,27 +39,19 @@ Settings 콘솔이 열리면 좌측 메뉴에서 Project: 프로젝트명 &gt; P
 
 선택 후 우측의 초록색 + 버튼을 누릅니다.
 
-
-
-![](../.gitbook/assets/image%20%28255%29.png)
+![](../.gitbook/assets/image%20%28285%29.png)
 
 이와 같은 패키지 설치 콘솔이 나올 것입니다.
 
 검색 창에 requests를 검색하여 아래의 Install Package를 눌러줍니다.
 
-
-
-![](../.gitbook/assets/image%20%28217%29.png)
+![](../.gitbook/assets/image%20%28241%29.png)
 
 잠시 기다리면 이렇게 녹색 알림으로 설치 완료 메세지가 나옵니다.
 
-
-
-![](../.gitbook/assets/image%20%28199%29.png)
+![](../.gitbook/assets/image%20%28221%29.png)
 
 마찬가지로 beautifulsoup4 도 설치해 주세요. \(Stage 4에서 사용합니다.\)
-
-
 
 ## requests 라이브러리의 사용
 
@@ -86,9 +74,7 @@ requests 는 방금 들여온 외부 라이브러리이자, **웹페이지에 �
 
 그 중 웹페이지의 내용을 요청하는 .get\(\) 함수를 사용하고, 매개 변수로 웹페이지의 주소를 입력합니다.
 
-
-
-![](../.gitbook/assets/image%20%28120%29.png)
+![](../.gitbook/assets/image%20%28129%29.png)
 
 사용한 주소는 네이버TV TOP100 의 주소입니다.
 
@@ -99,7 +85,7 @@ requests.get의 결과로 얻어진 req \(변수명이므로 마음대로 지어
 
 이제 print 함수를 사용해 이 raw를 출력해보겠습니다.
 
-![](../.gitbook/assets/image%20%28117%29.png)
+![](../.gitbook/assets/image%20%28126%29.png)
 
 1주차에 보던 HTML과 CSS 선택자로 이루어진 파일이 출력되었습니다!
 

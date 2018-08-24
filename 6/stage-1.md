@@ -1,8 +1,6 @@
-# Stage 1 - 데이터 수집의 기본기 복습
+# Stage 1 - 정적 수집과 동적 수집 비교
 
 첫 번째 스테이지에서는 데이터 수집에서 가장 기본적이면서도 필수적이고 많이 쓰이는 한 페이지 정적 수집에 대해 포인트만 다시 다뤄봅니다.
-
-
 
 ## 수집 대상 판단
 
@@ -10,7 +8,7 @@
 
 먼저 해당 웹 서비스에 정적 수집 방식을 적용할 수 있는지 판단할 수 있어야 합니다.
 
-![](../.gitbook/assets/image%20%28213%29.png)
+![](../.gitbook/assets/image%20%28237%29.png)
 
 ```text
 https://search.shopping.naver.com/search/category.nhn?pagingIndex=1&pagingSize=40&viewType=list&sort=rel&cat_id=50001203
@@ -18,9 +16,7 @@ https://search.shopping.naver.com/search/category.nhn?pagingIndex=1&pagingSize=4
 
 마우스 카테고리의 첫 번째 페이지 주소입니다.
 
-
-
-![](../.gitbook/assets/image%20%28147%29.png)
+![](../.gitbook/assets/image%20%28158%29.png)
 
 ```text
 https://search.shopping.naver.com/search/category.nhn?pagingIndex=2&pagingSize=40&viewType=list&sort=rel&cat_id=50001203
@@ -34,11 +30,7 @@ https://search.shopping.naver.com/search/category.nhn?pagingIndex=2&pagingSize=4
 
 반면 페이지 내에서 어떤 행동을 하였을 때 주소가 바뀌지 않고도 다른 데이터를 보여주는 것이 가능하다면 불가능하다고 볼 수 있겠지요?
 
-
-
 ## requests 라이브러리를 이용한 수집 준비
-
-
 
 ```python
 import requests
@@ -55,33 +47,25 @@ requests.get 함수로 원하는 페이지에 요청을 보내 결과를 req 변
 
 이 때 raw는 단순 String 타입의 텍스트이며 HTML로서의 기능을 갖고 있지 않습니다. 따라서 BeautifulSoup 라이브러리를 사용해 HTML 타입 변수로 바꾸어주고 있습니다.
 
-
-
 ## 리스트 가져오기
 
-![](../.gitbook/assets/image%20%2837%29.png)
-
-
+![](../.gitbook/assets/image%20%2838%29.png)
 
 원하는 데이터가 있는 페이지에 접근했다면 이제 데이터 선택자 경로를 찾아 리스트를 수집해야 합니다. 개발자 도구를 켜고 해당 부분을 마우스로 우클릭하여 맨 아래의 "검사"를 누릅니다.\(크롬 브라우저 기준\)
 
-![](../.gitbook/assets/image%20%2848%29.png)
+![](../.gitbook/assets/image%20%2849%29.png)
 
-![](../.gitbook/assets/image%20%28104%29.png)
+![](../.gitbook/assets/image%20%28111%29.png)
 
 div.info로 검색이 되었네요. 그런데 선택 영역을 보면 리스트 전체를 덮고 있지 않습니다. 수집하려는 데이터가 모두 저 영역 안에 있다면 상관이 없지만 영역 오른쪽에 있는 브랜드명도 수집하고 싶기 때문에 좀 더 범위를 넓혀보겠습니다.
 
+![](../.gitbook/assets/image%20%28146%29.png)
 
-
-![](../.gitbook/assets/image%20%28136%29.png)
-
-![](../.gitbook/assets/image%20%28223%29.png)
+![](../.gitbook/assets/image%20%28248%29.png)
 
 li.\_itemSection에 마우스를 대보니 리스트의 모든 영역을 커버하는 것을 알 수 있습니다. 현재 li 태그는 \_model\_list와 \_itemSection 두 개의 클래스를 가지고 있는데요.
 
 둘 중 하나의 클래스, 혹은 좀 더 확실하게 둘 모두 선택자 경로에 넣어도 좋습니다. 클래스를 두 개 가진 요소의 경우 li.\_model\_list.\_itemSection 과 같이 .으로 계속 이어나갑니다.
-
-
 
 ![](../.gitbook/assets/image%20%2834%29.png)
 
@@ -102,13 +86,11 @@ html = BeautifulSoup(raw, 'html.parser')
 items = html.select('li._itemSection')
 ```
 
-
-
 ## 리스트 요소에서 데이터 추출
 
 전체 페이지 내에서 필요한 물품 리스트만 가져오는 데에 성공했지만, 아직도 필요없는 부분이 훨씬 많습니다. 리스트 요소 내에서 필요한 부분만 추출해야겠지요?
 
-![](../.gitbook/assets/image%20%28194%29.png)
+![](../.gitbook/assets/image%20%28215%29.png)
 
 먼저 가장 바깥의 리스트 요소에는 data-expose-rank라는 속성에 랭킹이 들어있습니다. 페이지에 드러나지 않는 비밀정보네요! 텍스트가 아닌 속성은 .attrs\['속성명'\] 으로 수집 가능합니다.
 
@@ -121,9 +103,7 @@ for item in items:
     rank = int(item.attrs['data-expose-rank'])
 ```
 
-
-
-![](../.gitbook/assets/image%20%28105%29.png)
+![](../.gitbook/assets/image%20%28112%29.png)
 
 ![](../.gitbook/assets/image%20%2810%29.png)
 
@@ -144,8 +124,6 @@ for item in items:
     mall = item.select_one('div.info_mall > p.mall_txt > a.mall_img')
     mall_name = mall.attrs['title']
 ```
-
-
 
 ## 오
 

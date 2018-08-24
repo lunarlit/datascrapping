@@ -1,7 +1,8 @@
-
 # Pre - 실습 코드 데이터
 
-## Stage 2 - 15p
+## Pre - 실습 코드 데이터
+
+### Stage 2 - 15p
 
 ```python
 from selenium import webdriver
@@ -67,9 +68,7 @@ for data in list:
 # driver.close()
 ```
 
-
-
-## Stage 3
+### Stage 3
 
 ```python
 from selenium import webdriver
@@ -120,9 +119,7 @@ while True:
     time.sleep(1)
 ```
 
-
-
-## Stage 4
+### Stage 4
 
 ```python
 from selenium import webdriver
@@ -176,6 +173,5 @@ while True:
     time.sleep(1)
 ```
 
-# Pre - 실습 코드 데이터
-
+## Pre - 실습 코드 데이터
 
