@@ -73,4 +73,5 @@
   * [Stage 4 - 실습 예제 : 게시판 안으로 들어가기](6/stage-4.md)
   * [Challenge 2](6/challenge-2/README.md)
     * [모범 답안](6/challenge-2/undefined.md)
-
+  * [자율 과제](6/self-challenge/README.md)
+    * [모범 답안](6/self-challenge/solution.md)

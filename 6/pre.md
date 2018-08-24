@@ -1,8 +1,13 @@
 # Pre - 실습 코드 데이터
 
-## Pre - 실습 코드 데이터
+여러분의 소중한 시간을 절약하기 위해 의미없이 타이핑해야하는 데이터들은 미리 준비해두었습니다.
 
-### Stage 2 - 15p
+코드 창 우측 상단의 Copy 버튼을 눌러 Pycharm 등의 코드 편집기에 붙여넣으시면 됩니다.
+
+그냥 복사 - 붙여넣기를 할 경우 오류가 생길 확률이 높으니 꼭 Copy 버튼을 사용해 주세요.
+
+
+## Stage 2 - 15p
 
 ```python
 from selenium import webdriver
@@ -68,7 +73,7 @@ for data in list:
 # driver.close()
 ```
 
-### Stage 3
+## Stage 3
 
 ```python
 from selenium import webdriver
@@ -119,7 +124,7 @@ while True:
     time.sleep(1)
 ```
 
-### Stage 4
+## Stage 4
 
 ```python
 from selenium import webdriver
@@ -172,6 +177,4 @@ while True:
 
     time.sleep(1)
 ```
-
-## Pre - 실습 코드 데이터
 

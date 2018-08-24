@@ -1,129 +1,103 @@
 # Stage 1 - 정적 수집과 동적 수집 비교
 
-첫 번째 스테이지에서는 데이터 수집에서 가장 기본적이면서도 필수적이고 많이 쓰이는 한 페이지 정적 수집에 대해 포인트만 다시 다뤄봅니다.
+이번 스테이지에서는 기존에 배우던 방식인 정적 수집과 오늘 사용할 동적 수집을 비교해보고 어떤 상황에 어떤 방식을 써야 하는지 배워봅니다.
 
-## 수집 대상 판단
+얼핏 봐서는 브라우저를 사용하는 수집이 만능이라 정적 수집을 쓸 필요가 없어보이지만 정적 수집은 속도가 매우 빠르기 때문에 가능하면 사용하는 편이 좋습니다.
 
-스테이지 1, 2에 걸쳐 네이버 쇼핑에 있는 특정 카테고리의 상품들을 수집해 보겠습니다.
 
-먼저 해당 웹 서비스에 정적 수집 방식을 적용할 수 있는지 판단할 수 있어야 합니다.
 
-![](../.gitbook/assets/image%20%28237%29.png)
+## 정적 수집을 사용할 수 있는 경우
 
-```text
-https://search.shopping.naver.com/search/category.nhn?pagingIndex=1&pagingSize=40&viewType=list&sort=rel&cat_id=50001203
-```
+![](../.gitbook/assets/image%20%28189%29.png)
 
-마우스 카테고리의 첫 번째 페이지 주소입니다.
+가장 처음 데이터수집을 해보았던 네이버 TV TOP 100 페이지입니다. 이 페이지의 특징은 한 페이지 안에 모든 데이터가 다 담겨있다는 것입니다.
 
-![](../.gitbook/assets/image%20%28158%29.png)
+제일 먼저 다룬만큼 가장 쉬운 형태라고 할 수 있겠습니다.
 
-```text
-https://search.shopping.naver.com/search/category.nhn?pagingIndex=2&pagingSize=40&viewType=list&sort=rel&cat_id=50001203
-```
 
-두 번째 페이지의 주소입니다.
 
-첫 번째 페이지 주소와 비교했을 때 pagingIndex가 1에서 2로 바뀐 것을 알 수 있습니다.
+![](../.gitbook/assets/image%20%28109%29.png)
 
-이렇게 하나의 주소에 하나의 결과가 대응될 때 대부분 정적 수집이 가능하다고 판단할 수 있습니다.
+여러 페이지를 수집하는 예제에서 수집해 본 네이버 뉴스와 과제로 나왔던 Hashcode라는 서비스입니다. 이 서비스들은 여러 페이지를 이동하며 수집해야 했지만 각 페이지마다 주소\(정확히는 요청값\)가 달라지는 모습을 보였습니다.
 
-반면 페이지 내에서 어떤 행동을 하였을 때 주소가 바뀌지 않고도 다른 데이터를 보여주는 것이 가능하다면 불가능하다고 볼 수 있겠지요?
+따라서 단순히 주소의 요청값만 잘 바꿔준다면 첫 번째 형태를 여러 번 반복하는 것과 마찬가지입니다.
 
-## requests 라이브러리를 이용한 수집 준비
+이렇게 정적 수집이 가능한 페이지의 특징은
+
+1. 별다른 절차없이 주소로 바로 접속해도 데이터를 볼 수 있다.
+2. 새로고침하지 않으면 페이지 안의 데이터가 변하지 않는다. \(데이터가 정적이다.\)
+
+간단하게는 이 두가지로 정리해볼 수 있겠습니다.  
+\(이 두 가지를 만족하나 정적 수집이 불가능한 경우도 없지는 않습니다.\)
+
+
+
+## 정적 수집을 사용할 수 없는 경우
+
+![](../.gitbook/assets/image%20%2818%29.png)
+
+네이버 메일함은 바로 접속할 수 없고 반드시 로그인을 거쳐야 합니다.
+
+로그인 후 메일함의 주소를 복사하여 로그아웃된 상태에서 접속해보아도 왼쪽의 로그인 안내창으로 이어집니다.
+
+
+
+![](../.gitbook/assets/image%20%28167%29.png)
+
+굉장히 독특한 경우인데 메인 페이지를 통하지 않고 바로 접속하면 이용할 수 없는 페이지입니다.
+
+파이썬 코드에서 메인 페이지를 접속했다가 해당 페이지로 접속해보아도, 두 접속은 이어지는 것이 아니라 별개의 요청이기 때문에 소용이 없습니다.
+
+
+
+![](../.gitbook/assets/image%20%28216%29.png)
+
+최근의 발달한 웹 기술을 이용하면 새로고침을 하지 않고도 데이터를 추가로 로딩할 수가 있습니다.
+
+좌측의 사진 목록은 스크롤이 끝까지 도달하려하면 사진을 더 불러옵니다. 우측의 갤러리 뷰는 화살표를 누르면 새로운 사진이 계속 로딩됩니다.
+
+이런 동적 로딩 데이터들은 최초 한 번밖에 얻어올 수 없는 정적 수집으로는 도달이 불가능합니다.
+
+
+
+위와 같이 같은 주소를 사용해 접속해도 상황에 따라 데이터를 볼 수 없거나 다른 데이터가 나오는 페이지들은 기존 방식으로 수집할 수가 없습니다.
+
+
+
+## 정적 수집과 동적 수집의 비교
+
+
+
+기존에 배운 방식은 아래와 같이 주소에서 HTML 소스를 가져오도록 요청합니다.
 
 ```python
-import requests
-from bs4 import BeautifulSoup
-
-req = requests.get('https://search.shopping.naver.com/search/category.nhn?cat_id=50001203&pagingSize=40&pagingIndex=1')
+requests.get('https://tv.naver.com/r/')
 raw = req.text
 html = BeautifulSoup(raw, 'html.parser')
 ```
 
-정적 수집에 항상 사용되는 코드입니다.
-
-requests.get 함수로 원하는 페이지에 요청을 보내 결과를 req 변수에 저장하며, 그 중 HTML코드만 뽑아내 raw 변수에 저장합니다.
-
-이 때 raw는 단순 String 타입의 텍스트이며 HTML로서의 기능을 갖고 있지 않습니다. 따라서 BeautifulSoup 라이브러리를 사용해 HTML 타입 변수로 바꾸어주고 있습니다.
-
-## 리스트 가져오기
-
-![](../.gitbook/assets/image%20%2838%29.png)
-
-원하는 데이터가 있는 페이지에 접근했다면 이제 데이터 선택자 경로를 찾아 리스트를 수집해야 합니다. 개발자 도구를 켜고 해당 부분을 마우스로 우클릭하여 맨 아래의 "검사"를 누릅니다.\(크롬 브라우저 기준\)
-
-![](../.gitbook/assets/image%20%2849%29.png)
-
-![](../.gitbook/assets/image%20%28111%29.png)
-
-div.info로 검색이 되었네요. 그런데 선택 영역을 보면 리스트 전체를 덮고 있지 않습니다. 수집하려는 데이터가 모두 저 영역 안에 있다면 상관이 없지만 영역 오른쪽에 있는 브랜드명도 수집하고 싶기 때문에 좀 더 범위를 넓혀보겠습니다.
-
-![](../.gitbook/assets/image%20%28146%29.png)
-
-![](../.gitbook/assets/image%20%28248%29.png)
-
-li.\_itemSection에 마우스를 대보니 리스트의 모든 영역을 커버하는 것을 알 수 있습니다. 현재 li 태그는 \_model\_list와 \_itemSection 두 개의 클래스를 가지고 있는데요.
-
-둘 중 하나의 클래스, 혹은 좀 더 확실하게 둘 모두 선택자 경로에 넣어도 좋습니다. 클래스를 두 개 가진 요소의 경우 li.\_model\_list.\_itemSection 과 같이 .으로 계속 이어나갑니다.
-
-![](../.gitbook/assets/image%20%2834%29.png)
-
-선택자 경로를 발견했으면 Ctrl+F를 눌러 검색해봅니다. 클래스는 중복하여 존재할 수 있기 때문에 같은 리스트의 요소를 한 번에 선택할 수 있게 해주지만, 리스트 밖의 원하지 않는 요소도 같은 클래스를 가질 수 있기 때문입니다.
-
-검색 결과 li.\_model\_list.\_itemSection 이라는 선택자는 물품 리스트 요소에만 있는 것으로 확인됩니다.
-
-그렇다면 이제 파이썬 코드의 HTML 변수에서 .select 함수를 사용하여 리스트를 수집합니다.
-
-```python
-import requests
-from bs4 import BeautifulSoup
-
-req = requests.get('https://search.shopping.naver.com/search/category.nhn?cat_id=50001203&pagingSize=40&pagingIndex=1')
-raw = req.text
-html = BeautifulSoup(raw, 'html.parser')
-
-items = html.select('li._itemSection')
-```
-
-## 리스트 요소에서 데이터 추출
-
-전체 페이지 내에서 필요한 물품 리스트만 가져오는 데에 성공했지만, 아직도 필요없는 부분이 훨씬 많습니다. 리스트 요소 내에서 필요한 부분만 추출해야겠지요?
-
-![](../.gitbook/assets/image%20%28215%29.png)
-
-먼저 가장 바깥의 리스트 요소에는 data-expose-rank라는 속성에 랭킹이 들어있습니다. 페이지에 드러나지 않는 비밀정보네요! 텍스트가 아닌 속성은 .attrs\['속성명'\] 으로 수집 가능합니다.
-
-```python
-# 생략...
-items = html.select('li._itemSection')
+이를 어느 상황에서나 같은 주소에서 변하지 않는 데이터를 기대할 수 있다는 의미에서 정적\(static\) 수집이라 부릅니다.
 
 
-for item in items:
-    rank = int(item.attrs['data-expose-rank'])
-```
 
-![](../.gitbook/assets/image%20%28112%29.png)
+Stage 2부터 배워볼 수집 방식은 아래와 같이 실제 브라우저를 도구로 이용합니다.
 
-![](../.gitbook/assets/image%20%2810%29.png)
+![](../.gitbook/assets/image%20%28171%29.png)
 
-페이지에 드러나는 정보는 마찬가지로 우클릭 - 검사를 통해 빠르게 찾아볼 수 있습니다. 제목의 선택자 경로인 a.tit은 정보 영역인 div.info 안에서 처음으로 나오기 때문에, 유일성을 검증해보지 않아도 .select\_one\(\) 함수를 사용해 수집할 수 있습니다.
+단순히 HTML 소스를 요청할 뿐만 아니라 입력, 클릭 등 실제 브라우저를 사용할 때 하는 행동들도 수행할 수 있다는 의미에서 동적\(dynamic\) 수집이라 부릅니다.
 
-가격, 가격 갱신일, 별점, 상품평 수, 브랜드명도 마찬가지로 가져오겠습니다.
+위에서 봤던 예시들처럼 같은 주소를 가지고도 상황에 따라 데이터가 변하는 동적 페이지를 수집한다는 의미도 가지고 있습니다.
 
-```python
-for item in items:
-    rank = int(item.attrs['data-expose-rank'])
-    info = item.select_one('div.info')
-    name = info.select_one('a.tit').text
-    price = info.select_one('span.price span.num')
-    reload = price.attrs['data-reload-date']
-    price = price.text
-    star = info.select_one('span.etc span.star_graph span').attrs['style']
-    comments = info.select_one('span.etc em').text
-    mall = item.select_one('div.info_mall > p.mall_txt > a.mall_img')
-    mall_name = mall.attrs['title']
-```
 
-## 오
 
+![](../.gitbook/assets/image%20%28150%29.png)
+
+정적 수집과 동적 수집의 차이를 간단히 정리한 비교표입니다.
+
+정적 수집은 한 번 주소를 통해 요청하고 결과를 받는 것으로 끝입니다. 로그인 상태를 유지하는 등 연속적인 작업을 수행할 수 없습니다. 반면 동적 수집은 브라우저를 실제로 사용하기 때문에 브라우저가 꺼지지 않는 한 이전에 수행한 작업의 영향을 유지할 수 있습니다.
+
+또한 정적 수집은 위의 예제에서 보듯 웹에 존재하는 다양한 서비스를 모두 수집하기엔 한계가 있습니다. 따라서 필연적으로 동적 수집을 활용해야 합니다. 정적 수집을 먼저 배운 이유는 과정이 단순하여 이해하기 쉽기 때문입니다.
+
+정적 수집은 단점밖에 없어보이지만 꼭 사용해야 할 이유가 있습니다. HTML 결과를 받아 브라우저에 그려주는 과정이 생략되기 때문에 속도가 매우 빠르다는 것입니다. 따라서 정적 수집은 사용이 제한적이지만 가능한 경우 최대한 사용해주는 것이 좋습니다.
+
+그러면 다음 스테이지에서 동적 수집을 가능케하는 selenium 라이브러리에 대해 배워보겠습니다.
