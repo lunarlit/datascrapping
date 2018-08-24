@@ -3,20 +3,21 @@
 
 
 ```python
-from selenium import webdriver
+import openpyxl
 
-driver = webdriver.Chrome('./chromedriver')
+wb = openpyxl.Workbook()
+ws = wb.active
+ws.title = 'openpyxl 연습'
 
-driver.get('https://www.naver.com')
+ws['A1'] = 'Hello openpyxl!'
+days = ['월요일', '화요일', '수요일', '목요일', '금요일', '토요일', '일요일']
+ws.append(days)
 
-driver.find_element_by_id('id').send_keys('본인의 네이버 ID')
-driver.find_element_by_id('pw').send_keys('본인의 네이버 비밀번호')
-driver.find_element_by_css_selector('span.btn_login').click()
+ws2 = wb.create_sheet('계단식 배치')
 
-driver.find_element_by_css_selector('a.mn_mail').click()
+for i in range(1, 11):
+    ws2.cell(row=i, column=i).value = i
+
+wb.save('openpyxl.xlsx')
+
 ```
-
-메일함으로 접근하는 방법은 여러가지가 있습니다. 위 코드에서는 상단 메뉴의 메일 버튼을 누릅니다.
-
-![](../../.gitbook/assets/image%20%2824%29.png)
-

@@ -1,211 +1,8 @@
-# Pre - 실습 코드 데이터
-
-## Stage 2 - 15p
-
-```python
-from selenium import webdriver
-from bs4 import BeautifulSoup
-import time
-
-
-driver = webdriver.Chrome('./chromedriver')
-
-
-# ---- 페이지 접속 ----
-
-driver.get('https://map.naver.com/')
-
-
-# ---- 요소 탐색, 키보드 입력 ----
-
-driver.find_element_by_id('search-input').send_keys('신촌 스터디룸')
-
-
-# ---- 요소 탐색, 마우스 클릭 ----
-
-driver.find_element_by_css_selector('#header > div.sch > fieldset > button').click()
-
-
-# ---- 페이지 수집 ----
-
-list = driver.find_elements_by_css_selector('.lsnx_det')
-
-for data in list:
-    print(data.find_element_by_tag_name('a').text)
-
-
-# ---- 정적 수집으로 전환 ----
-
-# html = driver.page_source
-# soup = BeautifulSoup(html, 'html.parser')
-
-# list = soup.select('.lsnx_det')
-#
-# for data in list:
-#
-#     try:
-#         title = data.select_one('a').text
-#         addr = data.select_one('.addr').text[:-3].strip()
-#         tel = data.select_one('.tel').text.strip()
-#
-#     except:
-#         tel = ''
-#
-#     finally:
-#         print(title, '/', addr, '/', tel)
-#
-
-
-# ---- 페이지 버튼 클릭하여 넘기기 ----
-
-# driver.find_element_by_xpath('//a[text()=' + str(2) + ']').click()
-# time.sleep(1)
-
-
-# driver.find_element_by_xpath('//a[text()="3"]').click()
-# driver.close()
-```
-
-
-
-## Stage 3
-
-```python
-from selenium import webdriver
-from selenium import common
-from bs4 import BeautifulSoup
-import time
-
-driver = webdriver.Chrome('./chromedriver')
-
-driver.get('https://map.naver.com/')
-
-driver.find_element_by_id('search-input').send_keys('신촌 스터디룸')
-
-driver.find_element_by_css_selector('#header > div.sch > fieldset > button').click()
-
-page = 1
-
-while True:
-    html = driver.page_source
-    soup = BeautifulSoup(html, 'html.parser')
-
-    list = soup.select('.lsnx_det')
-
-    for data in list:
-
-        try:
-            title = data.select_one('a').text
-            addr = data.select_one('.addr').text.replace('지번', '').strip()
-            tel = data.select_one('.tel').text.strip()
-
-        except:
-            tel = ''
-
-        finally:
-            print(title, '/', addr, '/', tel)
-
-    page = page + 1
-
-    try:
-        if page % 5 == 1:
-            driver.find_element_by_class_name('next').click()
-        else:
-            driver.find_element_by_xpath('//a[text()=' + str(page) + ']').click()
-
-    except common.exceptions.NoSuchElementException:
-        break
-
-    time.sleep(1)
-```
-
-
-
-## Stage 4
-
-```python
-from selenium import webdriver
-from selenium import common
-from bs4 import BeautifulSoup
-import time
-
-driver = webdriver.Chrome('./chromedriver')
-driver2 = webdriver.Chrome('./chromedriver')
-
-driver.get('https://map.naver.com/')
-
-driver.find_element_by_id('search-input').send_keys('신촌 스터디룸')
-
-driver.find_element_by_css_selector('#header > div.sch > fieldset > button').click()
-
-page = 1
-
-while True:
-    html = driver.page_source
-    soup = BeautifulSoup(html, 'html.parser')
-
-    list = soup.select('ul.lst_site > li')
-
-    for data in list:
-
-        title = data.select_one('a').text
-
-        print(title)
-
-        detail_url = data.select_one('a.spm_sw_detail').attrs['href']
-        driver2.get('https://map.naver.com' + detail_url)
-        times = driver2.find_elements_by_css_selector('.section_detail_time li')
-        for t in times:
-            print(t.text)
-
-        print('---------------')
-        time.sleep(1)
-
-    page = page + 1
-
-    try:
-        if page % 5 == 1:
-            driver.find_element_by_class_name('next').click()
-        else:
-            driver.find_element_by_xpath('//a[text()=' + str(page) + ']').click()
-
-    except common.exceptions.NoSuchElementException:
-        break
-
-    time.sleep(1)
-```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 # Pre - 실습 코드 데이터
 
-## Stage 1 - txt 파일 다루기 {#5p}
+## Stage 1 - txt 파일 다루기 {#stage-1-txt}
 
 ```python
 # ---- 파일 쓰기 ----
@@ -245,8 +42,8 @@ req = requests.get('https://tv.naver.com/r/')
 raw = req.text
 html = BeautifulSoup(raw, 'html.parser')
 
-infos = html.select('.cds_info')
-chnInfos = {}
+infos = html.select('div.cds')
+chn_infos = {}
 
 
 for info in infos:
@@ -254,18 +51,18 @@ for info in infos:
     hit = int(info.select_one('span.hit').text[4:].replace(',', ''))
     like = int(info.select_one('span.like').text[5:].replace(',', ''))
 
-    if chn in chnInfos.keys():
-        chnInfos[chn]['hit'] += hit
-        chnInfos[chn]['like'] += like
+    if chn in chn_infos.keys():
+        chn_infos[chn]['hit'] += hit
+        chn_infos[chn]['like'] += like
     else:
-        chnInfos[chn] = {'hit': hit, 'like': like}
+        chn_infos[chn] = {'hit': hit, 'like': like}
 
 
 def sortKey(item):
     return item[1]['hit']
 
 
-sortedList = sorted(chnInfos.items(), key=sortKey, reverse=True)
+sortedList = sorted(chn_infos.items(), key=sortKey, reverse=True)
 
 f = <            >
 
@@ -345,121 +142,53 @@ df = dt.strftime(<       >)
 # wb.save('test2.xlsx')
 ```
 
-## Stage 3 - url을 분석하여 데이터 수집하기 {#32p}
+
+## Stage 3 - 네이버 TV 예제 저장
 
 ```python
-from urllib import <    >, <    >
+import requests
 from bs4 import BeautifulSoup
-
-for i in range(3):
-    print('-------------- page' + <    > + '출력중 -----------')
-    page = <    >
-    req = request.Request('https://search.naver.com/search.naver?&where=news&query=' + <    > + '&start=' + <    >,
-                          headers={'User-Agent': 'Mozilla/5.0'})
-    raw = request.urlopen(req).read()
-    html = BeautifulSoup(raw, 'html.parser')
-    list = html.select('.type01 dl')
-
-    for article in list:
-        journal = article.select_one('span._sp_each_source').text
-        title = article.select_one('dt').text
-
-        print(journal, title)
-```
-
-## Stage 3  수집한 데이터 가공하기 {#35p}
-
-```python
-from urllib import request, parse
-from bs4 import BeautifulSoup
-
-journalTitles = <     >
-
-for i in range(3):
-    req = request.Request('https://search.naver.com/search.naver?&where=news&query=' + parse.quote('아시안게임') + '&start=' + str(i * 10 + 1),
-                          headers={'User-Agent': 'Mozilla/5.0'})
-    raw = request.urlopen(req).read()
-    html = BeautifulSoup(raw, 'html.parser')
-
-    list = html.select('.type01 dl')
-
-    for article in list:
-        journal = article.select_one('span._sp_each_source').text
-        title = article.select_one('dt').text
-
-        if <     >:
-            <     > = []
-            <     >
-        else:
-            if title not in journalTitles[journal]:
-                <     >
-
-for key in journalTitles:
-    print(key, journalTitles[key])
-```
-
-## Stage 4 - 여러 페이지 수집 실습 {#39p}
-
-```python
-from bs4 import BeautifulSoup
-from urllib import request, parse
+import datetime
 import openpyxl
 
-# ----------------- 준비 -----------------
-
-dict = {}
-keyword = '아시안게임'
-period = '7'
-# pd: 1일 - 4, 1주 - 1, 1개월 - 2, 6개월 - 6, 1년 - 5, 1시간 - 7, 2시간 - 8, 3시간 - 9, 4시간 - 10, 5시간 - 11, 6시간 - 12
-req = request.Request('https://search.naver.com/search.naver?&where=news&query=' + parse.quote(keyword) + '&pd=' + period + '&start=1', headers={'User-Agent': 'Mozilla/5.0'})
-raw = request.urlopen(req).read()
+raw = requests.get('https://tv.naver.com/r/').text
 html = BeautifulSoup(raw, 'html.parser')
-total = int(html.select_one('.all_my').text.split('/')[1][:-1].replace(',', '').strip())
-page = 1
 
-# ----------------- 수집 -----------------
+# ---- 엑셀 파일 초기화 ----
 
-while <       >:
-    req = request.Request(
-        'https://search.naver.com/search.naver?&where=news&query=' + parse.quote(keyword) + '&pd=' + period + '&start=' + str((page-1) * 10 + 1),
-        headers={'User-Agent': 'Mozilla/5.0'})
-    raw = request.urlopen(req).read()
-    html = BeautifulSoup(raw, 'html.parser')
-    list = html.select('.type01 dl')
+# 이곳에 엑셀 파일과 관련 변수들을 준비하세요.
 
-    for article in list:
-        journal = article.select_one('span._sp_each_source').text
-        title = article.select_one('dt').text
+# -------------------------
 
-        if journal not in dict:
-            dict[journal] = [title]
-        else:
-            if title not in dict[journal]:
-                dict[journal].append(title)
+infos = html.select('div.cds')
+chn_infos = {}
 
-    print(page * 10, '/', total)
-    page = page + 1
+for info in infos:
+    title = info.select_one('dt.title tooltip').text
+    chn = info.select_one('dd.chn > a').text
+    hit = int(info.select_one('span.hit').text[4:].replace(',', ''))
+    like = int(info.select_one('span.like').text[5:].replace(',', ''))
 
-# ----------------- 출력 -----------------
+    if chn in chn_infos.keys():
+        chn_infos[chn]['hit'] += hit
+        chn_infos[chn]['like'] += like
+    else:
+        chn_infos[chn] = {'hit': hit, 'like': like}
 
-for key in dict.keys():
-    print(key, dict[key])
+    clips_sheet.append([title, chn, hit, like])
 
-# ----------------- 저장 -----------------
 
-wb = openpyxl.Workbook()
-row = 1
-ws = wb.active
+def sortKey(item):
+    return item[1]['hit']
 
-for journalTitles in dict.items():
-    ws.cell(row=row, column=1).value = <     >
 
-    for title in journalTitles[1]:
-        ws.cell(row=row, column=2).value = <    >
-        <    >
+sortedList = sorted(chn_infos.items(), key=sortKey, reverse=True)
 
-    <    >
 
-wb.save(keyword + '.xlsx')
+# ----- 엑셀 파일 저장 -----
+
+# 이곳에서 엑셀 파일을 저장하세요.
+
+# ------------------------
+
 ```
-

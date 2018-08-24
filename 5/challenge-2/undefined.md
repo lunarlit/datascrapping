@@ -1,19 +1,29 @@
 # 모범 답안
 
 ```python
+from bs4 import BeautifulSoup
+from urllib import request
+import openpyxl
+import datetime
 
-from selenium import webdriver
+xl = openpyxl.Workbook()
+sheet = xl.active
+sheet.title = "질문 리스트"
 
-driver = webdriver.Chrome('./chromedriver')
-driver.get('https://datalab.naver.com/keyword/realtimeList.naver?where=main')
+for page in range(1, 11):
+    print(page, 'page를 수집하는 중입니다...')
+    raw = request.urlopen('https://hashcode.co.kr/?page=' + str(page))
+    html = BeautifulSoup(raw, 'html.parser')
 
-driver.find_element_by_class_name('select_date')
+    questions = html.select('.question-list-item')
 
-list = driver.find_elements_by_css_selector('div.select_date span.title')
+    for question in questions:
+        title = question.select_one('div.question h4 > a').text
+        sheet.append([title])
 
-for keyword in list:
-    print(keyword.text)
+print('수집 완료!')
+
+filename = 'hashcode_' + datetime.datetime.now().strftime("%Y_%m_%d")
+xl.save(filename + '.xlsx')
+
 ```
-
-
-

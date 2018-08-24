@@ -43,11 +43,11 @@ open의 결과값을 변수 f에 집어넣고 있습니다.
 
 .close\( \) 함수는 열었던 파일을 닫아 더 이상 컨트롤할 수 없게 만듭니다.
 
-사용이 끝난 파일은 꼭 .close\( \) 를 실행하여 권한을 반납하여야 합니다.
+사용이 끝난 파일은 꼭 .close\( \) 를 실행하여 연결을 종료하여야 합니다.
 
 ![](../.gitbook/assets/image%20%28208%29.png)
 
-위 코드를 실행하고 test.txt를 열어보면, hello world! 가 성공적으로 작성된 것을 볼 수 있습니다.
+위 코드를 실행하고 코드가 있는 폴더를 열어 생성된 test.txt를 보면, hello world! 가 성공적으로 작성된 것을 볼 수 있습니다.
 
 
 
@@ -70,7 +70,7 @@ f.close()
 
 ![](../.gitbook/assets/image%20%28179%29.png)
 
-읽기 모드를 알아보기에 앞서, test.txt의 내용에 한 줄을 추가해 주세요.
+읽기 모드를 알아보기에 앞서, test.txt의 내용에 한 줄을 더 추가해 주세요.
 
 
 
@@ -94,6 +94,10 @@ f.close()
 
 
 
+[file 클래스 정리 표]
+
+
+
 ## 수집한 데이터 저장해보기
 
 이제 파일에 간단히 저장하는 방법을 알았으니, 네이버 TV TOP 100으로 돌아가 정렬된 결과를 저장해봅시다.
@@ -102,13 +106,7 @@ f.close()
 
 ```python
 f = open('test.txt', 'w')
-```
 
-먼저 코드 시작지점에 파일을 열어두고
-
-
-
-```python
 for sortedInfo in sortedList:
     f.write(sortedInfo[0] + ',' + str(sortedInfo[1]['hit']) + '\n')
 
@@ -124,14 +122,14 @@ f.close()
 
 메모장에 직접 쓸 때는 Enter를 눌러 줄을 바꾸지만, 코드 상에서는 이를 표현할 수 없어 대신 '\n' 을 만나면 줄을 바꾸도록 정해져 있습니다.
 
-/ \(슬래시\) 와 헷갈리지 않게 주의하세요!
+/ \(슬래시\) 와 \(역슬래시) 헷갈리지 않게 주의하세요!
 {% endhint %}
 
 위 코드들을 추가하여 실행시키면 다음과 같은 결과 파일을 얻을 수 있습니다.
 
 ![](../.gitbook/assets/image%20%2871%29.png)
 
-잘 저장이 되었습니다. 그런데 메모장은 아무래도 줄이 맞지 않아 데이터를 확인하기 불편하네요. 
+잘 저장이 되었습니다. 그런데 메모장은 아무래도 열이 맞지 않아 데이터를 확인하기 불편하네요. 
 
 
 
@@ -227,3 +225,48 @@ f = open(filename + '.csv', 'w')
 \(그래도 같은 날짜에 두 번 이상 수집하면 이전 데이터가 날아가겠죠? 
 
 이럴 경우 시간, 분, 초 단위까지 필요에 따라 활용해서 파일명을 변경해야겠습니다.\)
+
+
+```python
+import requests
+from bs4 import BeautifulSoup
+import datetime
+
+req = requests.get('https://tv.naver.com/r/')
+raw = req.text
+html = BeautifulSoup(raw, 'html.parser')
+
+infos = html.select('div.cds')
+chn_infos = {}
+
+
+for info in infos:
+    chn = info.select_one('dd.chn > a').text
+    hit = int(info.select_one('span.hit').text[4:].replace(',', ''))
+    like = int(info.select_one('span.like').text[5:].replace(',', ''))
+
+    if chn in chn_infos.keys():
+        chn_infos[chn]['hit'] += hit
+        chn_infos[chn]['like'] += like
+    else:
+        chn_infos[chn] = {'hit': hit, 'like': like}
+
+
+def sortKey(item):
+    return item[1]['hit']
+
+
+sortedList = sorted(chn_infos.items(), key=sortKey, reverse=True)
+
+dt = datetime.datetime.now()
+filename = 'TOP100_' + dt.strftime("%Y_%m_%d")
+f = open(filename + '.csv', 'w')
+
+for sortedInfo in sortedList:
+    f.write(sortedInfo[0] + ',' + str(sortedInfo[1]['hit']) + '\n')
+
+f.close()
+```
+
+최종 코드입니다. 자신의 코드가 잘 실행되지 않는다면 참고하세요.
+그냥 복사 붙여넣기 하는 것보다 자신의 코드와 한줄 한줄 비교하며 어디가 잘못되었는지 파악해보세요.
