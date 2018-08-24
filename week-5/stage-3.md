@@ -68,7 +68,7 @@ excel.close()
 
 마지막으로 datetime 라이브러리를 이용해 오늘 날짜가 포함된 파일명을 생성하여 저장합니다.
 
-![](../.gitbook/assets/image%20%28114%29.png)
+![](../.gitbook/assets/image%20%28123%29.png)
 
 성공적으로 엑셀 파일에 담긴 모습입니다!
 

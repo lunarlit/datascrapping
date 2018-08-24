@@ -10,5 +10,7 @@
 
 {% page-ref page="week-4/" %}
 
+{% page-ref page="week-5/" %}
 
+{% page-ref page="week-6/" %}
 

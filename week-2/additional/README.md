@@ -22,5 +22,5 @@ shopping_items = [
 
 최종 출력은 다음과 같습니다.
 
-![](../../.gitbook/assets/image%20%28141%29.png)
+![](../../.gitbook/assets/image%20%28151%29.png)
 

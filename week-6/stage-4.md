@@ -8,7 +8,7 @@
 
 ## 상세 페이지 조회
 
-![](../.gitbook/assets/image%20%28192%29.png)
+![](../.gitbook/assets/image%20%28222%29.png)
 
 네이버 지도 예제를 계속 사용하도록 하겠습니다.
 
@@ -33,7 +33,7 @@ for data in list:
 
 리스트를 찾아 list라는 변수에 배열로 집어넣고, for문을 돌며 각 리스트 요소에서 상세보기 버튼의 경로로 선택하여 클릭을 명령하고 있습니다.
 
-![](../.gitbook/assets/image%20%28116%29.png)
+![](../.gitbook/assets/image%20%2895%29.png)
 
 하지만 이런 에러를 마주하게 될 것입니다.
 
@@ -43,7 +43,7 @@ Stage 3에서 보았던 NoSuchElementException과는 조금 다른데요.
 
 ElementNotVisibleException은 요소가 존재하긴 하지만, 가려져있어 선택할 수 없다는 뜻입니다.
 
-![](../.gitbook/assets/image%20%281%29.png)
+![](../.gitbook/assets/image%20%28139%29.png)
 
 브라우저를 보면 해당 리스트를 클릭하여 선택해야만 상세보기 버튼이 나오는 것을 알 수 있습니다. 가상브라우저는 리스트를 클릭하라는 명령을 받지 못했기 때문에 상세보기 버튼을 찾을 수 없는 것이죠.
 
@@ -59,7 +59,7 @@ for data in list:
 
 첫번째 상세보기까지는 잘 눌리지만, 또다른 난관에 봉착합니다.
 
-![](../.gitbook/assets/image%20%28161%29.png)
+![](../.gitbook/assets/image%20%28487%29.png)
 
 바로 탭이 생기는 것인데요. 인간이 직접 사용할 때에는 자연스럽게 정보를 확인하고, 탭을 닫고, 리스트로 돌아가 다음 요소를 눌러볼 수 있습니다.
 
@@ -126,13 +126,13 @@ driver.get('https://map.naver.com' + link)
 
 이런 방식으로 상세 주소에 드라이버를 접속시킬 수 있습니다.
 
-![](../.gitbook/assets/image%20%28242%29.png)
+![](../.gitbook/assets/image%20%28469%29.png)
 
 주소로 이동했을 경우 하나의 탭에서 이동이 이루어지기 때문에 뒤로를 누르면 원래 주소로 다시 돌아올 것입니다.
 
 그런데 구현하기전에 예상되는 문제가 있습니다.
 
-![](../.gitbook/assets/image%20%28151%29.png)
+![](../.gitbook/assets/image%20%28247%29.png)
 
 지도 데이터가 동적으로 로딩되기 때문에 생기는 문제입니다. "신촌 치킨"을 검색 했건 안했건 주소가 [https://map.naver.com/](https://map.naver.com/) 으로 동일한 것은 기억하실 겁니다.
 
@@ -144,7 +144,7 @@ driver.get('https://map.naver.com' + link)
 
 답은 "뒤로"를 안누르고도 수집을 계속할 수 있게 만드는 것입니다.
 
-![](../.gitbook/assets/image%20%28157%29.png)
+![](../.gitbook/assets/image%20%28349%29.png)
 
 드라이버 변수를 두 개 만들어 하나는 지도 리스트, 하나는 상세 페이지를 조회하도록 합니다.
 

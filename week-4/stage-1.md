@@ -6,7 +6,7 @@ Dictionary는 리스트와 비슷하게 데이터를 한 데 모을 수 있는 �
 
 ## Dictionary를 소개합니다
 
-![](../.gitbook/assets/image%20%2827%29.png)
+![](../.gitbook/assets/image%20%2830%29.png)
 
 리스트는 값을 차례로 저장하고 "인덱스" 라는 숫자 번호를 통해 저장된 값을 불러와 활용할 수 있습니다.
 

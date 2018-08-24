@@ -68,11 +68,11 @@
   * [Stage 1 - 정적 수집과 동적 수집 비교](week-6/stage-1.md)
   * [Stage 2 - 가상브라우저를 조종해보자](week-6/stage-2.md)
   * [Challenge 1](week-6/challenge-1/README.md)
-    * [모범 답안](week-6/challenge-1/undefined.md)
+    * [모범 답안](week-6/challenge-1/solution.md)
   * [Stage 3 - 가상브라우저 고급 활용법](week-6/stage-3.md)
   * [Stage 4 - 실습 예제 : 게시판 안으로 들어가기](week-6/stage-4.md)
   * [Challenge 2](week-6/challenge-2/README.md)
-    * [모범 답안](week-6/challenge-2/undefined.md)
+    * [모범 답안](week-6/challenge-2/solution.md)
   * [자율 과제](week-6/self-challenge/README.md)
     * [모범 답안](week-6/self-challenge/solution.md)
 
