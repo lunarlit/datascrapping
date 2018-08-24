@@ -14,3 +14,4 @@ driver.find_element_by_css_selector('#sourceEditArea textarea').send_keys('i lov
 # 번역 버튼 클릭
 driver.find_element_by_css_selector('#btnTranslate').click()
 ```
+

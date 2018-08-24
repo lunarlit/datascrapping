@@ -27,3 +27,4 @@ list = driver.find_elements_by_css_selector('div.select_date span.title')
 for keyword in list:
     print(keyword.text)
 ```
+

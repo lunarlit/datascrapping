@@ -1,7 +1,6 @@
 # 모범 답안
 
 ```python
-
 from selenium import webdriver
 
 driver = webdriver.Chrome('./chromedriver')
@@ -13,5 +12,5 @@ list = driver.find_elements_by_css_selector('div.select_date span.title')
 
 for keyword in list:
     print(keyword.text)
-
 ```
+

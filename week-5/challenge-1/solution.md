@@ -1,7 +1,5 @@
 # 모범 답안
 
-
-
 ```python
 import openpyxl
 
@@ -19,5 +17,5 @@ for i in range(1, 11):
     ws2.cell(row=i, column=i).value = i
 
 wb.save('openpyxl.xlsx')
-
 ```
+
