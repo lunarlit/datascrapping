@@ -10,11 +10,11 @@
 
 지금 수집되는 데이터의 형태는 아래와 같습니다.
 
-![](../.gitbook/assets/image%20%28302%29.png)
+![](../.gitbook/assets/image%20%28306%29.png)
 
 이를 가공하여 검색 키워드에 대해 어떤 언론사가 어떤 기사를 썼는지 파악할 수 있도록 만들어 보려고 합니다.
 
-![](../.gitbook/assets/image%20%2894%29.png)
+![](../.gitbook/assets/image%20%2895%29.png)
 
 가공 결과는 위와 같이 언론사명에 여러 기사 제목이 대응되는 형태가 될 것입니다.
 
@@ -22,7 +22,7 @@
 
 이러한 구조를 코드로 구현하려면 어떻게 해야 할까요?
 
-![](../.gitbook/assets/image%20%28277%29.png)
+![](../.gitbook/assets/image%20%28280%29.png)
 
 ‘언론사명’ 이라는 중심 키워드에 데이터를 모아야 하기 때문에 전체 구조는 Dictionary를 사용할 것입니다. 키에 대응하는 값은 무엇이 될까요? 네이버 TV 예제처럼 복합적인 구조인가요?
 
@@ -34,7 +34,7 @@
 
 가공 방식과 구조가 완성되었다면 이를 구현할 알고리즘을 짜고 의사 코드로 만들어보는 것이 좋습니다.
 
-![](../.gitbook/assets/image%20%28321%29.png)
+![](../.gitbook/assets/image%20%28325%29.png)
 
 페이지마다 여러 개의 언론사명, 기사 제목 쌍이 수집될 것입니다.
 
@@ -107,7 +107,7 @@ for item in journal_articles.items():
 
 3주차 Stage 4의 출력 결과입니다.
 
-![](../.gitbook/assets/image%20%28364%29.png)
+![](../.gitbook/assets/image%20%28368%29.png)
 
 방금 구현한 코드의 출력 결과입니다. 수집된 데이터에서 새로운 가치를 창출했습니다.
 
@@ -130,7 +130,7 @@ for i in range(3):
     raw = requests.get('https://search.naver.com/search.naver?&where=news&query=' + keyword + '&start=' + str(i * 10 + 1), headers={'User-Agent': 'Mozilla/5.0'}).text
 ```
 
-![](../.gitbook/assets/image%20%28163%29.png)
+![](../.gitbook/assets/image%20%28165%29.png)
 
 콘솔 창에서 검색어를 입력하고 나서 검색이 실행되는 모습입니다.
 
@@ -146,7 +146,7 @@ for i in range(3):
 
 네이버 TV 수집 예제는 채널명 - 데이터가 1:1 대응이기 때문에 그냥 한 줄로 출력해도 충분했지만 지금의 네이버 뉴스 예제는 다릅니다.
 
-![](../.gitbook/assets/image%20%28153%29.png)
+![](../.gitbook/assets/image%20%28155%29.png)
 
 데이터를 위와 같이 언론사명 - 기사 제목이 잘 보이도록 작성하려고 합니다.
 
@@ -154,11 +154,11 @@ for i in range(3):
 
 ### 저장 알고리즘 설계
 
-![](../.gitbook/assets/image%20%28171%29.png)
+![](../.gitbook/assets/image%20%28173%29.png)
 
 현재 데이터는 위와 같이 \(언론사명, \[기사 제목 리스트\]\) 로 이루어진 리스트입니다.
 
-![](../.gitbook/assets/image%20%28429%29.png)
+![](../.gitbook/assets/image%20%28433%29.png)
 
 먼저 이 리스트를 순회하면 각 언론사의 데이터에 접근할 수 있고, 먼저 언론사명을 A열에 작성합니다.
 

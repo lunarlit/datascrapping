@@ -2,7 +2,7 @@
 
 ## 도전과제 1
 
-![](../../.gitbook/assets/image%20%28264%29.png)
+![](../../.gitbook/assets/image%20%28267%29.png)
 
 요즘 핫한 번역 서비스 파파고에 접속하여 \([https://papago.naver.com/](https://papago.naver.com/)\) ‘i love koala study’ 라는 문장을 번역하도록 해보세요.
 

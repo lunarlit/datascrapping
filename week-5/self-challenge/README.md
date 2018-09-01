@@ -1,6 +1,6 @@
 # 자율 과제
 
-![](../../.gitbook/assets/image%20%28286%29.png)
+![](../../.gitbook/assets/image%20%28290%29.png)
 
 Challenge 2에서 수집한 제목 리스트는 사실 그리 가치있는 데이터는 아닙니다.
 

@@ -8,7 +8,7 @@
 
 [http://chromedriver.chromium.org/downloads ](http://chromedriver.chromium.org/downloads%20) 에 접속하여 크롬드라이버 최신 버전들 다운로드합니다. 크롬드라이버는 인터넷 브라우저 크롬과 같은 기능을 갖는 가상 브라우저입니다.
 
-![](../.gitbook/assets/image%20%28431%29.png)
+![](../.gitbook/assets/image%20%28435%29.png)
 
 다운로드한 크롬드라이버를 위와 같이 실행할 파이썬 파일이 있는 폴더에 넣어야 합니다.
 
@@ -32,7 +32,7 @@ selenium 라이브러리에서 webdriver 클래스를 불러와 아까 다운로
 
 ## selenium 사용법
 
-![](../.gitbook/assets/image%20%28169%29.png)
+![](../.gitbook/assets/image%20%28171%29.png)
 
 브라우저의 거의 모든 것을 실행할 수 있는 방대한 라이브러리이지만, 일단 위에 나온 함수 정도만 알면 현재 필요한만큼은 무리없이 사용할 수 있습니다.
 
@@ -46,7 +46,7 @@ driver.get('https://map.naver.com/')
 
 이제 위와 같이 드라이버 변수에서 .get\( \) 함수를 호출하면 매개변수로 전달된 주소로 이동합니다.
 
-![](../.gitbook/assets/image%20%28209%29.png)
+![](../.gitbook/assets/image%20%28211%29.png)
 
 ### 2. find\_element\_by\_~~\( \) 함수
 
@@ -86,7 +86,7 @@ driver.find_element_by_id('search-input').send_keys('신촌 스터디룸')
 
 위 코드는 드라이버 변수를 생성하여 [https://map.naver.com](https://map.naver.com) 으로 이동한 후 find\_element\_by\_id\( \) 함수를 이용해 검색창을 선택하고 '신촌 스터디룸' 이라는 검색어를 입력하는 코드입니다.
 
-![](../.gitbook/assets/image%20%28358%29.png)
+![](../.gitbook/assets/image%20%28362%29.png)
 
 실행시키면 이와 같은 결과를 볼 수 있습니다.
 
@@ -141,7 +141,7 @@ find\_element\_by\_~~\( \) 함수가 select\_one \( \) 으로 바뀌는 차이 �
 
 수집 과정 자체는 정적 수집과 차이가 없다는 것을 알 수 있습니다.
 
-![](../.gitbook/assets/image%20%28253%29.png)
+![](../.gitbook/assets/image%20%28256%29.png)
 
 이 경우 위와 같이 실제 브라우저의 리스트 요소에서 a태그의 텍스트를 선택하여 출력하게 됩니다.
 

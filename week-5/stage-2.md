@@ -12,13 +12,13 @@ csv도 엑셀로 열면 똑같이 보이는데 왜 xlsx로 된 엑셀 파일을 
 
 파일을 열어 조금 다뤄보면 알 수 있습니다.
 
-![](../.gitbook/assets/image%20%28114%29.png)
+![](../.gitbook/assets/image%20%28115%29.png)
 
 csv 파일은 말 그대로 "쉼표로 구분된 값들" 이 저장된 파일입니다.
 
 바꿔 말하면 그 이상은 저장할 수 없다는 뜻이 됩니다.
 
-![](../.gitbook/assets/image%20%28483%29.png)
+![](../.gitbook/assets/image%20%28487%29.png)
 
 엑셀에서 사용할 수 있는 수식, 서식, 필터, 차트 등 강력한 스프레드시트의 기능들은 csv로 저장하고나면 사라져 버립니다.
 
@@ -32,13 +32,13 @@ csv 파일은 말 그대로 "쉼표로 구분된 값들" 이 저장된 파일입
 
 엑셀 파일을 다루기 위해서는 추가 라이브러리가 필요합니다.
 
-![](../.gitbook/assets/image%20%28366%29.png)
+![](../.gitbook/assets/image%20%28370%29.png)
 
 혹시 라이브러리 추가 방법은 기억 나시나요? 2주차에서 한 번 해보았는데요.
 
 위와 같이 상단 메뉴에서 File &gt; Settings에 들어간 후 Project Interpreter 메뉴로 들어가 나오는 창에서 우측의 녹색 + 버튼을 누르면 됩니다.
 
-![](../.gitbook/assets/image%20%28326%29.png)
+![](../.gitbook/assets/image%20%28330%29.png)
 
 이런 창이 뜨면 openpyxl을 검색하여 아래의 Install Package 버튼을 눌러주세요.
 
@@ -52,7 +52,7 @@ csv 파일은 말 그대로 "쉼표로 구분된 값들" 이 저장된 파일입
 
 먼저 앞으로 쓰일 용어를 정리해보겠습니다. 엑셀에서 쓰이는 용어와 동일합니다.
 
-![](../.gitbook/assets/image%20%28335%29.png)
+![](../.gitbook/assets/image%20%28339%29.png)
 
 Workbook은 엑셀 파일 전체를 말합니다. 여러 개의 워크 시트를 가질 수 있습니다. openpyxl의 Workbook 타입과 연결됩니다.
 
@@ -71,7 +71,7 @@ wb.save('test.xlsx')
 
 이제 새로 파이썬 파일을 하나 만들어 위와 같이 입력 후 실행해 봅니다.
 
-![](../.gitbook/assets/image%20%28131%29.png)
+![](../.gitbook/assets/image%20%28132%29.png)
 
 코드가 있는 폴더에 test.xlsx 가 생성된 것을 볼 수 있습니다.
 
@@ -136,7 +136,7 @@ sheet.append([1, 2, 3, 4, 5])
 wb.save('test2.xlsx')
 ```
 
-![](../.gitbook/assets/image%20%28471%29.png)
+![](../.gitbook/assets/image%20%28475%29.png)
 
 위 코드의 실행 결과입니다.
 
@@ -223,7 +223,7 @@ sheet1.append(['다시', '첫번째 시트'])
 wb.save('test3.xlsx')
 ```
 
-![](../.gitbook/assets/image%20%28207%29.png)
+![](../.gitbook/assets/image%20%28209%29.png)
 
 4행에서는 이전과 같이 .active로 시트를 불러오는 것이 아니라, 엑셀 파일 변수에서 \[ '시트 이름' \] 을 사용하여 불러오고 있습니다. \(openpyxl을 통해 기본 생성되는 시트의 이름이 Sheet 입니다.\)
 
@@ -260,7 +260,7 @@ test2.xlsx은 셀 조작 파트에서 만든 파일입니다. load\_workbook 함
 
 실행 후 test2.xlsx를 열어보면 기존 내용에서 시트 이름이 바뀌고 데이터가 잘 입력된 것을 볼 수 있습니다.
 
-![](../.gitbook/assets/image%20%28260%29.png)
+![](../.gitbook/assets/image%20%28263%29.png)
 
 {% hint style="danger" %}
 test2.xlsx가 열려있는 상태라면 쓰기 권한이 없어 오류가 생길 것입니다. 같은 파일 이름으로 저장하려면 꼭 열려있는 엑셀 파일을 닫고 실행해주세요.
@@ -270,19 +270,19 @@ test2.xlsx가 열려있는 상태라면 쓰기 권한이 없어 오류가 생길
 
 ### Workbook 타입 관련 기능
 
-![](../.gitbook/assets/image%20%28345%29.png)
+![](../.gitbook/assets/image%20%28349%29.png)
 
 ### 
 
 ### Worksheet 타입 관련 기능
 
-![](../.gitbook/assets/image%20%28206%29.png)
+![](../.gitbook/assets/image%20%28208%29.png)
 
 ### 
 
 ### cell 타입 관련 기능
 
-![](../.gitbook/assets/image%20%28192%29.png)
+![](../.gitbook/assets/image%20%28194%29.png)
 
 훨씬 더 많은 기능을 확인하고 싶다면? [https://openpyxl.readthedocs.io/en/stable/index.html](https://openpyxl.readthedocs.io/en/stable/index.html)
 

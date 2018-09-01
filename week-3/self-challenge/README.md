@@ -6,11 +6,11 @@
 
 [https://tech.kakao.com​](https://tech.kakao.com​)
 
-![](../../.gitbook/assets/image%20%28173%29.png)
+![](../../.gitbook/assets/image%20%28175%29.png)
 
 ## 2. 네이버 증권에서 종목명 수집하기
 
 [http://finance.naver.com/sise/lastsearch2.nhn ](http://finance.naver.com/sise/lastsearch2.nhn%20)
 
-![](../../.gitbook/assets/image%20%28382%29.png)
+![](../../.gitbook/assets/image%20%28386%29.png)
 

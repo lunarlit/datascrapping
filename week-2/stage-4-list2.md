@@ -40,7 +40,7 @@ for city in cities:
     print('-------------------------')
 ```
 
-![&#xACB0;&#xACFC; - &#xC77C;&#xBD80; &#xC0DD;&#xB7B5;](../.gitbook/assets/image%20%28102%29.png)
+![&#xACB0;&#xACFC; - &#xC77C;&#xBD80; &#xC0DD;&#xB7B5;](../.gitbook/assets/image%20%28103%29.png)
 
 for 문을 작성하고 실행할 기능을 정의해 주기만 하면, cities 리스트 내의 모든 요소에 대해 같은 기능을 반복하여 실행합니다.
 
@@ -76,7 +76,7 @@ for문이 선언되는 순간 일반 실행 공간과 분리된 공간이 형성
 
 리스트의 모든 내용을 반복 실행하면 분리된 공간이 종료되어 다음 줄의 일반 실행 공간으로 넘어갑니다.
 
-![](../.gitbook/assets/image%20%28255%29.png)
+![](../.gitbook/assets/image%20%28258%29.png)
 
 분리된 공간에서는 바깥 공간의 변수를 사용할 수 있습니다.
 
@@ -87,7 +87,7 @@ for문이 선언되는 순간 일반 실행 공간과 분리된 공간이 형성
 
 리스트 타입 역시 리스트를 편집할 수 있는 여러 타입 함수를 제공합니다.
 
-![](../.gitbook/assets/image%20%28443%29.png)
+![](../.gitbook/assets/image%20%28447%29.png)
 
 ```python
 cities = ['서울', '인천', '수원', '성남', '대전', '원주', '대구', '김해']
@@ -106,7 +106,7 @@ cities.sort()
 print(cities)
 ```
 
-![&#xCD9C;&#xB825; &#xACB0;&#xACFC;](../.gitbook/assets/image%20%28355%29.png)
+![&#xCD9C;&#xB825; &#xACB0;&#xACFC;](../.gitbook/assets/image%20%28359%29.png)
 
 리스트 타입 함수들은 문자열과 달리 원본 리스트를 직접 수정합니다.
 

@@ -4,9 +4,9 @@
 
 파이썬 코드를 사용해 아래와 같은 엑셀 파일을 완성시켜 보세요.
 
-![&#xCCAB; &#xBC88;&#xC9F8; &#xC2DC;&#xD2B8;](../../.gitbook/assets/image%20%28119%29.png)
+![&#xCCAB; &#xBC88;&#xC9F8; &#xC2DC;&#xD2B8;](../../.gitbook/assets/image%20%28120%29.png)
 
-![&#xB450; &#xBC88;&#xC9F8; &#xC2DC;&#xD2B8;](../../.gitbook/assets/image%20%28416%29.png)
+![&#xB450; &#xBC88;&#xC9F8; &#xC2DC;&#xD2B8;](../../.gitbook/assets/image%20%28420%29.png)
 
 파일명은 openpyxl.xlsx 로 저장해 주세요.
 
