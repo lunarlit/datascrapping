@@ -4,6 +4,7 @@
 * [들어가며](intro.md)
 * [사전 준비](undefined.md)
 * [1주차 - 웹 페이지는 어떻게 구성되어 있을까?](week-1/README.md)
+  * [Pre - 실습 코드 데이터](week-1/pre.md)
   * [Stage 1 - HTML에 대해 알아보자](week-1/stage-1-html.md)
   * [Stage 2 - 선택자 대해 알아보자](week-1/stage-2-selector.md)
   * [Challenge 1](week-1/challenge-1/README.md)

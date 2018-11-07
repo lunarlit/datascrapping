@@ -6,7 +6,7 @@
 
 그냥 복사 - 붙여넣기를 할 경우 오류가 생길 확률이 높으니 꼭 Copy 버튼을 사용해 주세요.
 
-## Stage 1 - txt 파일 다루기 {#stage-1-txt}
+## Stage 1 - txt 파일 다루기 <a id="stage-1-txt"></a>
 
 ```python
 # ---- 파일 쓰기 ----
@@ -36,7 +36,7 @@
 # f.close()
 ```
 
-## Stage 1 - 네이버 TV 수집 결과 저장 {#stage-1-tv}
+## Stage 1 - 네이버 TV 수집 결과 저장 <a id="stage-1-tv"></a>
 
 ```python
 import requests
@@ -76,7 +76,7 @@ for sortedInfo in sortedList:
 f.<       >
 ```
 
-## Stage 1 - 시간 정보 포매팅 {#stage-1-datetime}
+## Stage 1 - 시간 정보 포매팅 <a id="stage-1-datetime"></a>
 
 ```python
 import datetime
@@ -90,7 +90,7 @@ df = dt.strftime(<       >)
 # print(df)
 ```
 
-## Stage 2 - 엑셀 파일 다루기 {#stage-2-openpyxl}
+## Stage 2 - 엑셀 파일 다루기 <a id="stage-2-openpyxl"></a>
 
 ```python
 # ---- 1. 엑셀 파일 만들고 저장하기 ----
@@ -203,7 +203,7 @@ sortedList = sorted(chn_infos.items(), key=sortKey, reverse=True)
 
 
 
-## Stage 4 - 네이버 뉴스 예제 저장 {#stage-4-news}
+## Stage 4 - 네이버 뉴스 예제 저장 <a id="stage-4-news"></a>
 
 3주차 스테이지 4에서 만들었던 자신의 네이버 뉴스 수집 코드를 복사하여 사용하세요. 
 

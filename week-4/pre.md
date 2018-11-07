@@ -6,7 +6,7 @@
 
 그냥 복사 - 붙여넣기를 할 경우 오류가 생길 확률이 높으니 꼭 Copy 버튼을 사용해 주세요.
 
-## Stage 1 - Dictionary에 대해 알아보자 {#stage-1-dictionary}
+## Stage 1 - Dictionary에 대해 알아보자 <a id="stage-1-dictionary"></a>
 
 ```python
 # ---- dictionary 기본 구성 & 조회 ----
@@ -25,7 +25,7 @@ chnInfos = {'하트시그널2': {'hit': 20000, 'like': 3800},
 
 
 
-## Stage 1 - 이항 연산자 {#stage-1-bin-op}
+## Stage 1 - 이항 연산자 <a id="stage-1-bin-op"></a>
 
 ```python
 a = 100
@@ -86,7 +86,7 @@ subjects = ['파이썬', '자바스크립트', '루비', '코틀린', '자바스
 
 
 
-## Stage 3 - 참/거짓 {#stage-3-true-false}
+## Stage 3 - 참/거짓 <a id="stage-3-true-false"></a>
 
 ```python
 
@@ -170,7 +170,7 @@ print(chn_infos)
 
 
 
-## Stage 4 - 리스트 정렬 {#stage-4-list-sort}
+## Stage 4 - 리스트 정렬 <a id="stage-4-list-sort"></a>
 
 ```python
 
@@ -200,7 +200,7 @@ mixed = [3, '호날두', 'Python', 15, '메시', 'Data']
 
 
 
-## Stage 4 - Dictionary 정렬 {#stage-4-dict-sort}
+## Stage 4 - Dictionary 정렬 <a id="stage-4-dict-sort"></a>
 
 ```python
 # ---- dictionary 정렬 해보기 ----
@@ -215,7 +215,7 @@ chn_infos = {'하트시그널2': {'hit': 20000, 'like': 3800},
 
 
 
-## Stage 4 - 튜플 {#stage-4-tuple}
+## Stage 4 - 튜플 <a id="stage-4-tuple"></a>
 
 ```python
 list = [15, 4, 1, 67, 8]
@@ -230,7 +230,7 @@ print(tuple)
 
 
 
-## Stage 4 - 채널 정보 정렬 {#stage-4-tv}
+## Stage 4 - 채널 정보 정렬 <a id="stage-4-tv"></a>
 
 4주차 스테이지 3에서 만들었던 자신의 네이버 TV TOP 100 수집/가공 코드를 복사하여 사용하세요. 
 
