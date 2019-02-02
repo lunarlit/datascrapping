@@ -1,6 +1,6 @@
 # Table of contents
 
-* [코알라 데이터수집 스터디 학생자료](README.md)
+* [네이버 함께 정복하는 무적의 크롤링](README.md)
 * [들어가며](intro.md)
 * [사전 준비](undefined.md)
 * [1주차 - 웹 페이지는 어떻게 구성되어 있을까?](week-1/README.md)
