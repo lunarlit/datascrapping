@@ -6,6 +6,10 @@
 
 그냥 복사 - 붙여넣기를 할 경우 오류가 생길 확률이 높으니 꼭 Copy 버튼을 사용해 주세요.
 
+
+
+## Stage 2
+
 {% embed url="https://drive.google.com/open?id=19LcOcROOursDajHhXHB5k4wslFE4afyV" %}
 
 사진 파일이 포함되어있는 압축 파일입니다. 압축을 풀어 shopping.html의 내용을 확인하세요.

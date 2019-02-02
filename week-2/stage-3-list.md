@@ -36,7 +36,7 @@ cities = ['서울', '인천', '수원', '성남', '대전', '원주', '대구', 
 print(cities)
 ```
 
-![](../.gitbook/assets/image%20%28324%29.png)
+![](../.gitbook/assets/image%20%28325%29.png)
 
 cities를 print 한 결과입니다. 값들이 잘 들어있네요.
 
@@ -57,7 +57,7 @@ print(cities)
 
 이와 같이 배열 변수 뒤에 \[ \]를 붙이고, 그 안에 가져올 값의 순서를 넣으면 됩니다.
 
-![](../.gitbook/assets/image%20%28304%29.png)
+![](../.gitbook/assets/image%20%28305%29.png)
 
 0부터 시작하는 이 순서는 인덱스라고 부릅니다. 1부터 세는 실수를 주의하세요!
 
@@ -114,7 +114,7 @@ print(cities[0:3])
 print(cities[4:6])
 ```
 
-![&#xCD9C;&#xB825; &#xACB0;&#xACFC;](../.gitbook/assets/image%20%28268%29.png)
+![&#xCD9C;&#xB825; &#xACB0;&#xACFC;](../.gitbook/assets/image%20%28269%29.png)
 
 그럴 때는 숫자 하나짜리 인덱스 대신 인덱스 범위를 지정해주면 됩니다. 주의할 점은 0:3에 3이 포함되지 않는다는 것입니다.
 
@@ -129,7 +129,7 @@ print(cities[-1])   # 끝에서 첫번째
 print(cities[1:-1]) # 두번째 ~ 끝에서 첫번째
 ```
 
-![&#xCD9C;&#xB825; &#xACB0;&#xACFC;](../.gitbook/assets/image%20%28389%29.png)
+![&#xCD9C;&#xB825; &#xACB0;&#xACFC;](../.gitbook/assets/image%20%28390%29.png)
 
 좀 더 심화된 문법을 알아볼까요? 인덱스 범위의 숫자들은 생략할 수 있습니다.
 
@@ -152,7 +152,7 @@ price = price[5:-2]
 print(price)
 ```
 
-![&#xCD9C;&#xB825; &#xACB0;&#xACFC;](../.gitbook/assets/image%20%28419%29.png)
+![&#xCD9C;&#xB825; &#xACB0;&#xACFC;](../.gitbook/assets/image%20%28420%29.png)
 
 이는 데이터 수집에서도 유용하게 쓰입니다. '가격 : ~~~ 원' 이라는 포맷으로 여러 가격 데이터가 수집되었을 때, 가격이 네 자리에서 여섯 자리 등 다양한 경우가 있습니다.
 

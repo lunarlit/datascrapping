@@ -6,7 +6,7 @@
 
 ## 기존 방식으로 페이지 넘기기
 
-![](../.gitbook/assets/image%20%28300%29.png)
+![](../.gitbook/assets/image%20%28301%29.png)
 
 네이버 지도 하단의 페이지 버튼은 이렇게 생겼습니다. 그리고 그 HTML 소스코드는 다음과 같습니다.
 
@@ -141,7 +141,7 @@ while True:
 
 하지만 마지막엔 꼭 다음과 같은 에러를 만나게 됩니다.
 
-![](../.gitbook/assets/image%20%28372%29.png)
+![](../.gitbook/assets/image%20%28373%29.png)
 
 NoSuchElementException. "그런 요소가 없는데요?" 라는 오류입니다.
 
@@ -149,7 +149,7 @@ NoSuchElementException. "그런 요소가 없는데요?" 라는 오류입니다.
 
 이는 "신촌 스터디룸"을 검색했을 때 나온 메세지입니다.
 
-![](../.gitbook/assets/image%20%28356%29.png)
+![](../.gitbook/assets/image%20%28357%29.png)
 
 이 때 페이지는 4까지밖에 없는데, 5페이지를 누르라는 명령을 받아 오류가 난 것입니다.
 

@@ -12,5 +12,5 @@
 
 [http://finance.naver.com/sise/lastsearch2.nhn ](http://finance.naver.com/sise/lastsearch2.nhn%20)
 
-![](../../.gitbook/assets/image%20%28386%29.png)
+![](../../.gitbook/assets/image%20%28387%29.png)
 

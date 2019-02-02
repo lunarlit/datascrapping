@@ -1,12 +1,26 @@
+---
+description: >-
+  FACEBOOK을 만드는 Python 장고 스터디에 오신것을 환영합니다. 이 온라인 자료가 코딩을 배우시는 모든 분께 도움이 되길 바랍니다.
+  이 자료는 무료입니다!
+---
+
 # 코알라 데이터수집 스터디 학생자료
 
-## 이 자료는 코알라의 재산입니다.
+## 직접 배우고 싶다면 `코딩좀알려주라`로 오세요! <a id="undefined"></a>
 
-코알라 - 코딩좀알려주라\([http://coalastudy.com](http://coalastudy.com/)\)에서 제작하였습니다.
+![&#xC18C;&#xADDC;&#xBAA8; &#xCF54;&#xB529; &#xAC15;&#xC758;, &#xB9CC;&#xC871;&#xB3C4; &#xC5C4;&#xCCAD; &#xB192;&#xC74C;!](.gitbook/assets/image%20%28194%29.png)
 
-혼자 따라가기 벅차시다면 코알라 오프라인 스터디\(유료\)에 참여해주세요! 
+이 자료는 초심자도 쉽게 이해하고 따라할 수 있도록 제작되었습니다.
 
-숙련된 리더들이 모든 사소한 궁금증까지도 해결해드립니다.
+온라인 자료만으로도 큰 도움이 되지만, 직접 강사를 만나고 소규모의 수강생들과 함께 코딩을 배우고 싶다면 [https://coalastudy.com](https://coalastudy.com/)으로 놀러와주세요.
+
+## 이 자료는 코알라의 재산입니다. <a id="undefined-1"></a>
+
+**`© 2019 Coala All Rights Reserved`** 
+
+코딩좀알려주라\([https://coalastudy.com](https://coalastudy.com/)\)에서 제작하였습니다.
+
+모든 사람들이 쉽게 코딩을 배울 수 있도록 귀중한 자료를 공개하였습니다. 상업적인 용도로 사용하실 수 없으며 개인 학습용으로만 이용바랍니다. 협력 및 제안은 info@meeta.io로 연락주세요:\)
 
 ## 코딩을 배우는 이유는?
 
@@ -16,11 +30,11 @@
 
 ## 코알라의 코딩스터디!
 
-![](.gitbook/assets/image%20%28253%29.png)
+![](.gitbook/assets/image%20%28254%29.png)
 
 ![](.gitbook/assets/image%20%2890%29.png)
 
-![](.gitbook/assets/image%20%28281%29.png)
+![](.gitbook/assets/image%20%28282%29.png)
 
 ## 축하드립니다.
 

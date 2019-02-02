@@ -6,7 +6,7 @@
 
 ![&#xCCAB; &#xBC88;&#xC9F8; &#xC2DC;&#xD2B8;](../../.gitbook/assets/image%20%28120%29.png)
 
-![&#xB450; &#xBC88;&#xC9F8; &#xC2DC;&#xD2B8;](../../.gitbook/assets/image%20%28420%29.png)
+![&#xB450; &#xBC88;&#xC9F8; &#xC2DC;&#xD2B8;](../../.gitbook/assets/image%20%28421%29.png)
 
 파일명은 openpyxl.xlsx 로 저장해 주세요.
 
