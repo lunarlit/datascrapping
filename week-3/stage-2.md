@@ -61,7 +61,7 @@ infos = html.select('div.cds')
 
 1주차 스터디를 잘 들으신 분은 **"cds 클래스를 가진 div 태그"** 라는 것을 기억하실테고, 기억력이 좋으신 분들은 이 선택자가 네이버TV TOP100의 클립 하나하나의 정보를 담고있다는 사실까지 기억하실 겁니다.
 
-{% page-ref page="../week-1/stage-4-conditions.md" %}
+{% page-ref page="../week-1/stage-4.md" %}
 
 기억이 잘 나지 않으신다면 꼭 1주차의 Stage 4를 복습하고 오세요!
 
